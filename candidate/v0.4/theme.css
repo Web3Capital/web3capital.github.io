@@ -1,0 +1,1987 @@
+/*
+ * MYRILUM marketing-site theme adapter.
+ *
+ * This file contains no independent palette. It maps the adopted v0.4
+ * presentation layer onto checksum-locked Myrilum Design System v0.3
+ * semantic tokens. Dark mode follows an Apple-led neutral hierarchy: near-black
+ * canvases, graphite surfaces, white/gray content, and color reserved for small
+ * interactive or product-visual moments.
+ */
+
+/* Theme preference control: hidden when JavaScript is unavailable. */
+.site-theme-control {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+}
+
+html[data-theme-hydrated="true"] .site-theme-control {
+  display: flex;
+}
+
+.site-theme-control__label {
+  color: inherit;
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+}
+
+.site-theme-control__options {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  background: var(--control-bg);
+}
+
+.site-theme-control__option {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  transition:
+    background var(--duration-fast) var(--ease-hover),
+    color var(--duration-fast) var(--ease-hover);
+}
+
+.site-theme-control__option:hover {
+  background: var(--control-bg-hover);
+  color: var(--text-primary);
+}
+
+.site-theme-control__option[aria-pressed="true"] {
+  background: var(--control-bg-pressed);
+  color: var(--text-primary);
+}
+
+.site-theme-control__option:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* The locked light and dark logo assets switch without a post-hydration flash. */
+.brand-lockup {
+  position: relative;
+}
+
+.brand-lockup__image--dark {
+  display: none;
+}
+
+.brand-lockup[data-logo-tone="dark"] .brand-lockup__image--light,
+html[data-theme="dark"]
+  .brand-lockup[data-logo-tone="adaptive"]
+  .brand-lockup__image--light {
+  display: none;
+}
+
+.brand-lockup[data-logo-tone="dark"] .brand-lockup__image--dark,
+html[data-theme="dark"]
+  .brand-lockup[data-logo-tone="adaptive"]
+  .brand-lockup__image--dark {
+  display: block;
+}
+
+/* Canonical dark canvas and native-control integration. */
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+  background: var(--bg-sunken);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] {
+  accent-color: var(--accent);
+}
+
+html[data-theme="dark"] ::selection {
+  background: var(--selection-bg-active);
+  color: var(--text-on-accent);
+}
+
+html[data-theme="dark"] :where(input, textarea, select, button) {
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] .v2-shell,
+html[data-theme="dark"] .v2-shell-main {
+  background: var(--v4-page-canvas);
+  color: var(--text-primary);
+}
+
+/* Global navigation, mega menu, mobile menu, and footer. */
+html[data-theme="dark"] :is(.v2-shell-header, .v2-shell-header.is-condensed) {
+  border-bottom-color: var(--border-subtle);
+  background: var(--v4-header-material);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-shell-nav-trigger,
+    .v2-shell-utility-link,
+    .v2-shell-language-option,
+    .v2-shell .v2-shell-cta,
+    .v2-shell-menu-toggle,
+    .v2-shell-menu-close
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-shell-nav-trigger:hover,
+    .v2-shell-nav-trigger.is-active,
+    .v2-shell-nav-item.is-expanded .v2-shell-nav-trigger,
+    .v2-shell-utility-link:hover,
+    .v2-shell-utility-link.is-active,
+    .v2-shell-language-option:hover,
+    .v2-shell-language-option.is-active,
+    .v2-shell .v2-shell-cta:hover,
+    .v2-shell-mega-overview.is-current,
+    .v2-shell-mega-group a.is-current,
+    .v2-shell-mega-group a:hover,
+    .v2-shell-mega-group a:focus-visible
+  ) {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-shell-header.has-mega-open,
+    .v2-shell--menu-open .v2-shell-header,
+    .v2-shell-mega-panel,
+    .v2-shell-navigation,
+    .v2-shell-menu-masthead
+  ) {
+  border-color: var(--border-subtle);
+  background: var(--bg-content);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-shell-mega-panel {
+  box-shadow: var(--shadow-popover);
+}
+
+html[data-theme="dark"] .v2-shell-mega-back {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-shell-mega-panel h2,
+html[data-theme="dark"] .v2-shell-mega-panel h3,
+html[data-theme="dark"] .v2-shell-mega-panel strong {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-shell-mega-panel p,
+html[data-theme="dark"] .v2-shell-mega-panel small {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-shell-mega-backdrop {
+  background: var(--scrim);
+}
+
+html[data-theme="dark"] .v2-shell-footer {
+  border-color: var(--border-subtle);
+  background: var(--bg-inset);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-shell-footer-cta {
+  border-color: var(--border-subtle);
+  background: var(--bg-content);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-shell-footer-cta__copy h2 {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-shell-footer-cta__copy > p:last-child,
+html[data-theme="dark"]
+  :is(
+    .v2-shell-footer-group a,
+    .v2-shell-footer-mobile-group a,
+    .v2-shell-footer-meta,
+    .v2-shell-footer-meta a,
+    .v2-shell-footer-language button
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-shell-footer-group a:hover,
+    .v2-shell-footer-group a:focus-visible,
+    .v2-shell-footer-group a.is-current,
+    .v2-shell-footer-mobile-group a:hover,
+    .v2-shell-footer-mobile-group a:focus-visible,
+    .v2-shell-footer-mobile-group a.is-current,
+    .v2-shell-footer-meta a:hover,
+    .v2-shell-footer-meta a:focus-visible,
+    .v2-shell-footer-meta a.is-current,
+    .v2-shell-footer-language button[aria-pressed="true"]
+  ) {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-shell-footer-meta {
+  border-color: var(--border-subtle);
+  background: var(--bg-inset);
+}
+
+/* Homepage: dark graphite product storytelling with authored navy beats. */
+html[data-theme="dark"] .v2-apple-home {
+  background: var(--bg-sunken);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-spotlight,
+    .v2-apple-home-grid > article,
+    .v2-apple-home-closing
+  ):not([data-tone="navy"]) {
+  background: var(--v4-section-primary);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-spotlight[data-tone="ice"],
+    .v2-apple-home-grid > article[data-tone="ice"],
+    .v2-apple-home-spotlight[data-tone="light"],
+    .v2-apple-home-grid > article[data-tone="light"],
+    .v2-apple-home-spotlight[data-tone="soft"],
+    .v2-apple-home-grid > article[data-tone="soft"],
+    .v2-apple-home-spotlight[data-media="full-bleed"][data-tone="ice"],
+    .v2-apple-home-spotlight[data-media="full-bleed"][data-tone="light"],
+    .v2-apple-home-grid > article[data-product="knowledge"],
+    .v2-apple-home-grid > article[data-product="enterprise"],
+    .v2-apple-home-grid > article[data-product="operations"]
+  ) {
+  background: var(--v4-section-secondary);
+}
+
+/* The infrastructure artwork is authored on a light physical canvas. Keep this
+   tile as an intentional Apple-like light transition inside the dark sequence. */
+html[data-theme="dark"]
+  .v2-shell
+  .v2-apple-home-grid
+  > article[data-product="infrastructure"] {
+  background: linear-gradient(180deg, var(--gray-50), var(--gray-100));
+  color: var(--gray-950);
+}
+
+html[data-theme="dark"]
+  .v2-shell
+  .v2-apple-home-grid
+  > article[data-product="infrastructure"]
+  :is(h2, h3) {
+  color: var(--gray-950);
+}
+
+html[data-theme="dark"]
+  .v2-shell
+  .v2-apple-home-grid
+  > article[data-product="infrastructure"]
+  p {
+  color: var(--gray-700);
+}
+
+html[data-theme="dark"]
+  .v2-shell
+  .v2-apple-home-grid
+  > article[data-product="infrastructure"]
+  .v2-apple-home-actions
+  a:not(.is-primary) {
+  color: var(--blue-700);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-spotlight,
+    .v2-apple-home-grid > article,
+    .v2-apple-home-closing
+  ):not([data-tone="navy"]):not([data-product="infrastructure"])
+  :is(h2, h3) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-spotlight,
+    .v2-apple-home-grid > article,
+    .v2-apple-home-closing
+  ):not([data-tone="navy"]):not([data-product="infrastructure"])
+  p {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-spotlight,
+    .v2-apple-home-grid > article,
+    .v2-apple-home-closing
+  ):not([data-tone="navy"]):not([data-product="infrastructure"])
+  .v2-apple-home-actions
+  a:not(.is-primary) {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-goal-search__field,
+    .v2-apple-home-goal-result__surface
+  ) {
+  border-color: var(--border-default);
+  background: var(--bg-raised);
+  box-shadow: var(--shadow-3);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-apple-home-goal-search__field input,
+html[data-theme="dark"] .v2-apple-home-goal-result__surface > header h2,
+html[data-theme="dark"] .v2-apple-home-goal-primary-match h3 {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-goal-result__surface > header p,
+    .v2-apple-home-goal-primary-match p,
+    .v2-apple-home-goal-no-match p,
+    .v2-apple-home-goal-other-matches small
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-apple-home-goal-result__surface > header button,
+html[data-theme="dark"] .v2-apple-home-goal-other-matches a {
+  border-color: var(--border-default);
+  background: var(--bg-inset);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-apple-home-goal-primary-match {
+  background: var(--control-bg);
+}
+
+html[data-theme="dark"] .v2-apple-home-goal-no-match {
+  background: var(--control-bg);
+}
+
+html[data-theme="dark"]
+  .v2-apple-home-visual:not([data-tone="navy"])::before {
+  border-color: var(--border-default);
+  background: color-mix(in srgb, var(--bg-raised) 88%, transparent);
+  box-shadow: var(--shadow-3);
+}
+
+html[data-theme="dark"]
+  .v2-apple-home-visual:not([data-tone="navy"])
+  .v2-apple-home-visual__artifact {
+  border-color: var(--border-default);
+  background: var(--bg-raised);
+  box-shadow: var(--shadow-2);
+}
+
+/* Shared editorial pages, service details, and resource/legal reading pages. */
+html[data-theme="dark"]
+  :is(
+    .v2-content-page,
+    .v2-content-body,
+    .v2-sku-page,
+    .v2-sku-content
+  ) {
+  background: var(--v4-page-canvas);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-content-jump {
+  border-color: var(--border-subtle);
+  background: var(--bg-content);
+}
+
+html[data-theme="dark"] .v2-content-jump > strong {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-content-jump a {
+  border-color: var(--border-default);
+  background: var(--control-bg);
+  color: var(--text-link-hover);
+}
+
+html[data-theme="dark"] .v2-content-jump a:hover {
+  border-color: var(--accent);
+  background: var(--control-bg-hover);
+  color: var(--text-link-hover);
+}
+
+html[data-theme="dark"] .v2-content-section {
+  background: var(--v4-section-primary);
+}
+
+html[data-theme="dark"] .v2-content-section.is-odd {
+  background: var(--v4-section-secondary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-content-section--dark,
+    .v2-content-section--dark.is-odd,
+    .v2-sku-section--dark
+  ) {
+  background: var(--bg-sunken);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-content-section__header h2,
+    .v2-capability-governance h2,
+    .v2-content-card h3,
+    .v2-content-related h2,
+    .v2-sku-section__header h2
+  ) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-content-section__header > p:last-child,
+    .v2-content-card > p,
+    .v2-content-section__note,
+    .v2-content-related__card p
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-content-card,
+    .v2-content-related__card,
+    .v2-sku-list-card,
+    .v2-sku-composition-grid > section,
+    .v2-sku-verification-grid > section
+  ) {
+  border-color: var(--border-default);
+  background: var(--v4-card);
+  box-shadow: var(--shadow-1);
+}
+
+html[data-theme="dark"] .v2-content-card__link {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-content-related {
+  background: var(--v4-section-secondary);
+}
+
+html[data-theme="dark"] .v2-content-related__card:hover {
+  border-color: var(--accent);
+  background: var(--bg-raised);
+}
+
+html[data-theme="dark"] .v2-sku-section:nth-of-type(even) {
+  background: var(--v4-section-primary);
+}
+
+html[data-theme="dark"] .v2-sku-section:nth-of-type(odd) {
+  background: var(--v4-section-secondary);
+}
+
+html[data-theme="dark"] .v2-sku-section--dark {
+  background: var(--bg-sunken);
+}
+
+/* Service market and directory. */
+html[data-theme="dark"] .v2-market-page {
+  background: var(--v4-page-canvas);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-demand-navigator,
+    .v2-market-directory,
+    .v2-market-all-delivery-services,
+    .v2-market-results
+  ) {
+  background: var(--v4-section-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-demand-search__field,
+    .v2-market-demand-card,
+    .v2-market-family-entry,
+    .v2-market-product-card,
+    .v2-market-selected-product,
+    .v2-market-card,
+    .v2-market-empty,
+    .v2-market-demand-uncertain
+  ) {
+  border-color: var(--border-default);
+  background: var(--v4-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-1);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-page,
+    .v2-market-detail
+  )
+  :where(h2, h3, h4, strong) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-page,
+    .v2-market-detail
+  )
+  :where(p, small, dt, dd) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-page,
+    .v2-market-detail
+  )
+  :where(a:not(.v2-content-action), button:not(.v2-content-action)) {
+  border-color: var(--border-default);
+}
+
+html[data-theme="dark"] .v2-market-demand-search__field input {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-demand-card__action,
+    .v2-market-category-toggle
+  ) {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-detail,
+    .v2-market-detail-section,
+    .v2-market-detail-keyline-item
+  ) {
+  border-color: var(--border-default);
+  background: var(--bg-content);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-market-detail-close {
+  background: var(--control-bg);
+  color: var(--text-primary);
+}
+
+/* Product detail pages. */
+html[data-theme="dark"] .v2-product-page {
+  background: var(--v4-page-canvas);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-product-local-nav,
+    .v2-product-scope-strip,
+    .v2-product-hero,
+    .v2-product-section,
+    .v2-product-related
+  ) {
+  border-color: var(--border-subtle);
+  background: var(--v4-section-primary);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-product-deliverables,
+    .v2-product-configuration,
+    .v2-product-related
+  ) {
+  background: var(--v4-section-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-product-page
+  :where(h1, h2, h3, h4, strong) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-product-page :where(p, small, dt, dd) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-product-local-nav__links > a:not(.v2-product-local-nav__cta),
+    .v2-product-breadcrumbs a
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-product-action--secondary,
+    .v2-product-related__rail a
+  ) {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-product-hero__visual,
+    .v2-product-highlight-card,
+    .v2-product-deliverables__package,
+    .v2-product-process__steps > li,
+    .v2-product-scope__accordions details,
+    .v2-product-configuration__grid > *,
+    .v2-product-related__rail > *
+  ) {
+  border-color: var(--border-default);
+  background: var(--v4-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-1);
+}
+
+html[data-theme="dark"] .v2-product-evidence,
+html[data-theme="dark"] .v2-product-final-cta {
+  background: var(--bg-sunken);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(.v2-product-evidence, .v2-product-final-cta)
+  :where(h2, h3, p, strong, small) {
+  color: inherit;
+}
+
+/* Nine product-family pages and the AI Agent family. */
+html[data-theme="dark"]
+  :is(
+    .v2-agent-family,
+    .v2-agent-family-page--apple-structured,
+    .v2-portfolio-family-page--apple-structured
+  ) {
+  background: var(--v4-page-canvas);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-agent-family-local-nav,
+    .v2-agent-family-shelf,
+    .v2-agent-family-lineup,
+    .v2-agent-family-support,
+    .v2-agent-family-features,
+    .v2-agent-family-work,
+    .v2-agent-family-compare,
+    .v2-agent-family-essentials,
+    .v2-agent-family-ecosystem,
+    .v2-agent-family-final
+  ) {
+  border-color: var(--border-subtle);
+  background: var(--v4-section-primary);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-agent-family-support,
+    .v2-agent-family-work,
+    .v2-agent-family-essentials
+  ) {
+  background: var(--v4-section-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family
+  :where(h1, h2, h3, h4, strong) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-agent-family :where(p, small, dt, dd) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-agent-family-hero__copy > span,
+html[data-theme="dark"]
+  .v2-agent-family-local-nav__links
+  a:not(.is-primary) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-heading:not(.v2-agent-family-heading--inverse)
+  > span,
+html[data-theme="dark"] .v2-agent-family-final > span,
+html[data-theme="dark"] .v2-agent-family-essentials__grid li {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-essentials__grid
+  > :where(article, section, div)
+  > svg,
+html[data-theme="dark"]
+  .v2-agent-family-related-rail
+  a
+  > span {
+  color: var(--text-link-hover);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-agent-family-section-link,
+    .v2-agent-family-product-card__actions a:not(.is-primary),
+    .v2-agent-family-product-card__actions button:not(.is-primary)
+  ) {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-agent-family-shelf__link,
+    .v2-agent-family-product-rail > ul > li,
+    .v2-agent-family-support__rail > ul > li,
+    .v2-agent-family-feature-card,
+    .v2-agent-family-work-card,
+    .v2-agent-family-configurator,
+    .v2-agent-family-configurator__recommendation,
+    .v2-agent-family-compare__table,
+    .v2-agent-family-essentials__grid > *,
+    .v2-agent-family-related-rail > ul > li,
+    .v2-agent-family-ecosystem__accordion details,
+    .v2-agent-family-ecosystem__visual,
+    .v2-agent-family-feature-modal > *
+  ) {
+  border-color: var(--border-default);
+  background: var(--v4-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-1);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-agent-family-workflow,
+    .v2-agent-family-trust-evidence
+  ) {
+  background: var(--bg-sunken);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-agent-family-workflow,
+    .v2-agent-family-trust-evidence
+  )
+  :where(h2, h3, p, strong, small) {
+  color: inherit;
+}
+
+html[data-theme="dark"] .v2-agent-family-feature-modal {
+  background: var(--scrim);
+}
+
+/* Component-complete dark mappings for late v0.4 Apple-structured rules. */
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-goal-search__field button,
+    .v2-apple-home-hero .v2-apple-home-actions a.is-primary,
+    .v2-apple-home-method .v2-apple-home-actions a.is-primary,
+    .v2-apple-home-grid
+      > article[data-product="models"]
+      .v2-apple-home-actions
+      a.is-primary
+  ) {
+  color: var(--gray-950);
+}
+
+html[data-theme="dark"]
+  .v2-apple-home-goal-search__field
+  input::placeholder {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-goal-result__surface > header span,
+    .v2-apple-home-goal-primary-match > span,
+    .v2-apple-home-goal-other-matches > span
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-apple-home-goal-result__surface
+  > header
+  q {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-apple-home-goal-primary-match
+  a {
+  color: var(--text-link-hover);
+}
+
+/* Editorial indexes, cards, related links, and expandable controls. */
+html[data-theme="dark"] .v2-content-index p,
+html[data-theme="dark"] .v2-content-index a,
+html[data-theme="dark"] .v2-content-card__index,
+html[data-theme="dark"] .v2-content-card__boundary span,
+html[data-theme="dark"] .v2-content-related__card > span {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-content-index a:hover,
+html[data-theme="dark"] .v2-content-index a span,
+html[data-theme="dark"] .v2-content-related__card > svg {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-content-card__boundary strong {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-content-related__card > strong {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-content-more-items > summary,
+    .v2-content-more-sections > summary
+  ) {
+  border-color: var(--control-border);
+  background: var(--control-bg);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-content-more-items > summary:hover,
+    .v2-content-more-sections > summary:hover
+  ) {
+  border-color: var(--accent);
+  background: var(--control-bg-hover);
+}
+
+html[data-theme="dark"] .v2-capability-compact-card {
+  border-color: var(--border-default);
+  background: var(--v4-card);
+}
+
+html[data-theme="dark"] .v2-capability-compact-card h3 {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-capability-compact-card p {
+  color: var(--text-secondary);
+}
+
+/* SKU internals inherit the dark card surfaces already established above. */
+html[data-theme="dark"]
+  :is(
+    .v2-sku-list-card h3,
+    .v2-sku-composition-grid h3,
+    .v2-sku-graph h3,
+    .v2-sku-graph a strong,
+    .v2-sku-composition-grid section > p strong
+  ) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-sku-list-card li,
+    .v2-sku-composition-grid li,
+    .v2-sku-composition-grid section > p,
+    .v2-sku-graph section > p
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-sku-composition-grid a,
+    .v2-sku-graph a span,
+    .v2-sku-graph a svg
+  ) {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-sku-graph a {
+  border-color: var(--border-default);
+  background: var(--v4-card);
+}
+
+html[data-theme="dark"] .v2-sku-graph a:hover {
+  border-color: var(--accent);
+  background: var(--control-bg-hover);
+}
+
+html[data-theme="dark"] .v2-sku-boundary {
+  border-color: var(--border-default);
+  background: var(--control-bg);
+}
+
+html[data-theme="dark"] .v2-sku-boundary p {
+  color: var(--text-primary);
+}
+
+/* Product detail labels, accordions, and authored navy delivery package. */
+html[data-theme="dark"] .v2-product-page {
+  --v2-product-accent: var(--accent);
+}
+
+html[data-theme="dark"]
+  .v2-product-page:is(
+    [data-category="strategy-consulting"],
+    [data-category="trust-security-compliance"],
+    [data-category="industry-science-engineering"]
+  ) {
+  --v2-product-accent: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-product-local-nav__name,
+html[data-theme="dark"] .v2-product-scope__accordions summary {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-product-hero__visual-label span,
+    .v2-product-highlight-card span,
+    .v2-product-deliverables__lead > span,
+    .v2-product-scope__accordions li,
+    .v2-product-configuration__grid li
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-product-configuration__grid a {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-product-deliverables__package {
+  border-color: var(--border-default);
+  background: var(--bg-sunken);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-2);
+}
+
+html[data-theme="dark"]
+  .v2-product-deliverables__package
+  :where(h2, h3, h4, p, li, span, small, strong) {
+  color: inherit;
+}
+
+/* Service-market filters, product cards, and selected states. */
+html[data-theme="dark"]
+  .v2-market-demand-search__field
+  input::placeholder,
+html[data-theme="dark"] .v2-market-product-card__header > span,
+html[data-theme="dark"] .v2-market-product-shelf__status > strong {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-market-demand-all button {
+  border-color: var(--border-default);
+  background: var(--bg-content);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-market-demand-all button > svg,
+html[data-theme="dark"] .v2-market-product-card__page-link {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-market-demand-all button.is-active,
+html[data-theme="dark"] .v2-market-demand-card.is-active {
+  border-color: var(--accent);
+  background: var(--control-bg-hover);
+}
+
+html[data-theme="dark"]
+  .v2-market-demand-card.is-active
+  .v2-market-demand-card__action {
+  color: var(--text-link-hover);
+}
+
+html[data-theme="dark"] .v2-market-family-entry {
+  border-color: var(--border-default);
+  background: var(--v4-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-1);
+}
+
+html[data-theme="dark"]
+  .v2-market-family-entry
+  :where(h2, h3, p, span, small, strong) {
+  color: inherit;
+}
+
+html[data-theme="dark"] .v2-market-all-delivery-services summary {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-market-all-delivery-services summary strong {
+  background: var(--control-bg);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-market-all-delivery-services nav a {
+  border-color: var(--border-default);
+  color: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-market-card-header {
+  background: var(--bg-inset);
+}
+
+html[data-theme="dark"] .v2-market-card-outcome {
+  background: var(--control-bg);
+}
+
+html[data-theme="dark"] .v2-market-product-rail .v2-market-product-card {
+  --v2-product-card-glow: var(--control-bg);
+}
+
+html[data-theme="dark"]
+  .v2-market-product-rail
+  .v2-market-product-card:is(
+    [data-category="strategy-consulting"],
+    [data-category="trust-security-compliance"],
+    [data-category="industry-science-engineering"]
+  ) {
+  --v2-product-card-glow: var(--control-bg);
+}
+
+html[data-theme="dark"] .v2-market-product-card__visual {
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      color-mix(in srgb, var(--v2-product-card-accent) 28%, transparent),
+      transparent 42%
+    ),
+    linear-gradient(155deg, var(--v2-product-card-glow), var(--bg-inset));
+}
+
+html[data-theme="dark"] .v2-market-product-card__visual-artifact {
+  border-color: var(--border-default);
+  background: var(--bg-raised);
+}
+
+html[data-theme="dark"] .v2-market-product-card__footer button {
+  background: var(--control-bg);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-market-product-card.is-selected
+  .v2-market-product-card__footer
+  button,
+html[data-theme="dark"] .v2-market-product-card__footer button:hover {
+  background: var(--accent-pressed);
+  color: var(--text-on-accent);
+}
+
+/* Product-family table, configuration, rails, and accordion internals. */
+html[data-theme="dark"] .v2-agent-family-actions a:not(.is-primary),
+html[data-theme="dark"]
+  .v2-agent-family-configurator__recommendation
+  a:not(.is-primary) {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-compare__table
+  :where(th, td) {
+  border-color: var(--border-default);
+}
+
+html[data-theme="dark"] .v2-agent-family-compare__table thead th {
+  background: var(--bg-inset);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-compare__table
+  thead
+  th[data-tone="warm"] {
+  background: var(--bg-raised);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-compare__table
+  thead
+  th[data-tone="cool"] {
+  background: var(--bg-inset);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-compare__table
+  thead
+  th[data-tone="dark"] {
+  background: var(--bg-content);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-compare__table
+  thead
+  th:first-child {
+  background: var(--bg-content);
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-agent-family-compare__table tbody th {
+  background: var(--bg-content);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-agent-family-compare__table tbody td {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-agent-family-compare__table thead a {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-compare__table
+  thead
+  th:is([data-tone="warm"], [data-tone="cool"])
+  a {
+  color: var(--text-link-hover);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-configurator__questions
+  legend,
+html[data-theme="dark"]
+  .v2-agent-family-ecosystem__accordion
+  :is(summary, h3 > button) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-configurator__questions
+  :where(label, button):not(.is-selected):not([aria-pressed="true"]) {
+  border-color: var(--control-border);
+  background: var(--control-bg);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-agent-family-configurator {
+  background: var(--v4-card);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-configurator__recommendation
+  > span,
+html[data-theme="dark"]
+  .v2-agent-family-work-card
+  > button
+  > span,
+html[data-theme="dark"]
+  .v2-agent-family-ecosystem__accordion
+  [role="region"],
+html[data-theme="dark"]
+  .v2-agent-family-ecosystem__accordion
+  details
+  > :not(summary) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-work-card
+  > button
+  > small {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-ecosystem__accordion
+  summary::after {
+  background: var(--control-bg);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-ecosystem__accordion
+  [role="region"]
+  strong {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-agent-family-feature-modal p {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-product-rail
+  > ul
+  > li[data-tone="dark"],
+html[data-theme="dark"] .v2-agent-family-ecosystem__visual {
+  border-color: var(--border-default);
+  background: var(--v4-card);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-product-rail
+  > ul
+  > li[data-tone="dark"]
+  :where(h2, h3, h4, p, span, small, strong) {
+  color: inherit;
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-ecosystem__visual
+  :where(h2, h3, h4, span, strong) {
+  color: inherit;
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-product-rail
+  > ul
+  > li[data-tone="dark"]
+  > small,
+html[data-theme="dark"]
+  .v2-agent-family-ecosystem__visual
+  > div
+  > small {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-product-rail
+  > ul
+  > li[data-tone="dark"]
+  p,
+html[data-theme="dark"]
+  .v2-agent-family-product-rail
+  > ul
+  > li[data-tone="dark"]
+  a:not(.is-primary),
+html[data-theme="dark"]
+  .v2-agent-family-ecosystem__visual
+  > div
+  > p {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-product-rail
+  > ul
+  > li[data-tone="warm"] {
+  background: var(--v4-card);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-product-rail
+  > ul
+  > li[data-tone="cool"] {
+  background: var(--v4-card);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-product-rail
+  > ul
+  > li:is([data-tone="warm"], [data-tone="cool"])
+  a:not(.is-primary) {
+  color: var(--text-link-hover);
+}
+
+/* Full-spectrum capability directory. */
+html[data-theme="dark"] .v2-capability-clusters,
+html[data-theme="dark"] .v2-capability-cluster,
+html[data-theme="dark"] .v2-capability-cluster > header,
+html[data-theme="dark"] .v2-capability-domain,
+html[data-theme="dark"] .v2-capability-domain__body,
+html[data-theme="dark"] .v2-capability-domain-list,
+html[data-theme="dark"] .v2-capability-domain__page-link {
+  border-color: var(--border-default);
+}
+
+html[data-theme="dark"] .v2-capability-cluster > header,
+html[data-theme="dark"] .v2-capability-domain__body {
+  background: var(--bg-inset);
+}
+
+html[data-theme="dark"] .v2-capability-domain {
+  background: var(--bg-content);
+}
+
+html[data-theme="dark"] .v2-capability-domain summary {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-capability-domain summary:hover {
+  background: var(--control-bg-hover);
+}
+
+html[data-theme="dark"]
+  .v2-capability-domain:not([open])
+  summary
+  > svg {
+  color: var(--text-link-hover);
+}
+
+html[data-theme="dark"] .v2-capability-domain[open] summary {
+  background: var(--bg-inset);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-capability-domain[open]
+  summary
+  :is(span, small, svg) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-capability-cluster > header h3,
+    .v2-capability-domain-list h4,
+    .v2-capability-domain__gate h4,
+    .v2-capability-domain summary strong
+  ) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-capability-cluster > header p,
+    .v2-capability-domain summary small,
+    .v2-capability-domain-list li,
+    .v2-capability-domain__gate p
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-capability-domain__gate {
+  background: var(--control-bg);
+}
+
+html[data-theme="dark"] .v2-capability-domain__gate > svg {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-capability-domain__page-link {
+  background: var(--control-bg);
+  color: var(--text-link-hover);
+}
+
+html[data-theme="dark"] .v2-capability-domain__page-link:hover {
+  background: var(--control-bg-hover);
+  color: var(--text-link-hover);
+}
+
+/* Candidate/review routes inherit the same readable surface hierarchy. */
+html[data-theme="dark"]
+  :is(.v2-fusion-page, .v2-studio-page, .v2-capability-directory) {
+  background: var(--v4-page-canvas);
+  color: var(--text-primary);
+}
+
+/* Apple-led monochrome closure.
+   These rules only remap authored v0.4 color moments onto canonical neutral and
+   semantic v0.3 tokens; they do not introduce a parallel palette. */
+html[data-theme="dark"] .site-theme-control__option[aria-pressed="true"] {
+  background: var(--control-bg-pressed);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-shell-nav-trigger:hover,
+    .v2-shell-nav-trigger.is-active,
+    .v2-shell-nav-item.is-expanded .v2-shell-nav-trigger,
+    .v2-shell-utility-link:hover,
+    .v2-shell-utility-link.is-active,
+    .v2-shell-language-option:hover,
+    .v2-shell-language-option.is-active,
+    .v2-shell-footer-group a.is-current,
+    .v2-shell-footer-mobile-group a.is-current,
+    .v2-shell-footer-meta a.is-current,
+    .v2-shell-footer-language button[aria-pressed="true"]
+  ) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-apple-home-hero {
+  background:
+    radial-gradient(
+      circle at 50% 72%,
+      color-mix(in srgb, var(--text-primary) 6%, transparent),
+      transparent 40%
+    ),
+    var(--bg-sunken);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-apple-home-hero::after {
+  border-color: var(--border-default);
+}
+
+html[data-theme="dark"]
+  .v2-shell
+  :is(
+    .v2-apple-home-spotlight[data-tone="navy"],
+    .v2-apple-home-grid > article[data-tone="navy"],
+    .v2-apple-home-grid > article[data-product="models"],
+    .v2-apple-home-method,
+    .v2-not-found
+  ) {
+  background: var(--bg-sunken);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-hero h1,
+    [data-tone="navy"] .v2-apple-home-module-copy h2,
+    .v2-apple-home-method__copy h2,
+    .v2-not-found h1
+  ) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-hero__eyebrow,
+    .v2-apple-home-hero__lead,
+    .v2-apple-home-goal-search > label,
+    .v2-apple-home-goal-examples,
+    .v2-apple-home-goal-examples > span,
+    [data-tone="navy"] .v2-apple-home-module-copy > p,
+    .v2-apple-home-method__copy > p,
+    .v2-apple-home-method__body,
+    .v2-not-found p,
+    .v2-not-found span
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-goal-browse,
+    .v2-apple-home-hero .v2-apple-home-actions a:not(.is-primary),
+    [data-tone="navy"] .v2-apple-home-actions a:not(.is-primary),
+    .v2-apple-home-method .v2-apple-home-actions a:not(.is-primary)
+  ) {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-apple-home-goal-examples button {
+  border-color: var(--control-border);
+  background: var(--control-bg);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-goal-examples button:hover,
+    .v2-apple-home-goal-examples button:focus-visible
+  ) {
+  border-color: var(--border-strong);
+  background: var(--control-bg-hover);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-goal-search__field button,
+    .v2-apple-home-hero .v2-apple-home-actions a.is-primary,
+    [data-tone="navy"] .v2-apple-home-actions a.is-primary,
+    .v2-apple-home-method .v2-apple-home-actions a.is-primary,
+    .v2-not-found a.is-primary
+  ) {
+  border-color: var(--text-primary);
+  background: var(--text-primary);
+  color: var(--gray-950);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-goal-search__field button:not(:disabled):hover,
+    .v2-apple-home-hero .v2-apple-home-actions a.is-primary:hover,
+    [data-tone="navy"] .v2-apple-home-actions a.is-primary:hover,
+    .v2-apple-home-method .v2-apple-home-actions a.is-primary:hover,
+    .v2-not-found a.is-primary:hover
+  ) {
+  border-color: var(--gray-200);
+  background: var(--gray-200);
+  color: var(--gray-950);
+}
+
+html[data-theme="dark"] .v2-apple-home-hero__visual > div {
+  border-color: var(--border-default);
+  background: var(--control-bg);
+  box-shadow:
+    inset 0 1px 0 var(--border-default),
+    var(--shadow-3);
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-apple-home-hero__visual
+  > div:is(:nth-child(2), :nth-child(3)) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  [data-tone="navy"]
+  .v2-apple-home-visual::before {
+  border-color: var(--border-default);
+  background: color-mix(in srgb, var(--bg-raised) 88%, transparent);
+  box-shadow: var(--shadow-3);
+}
+
+html[data-theme="dark"]
+  [data-tone="navy"]
+  .v2-apple-home-visual__main {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  [data-tone="navy"]
+  .v2-apple-home-visual__artifact {
+  border-color: var(--border-default);
+  background: var(--control-bg);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-apple-home-method__visual::after {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--gray-950) 64%, transparent) 0%,
+    color-mix(in srgb, var(--gray-950) 10%, transparent) 22%,
+    transparent 70%,
+    color-mix(in srgb, var(--gray-950) 52%, transparent) 100%
+  );
+}
+
+html[data-theme="dark"]
+  .v2-shell
+  .v2-apple-home-grid
+  > article[data-product="infrastructure"]
+  :is(h2, h3) {
+  color: var(--gray-950);
+}
+
+html[data-theme="dark"] .v2-not-found a:not(.is-primary) {
+  border-color: var(--border-default);
+  color: var(--text-link);
+}
+
+/* Large narrative beats use neutral contrast instead of navy fields. */
+html[data-theme="dark"]
+  :is(
+    .v2-content-section--dark,
+    .v2-content-section--dark.is-odd,
+    .v2-sku-section--dark,
+    .v2-product-evidence,
+    .v2-product-final-cta,
+    .v2-agent-family-workflow,
+    .v2-agent-family-trust-evidence
+  ) {
+  border-color: var(--border-subtle);
+  background: var(--bg-sunken);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-product-deliverables__package {
+  border-color: var(--border-default);
+  background: var(--bg-sunken);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"] .v2-product-page {
+  --v2-product-accent: var(--text-link);
+}
+
+html[data-theme="dark"]
+  .v2-product-page:is(
+    [data-category="strategy-consulting"],
+    [data-category="trust-security-compliance"],
+    [data-category="industry-science-engineering"]
+  ) {
+  --v2-product-accent: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-market-family-entry {
+  border-color: var(--border-default);
+  background: var(--v4-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-1);
+}
+
+html[data-theme="dark"] .v2-market-family-entry :where(p, small, span) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-market-hero {
+  background:
+    radial-gradient(
+      circle at 72% 28%,
+      color-mix(in srgb, var(--text-primary) 5%, transparent),
+      transparent 46%
+    ),
+    var(--bg-sunken);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-hero h1,
+    .v2-shell[data-language="zh"] .v2-market-hero h1
+  ) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-hero .v2-market-eyebrow,
+    .v2-market-introduction,
+    .v2-market-demand-search--hero > label,
+    .v2-market-demand-search--hero .v2-market-demand-search__meta small
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-market-demand-search--hero
+  .v2-market-demand-search__field {
+  border-color: var(--border-default);
+  background: var(--bg-raised);
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-market-demand-search--hero
+  .v2-market-demand-search__field
+  input {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-market-demand-search--hero
+  .v2-market-demand-search__meta
+  a {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"]
+  :is(.v2-market-simple-cta, .v2-content-hero, .v2-content-closing) {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      color-mix(in srgb, var(--text-primary) 5%, transparent),
+      transparent 48%
+    ),
+    var(--bg-sunken);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-simple-cta h2,
+    .v2-content-hero h1,
+    .v2-shell[data-language="zh"] .v2-content-hero h1,
+    .v2-content-closing h2
+  ) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-simple-cta > p,
+    .v2-market-simple-cta > span,
+    .v2-content-breadcrumbs,
+    .v2-content-hero .v2-kicker,
+    .v2-content-hero__lead,
+    .v2-content-closing .v2-kicker,
+    .v2-content-closing__copy > p:not(.v2-kicker),
+    .v2-content-closing small
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-content-breadcrumbs a {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-content-breadcrumbs a:hover {
+  color: var(--text-link-hover);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-simple-cta > a,
+    .v2-content-hero .v2-content-action--primary,
+    .v2-content-closing .v2-content-action--primary
+  ) {
+  border-color: var(--text-primary);
+  background: var(--text-primary);
+  color: var(--gray-950);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-content-hero .v2-content-action--secondary,
+    .v2-content-closing .v2-content-action--secondary
+  ) {
+  border-color: var(--border-default);
+  background: transparent;
+  color: var(--text-link);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-content-hero .v2-content-action--secondary:hover,
+    .v2-content-closing .v2-content-action--secondary:hover
+  ) {
+  border-color: var(--border-strong);
+  background: var(--control-bg-hover);
+  color: var(--text-link-hover);
+}
+
+html[data-theme="dark"] .v2-agent-family-tour__content {
+  background: var(--bg-inset);
+}
+
+html[data-theme="dark"] .v2-agent-family-tour__content > small,
+html[data-theme="dark"] .v2-agent-family-tour__content > p,
+html[data-theme="dark"] .v2-agent-family-tour__content > span,
+html[data-theme="dark"] .v2-agent-family-tour__content dt,
+html[data-theme="dark"] .v2-agent-family-tour__content dd,
+html[data-theme="dark"] .v2-agent-family-tour__content > em {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"] .v2-agent-family-tour__content dl > div {
+  border-color: var(--border-default);
+}
+
+html[data-theme="dark"] .v2-agent-family-tour__content > strong {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-apple-home-goal-primary-match,
+    .v2-apple-home-goal-no-match,
+    .v2-sku-boundary,
+    .v2-market-card-outcome,
+    .v2-capability-domain__gate
+  ) {
+  border-color: var(--border-default);
+  background: var(--control-bg);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-content-card__boundary strong,
+    .v2-apple-home-goal-result__surface > header q,
+    .v2-agent-family-work-card > button > small,
+    .v2-agent-family-product-rail > ul > li[data-tone="dark"] > small,
+    .v2-agent-family-ecosystem__visual > div > small,
+    .v2-capability-domain__gate > svg
+  ) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  :is(
+    .v2-market-demand-all button.is-active,
+    .v2-market-demand-card.is-active
+  ) {
+  border-color: var(--accent);
+  background: var(--control-bg-hover);
+}
+
+html[data-theme="dark"] .v2-market-all-delivery-services summary strong {
+  background: var(--control-bg);
+}
+
+html[data-theme="dark"] .v2-market-product-rail .v2-market-product-card,
+html[data-theme="dark"]
+  .v2-market-product-rail
+  .v2-market-product-card:is(
+    [data-category="strategy-consulting"],
+    [data-category="trust-security-compliance"],
+    [data-category="industry-science-engineering"]
+  ) {
+  --v2-product-card-glow: var(--control-bg);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-compare__table
+  thead
+  th[data-tone="warm"] {
+  background: var(--bg-raised);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-compare__table
+  thead
+  th[data-tone="cool"] {
+  background: var(--bg-inset);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-compare__table
+  thead
+  th[data-tone="dark"] {
+  background: var(--bg-content);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-compare__table
+  thead
+  th:is([data-tone="warm"], [data-tone="cool"], [data-tone="dark"])
+  a {
+  color: var(--text-link);
+}
+
+html[data-theme="dark"] .v2-agent-family-configurator {
+  background: var(--v4-card);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-product-rail
+  > ul
+  > li:is([data-tone="warm"], [data-tone="cool"], [data-tone="dark"]),
+html[data-theme="dark"] .v2-agent-family-ecosystem__visual {
+  border-color: var(--border-default);
+  background: var(--v4-card);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-product-rail
+  > ul
+  > li:is([data-tone="warm"], [data-tone="cool"], [data-tone="dark"])
+  :where(h2, h3, h4, strong) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-product-rail
+  > ul
+  > li:is([data-tone="warm"], [data-tone="cool"], [data-tone="dark"])
+  :where(p, small),
+html[data-theme="dark"]
+  .v2-agent-family-ecosystem__visual
+  > div
+  :where(p, small) {
+  color: var(--text-secondary);
+}
+
+html[data-theme="dark"]
+  .v2-agent-family-page--apple-structured
+  .v2-agent-family-work-card:has(> button[aria-pressed="true"]) {
+  border-color: var(--border-strong);
+  background: var(--bg-raised);
+}
+
+html[data-theme="dark"]
+  .v2-market-product-rail
+  .v2-market-product-card,
+html[data-theme="dark"]
+  .v2-market-product-rail
+  .v2-market-product-card:is(
+    [data-category="strategy-consulting"],
+    [data-category="trust-security-compliance"],
+    [data-category="industry-science-engineering"]
+  ) {
+  --v2-product-card-accent: var(--text-link);
+  --v2-product-card-glow: var(--control-bg);
+}
+
+html[data-theme="dark"] .v2-capability-domain[open] summary {
+  background: var(--bg-inset);
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-capability-domain[open]
+  summary
+  :is(span, small) {
+  color: var(--text-primary);
+}
+
+html[data-theme="dark"]
+  .v2-capability-domain[open]
+  summary
+  > svg {
+  color: var(--text-link);
+}
+
+@media (max-width: 820px) {
+  .site-theme-control {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-theme-control__options {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-theme-control__option {
+    min-width: 44px;
+    padding-right: var(--space-2);
+    padding-left: var(--space-2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-theme-control__option {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  html[data-theme="dark"]
+    :is(
+      .v2-shell-header,
+      .v2-shell-header.is-condensed,
+      .v2-shell-navigation,
+      .v2-shell-menu-masthead
+    ) {
+    background: var(--bg-content);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}

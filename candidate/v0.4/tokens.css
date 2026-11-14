@@ -1,0 +1,56 @@
+/* Route-scoped tokens for the local v0.4 design candidates. */
+.v2-shell {
+  --v4-canvas: var(--blue-950);
+  --v4-canvas-raised: var(--blue-900);
+  --v4-canvas-active: var(--blue-800);
+  --v4-surface: var(--bg-content);
+  --v4-surface-subtle: var(--bg-inset);
+  --v4-page-canvas: var(--bg-canvas);
+  --v4-section-primary: var(--bg-content);
+  --v4-section-secondary: var(--bg-inset);
+  --v4-card: var(--bg-raised);
+  --v4-card-inset: var(--bg-inset);
+  --v4-header-material: var(--material-toolbar);
+  --v4-content-inverse: var(--text-on-accent);
+  --v4-content-inverse-muted: var(--blue-200);
+  --v4-content-strong: var(--text-primary);
+  --v4-content-default: var(--text-secondary);
+  --v4-content-muted: var(--text-tertiary);
+  --v4-line-inverse: var(--blue-700);
+  --v4-line-inverse-strong: var(--blue-300);
+  --v4-line-default: var(--border-default);
+  --v4-line-subtle: var(--border-subtle);
+  --v4-proof: var(--amber-500);
+  --v4-proof-strong: var(--amber-700);
+  --v4-focus: var(--blue-400);
+  --v4-page-max: 1440px;
+  --v4-content-max: 1280px;
+  --v4-reading-max: 720px;
+  --v4-gutter: clamp(var(--space-5), 4vw, var(--space-16));
+  --v4-section-space: clamp(var(--space-16), 8vw, 128px);
+  --v4-header-height: 72px;
+  --v4-radius-control: var(--space-1);
+  --v4-radius-panel: var(--space-2);
+  --v4-control-min: 44px;
+  --v4-duration-fast: 140ms;
+  --v4-duration-base: 180ms;
+  --v4-duration-expand: 220ms;
+}
+
+[data-theme="dark"] .v2-shell {
+  --v4-canvas: var(--bg-sunken);
+  --v4-canvas-raised: var(--bg-canvas);
+  --v4-canvas-active: var(--bg-content);
+  --v4-page-canvas: var(--bg-sunken);
+  --v4-section-primary: var(--bg-canvas);
+  --v4-section-secondary: var(--bg-inset);
+  --v4-card: var(--bg-content);
+  --v4-card-inset: var(--bg-inset);
+  --v4-header-material: var(--material-toolbar);
+  --v4-content-strong: var(--text-primary);
+  --v4-content-default: var(--text-secondary);
+  --v4-content-muted: var(--text-tertiary);
+  --v4-line-default: var(--border-default);
+  --v4-line-subtle: var(--border-subtle);
+  --v4-focus: var(--blue-400);
+}

@@ -1,0 +1,5 @@
+:HL["/_next/static/chunks/16gd0dj2a71kv.css","style"]
+:HL["/candidate/v0.4/tokens.css?rev=20260825-dark-theme-v1","style"]
+:HL["/candidate/v0.4/site.css?rev=20260902-regional-sites-v1","style"]
+:HL["/candidate/v0.4/theme.css?rev=20260826-dark-theme-v5","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"market","param":null,"prefetchHints":0,"slots":{"children":{"name":"products","param":null,"prefetchHints":0,"slots":{"children":{"name":"productSlug","param":{"type":"d","key":"ai-organization-enablement-training","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"nVAumvKOEtiD8f51QoeE-"}

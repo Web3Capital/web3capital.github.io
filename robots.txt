@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://myrilum.com
+Sitemap: https://myrilum.com/sitemap.xml

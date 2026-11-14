@@ -1,0 +1,86 @@
+{
+  "productName": "MYRILUM 灵核OS",
+  "appId": "com.myrilum.lingheos",
+  "version": "1.9.12",
+  "platform": "darwin-arm64",
+  "builtAt": "2026-11-04T02:00:05.653Z",
+  "artifacts": {
+    "installedAppPath": "/Applications/MYRILUM-LingheOS.app",
+    "distAppPath": "apps/desktop-client/dist/MYRILUM-LingheOS.app",
+    "dmgPath": "apps/desktop-client/dist/MYRILUM-LingheOS-macOS-arm64.dmg",
+    "dmgSizeBytes": 364642428,
+    "dmgSha256": "989eaf507731a835e1cff9aa3035cbfa44203edbfdb828e9c345eb7b9042ecf6",
+    "updateZipPath": "apps/desktop-client/dist/MyrilumOS-1.9.12.zip",
+    "updateZipArm64Path": "apps/desktop-client/dist/MyrilumOS-1.9.12-mac-arm64.zip",
+    "updateZipSizeBytes": 331898284,
+    "updateZipSha256": "86c8a8f780c90b42b79fafc24da90c7e991f69c0705bb8fd872992165c88a370",
+    "updateFeedPath": "apps/desktop-client/dist/latest-mac.json",
+    "electronAsarHeaderSha256": "af00ca249cccce76debcd1a79ce662ec19b55ea9582e1bc29e4bcd1943d6fa0e",
+    "appAsarFileSha256": "1549ee75fe5f4f5b715012cddf25ae395a8e9dc283dc4e2b2d894f32c1594c7e",
+    "infoPlistSha256": "ddf0e5501b8ef8b74ffbbb2723fb450487b6215bc26ab44b60a1a2eceff868d2"
+  },
+  "defaultModel": {
+    "id": "qwen3.7-plus",
+    "vendor": "aliyun-bailian",
+    "isDefault": true
+  },
+  "patchesApplied": [
+    "Sidebar brand header switched to monochrome iM mark (logo-mark-black.png in light mode, logo-mark-white.png in dark mode) for both expanded and collapsed states",
+    "Chat message avatar dynamically renders the 9 transparent 3D Linghe character poses by conversation context with click-to-cycle",
+    "Bottom-right input box Linghe pet resized to 68px",
+    "Requirement task sheet (灵核《需求任务书》) hidden during normal chat and displayed only when explicitly requested",
+    "Disabled dead remote productOverlay polling, SkillSubscriptionGate, and 5 dead remote first-party MCP endpoints (reducing first-token latency from 59s to 1.8s and idle CPU to <2%)",
+    "Restored COS bucket path compatibility (/sovereign/expert-marketplace and /sovereign/binaries) for built-in expert avatar icons",
+    "Restored normal centered window geometry (cancelled forced left-half window pinning)",
+    "Upgraded UI/UX & Typography to MYRILUM LingheOS Sovereign Design System (LIHE v2.2.2 Tianzhang): embedded Linghe Sans Flex / Linghe Sans Text / Linghe Sans Code / Linghe Symbols fonts, 5-tier LIHE light/dark surface palette (#FDFCFC/#FAF9F9/#F2F0F0/#FFFFFF & #000000/#0F0F0F/#171717/#1F1F1F), borderless tonal sidebar (250px, 36px rows, 8px pill selection), 780px centered chat column, 24px user prompt bubble, 16px borderless code blocks, and 28px elevated pill composer with 20px soft Tianshu shadow"
+  ],
+  "designSystem": "MYRILUM LingheOS LIHE v2.2.2 Tianzhang — 6-Agent 3-Round Verified Unified 4-Corner Large Radius System",
+  "updatedAt": "2026-11-04T02:00:05.653Z",
+  "themeSourcePath": "apps/desktop-client/theme/lihe-v222-tianzhang-master.css",
+  "auditSummary": {
+    "agents": 6,
+    "rounds": 3,
+    "verifiedRoutes": 27,
+    "verifiedStandaloneWindows": 11,
+    "pollutedCssCount": 0,
+    "fontFaceCountInHtml": 6,
+    "asarHeaderSha256": "3c39ba869f904c6862ea0075f7b735d5c90db994fe7500f74550518a0b542649",
+    "liheStyleBlocksInHtml": 1
+  },
+  "securityHardening": {
+    "plaintextKeysInBundledProductJson": 0,
+    "localKeyBridge": "~/.myrilumos/models.json (in-memory overlay only, chmod 600)",
+    "autoUpdaterFused": true,
+    "fullscreenAdaptiveGeometry": true
+  },
+  "round": "Round-12-Linghe-Omega-v2.0-Superintelligent-Fusion-Into-v1.9.12",
+  "asarHeaderSha256": "af00ca249cccce76debcd1a79ce662ec19b55ea9582e1bc29e4bcd1943d6fa0e",
+  "dmgSha256": "989eaf507731a835e1cff9aa3035cbfa44203edbfdb828e9c345eb7b9042ecf6",
+  "productVersion": "1.9.12",
+  "genieVersion": "1.9.12",
+  "versionGovernance": {
+    "versionSynchronizedPlaces": [
+      "/Applications/MYRILUM-LingheOS.app/Contents/Info.plist",
+      "/Applications/MYRILUM-LingheOS.app/Contents/Resources/app.asar/package.json",
+      "/Applications/MYRILUM-LingheOS.app/Contents/Resources/app.asar.unpacked/cli/product.json",
+      "apps/desktop-client/release-manifest.json"
+    ],
+    "remoteModelMergeGuard": "/*__MYRILUM_SAFE_MODEL_MERGE__*/mergeNamedArrayLayers(r.models,o?.models,i?.models)",
+    "ledgerSchemaCompatibility": "Additive-Only (myrilum.billing.ledger.v2)",
+    "installChannelAttributionEnabled": true
+  },
+  "catalogEpoch": 25,
+  "appleCodeSigning": {
+    "teamId": "J82R9Z924D",
+    "authority": "Apple Development: Stephen Yang (Z9982R3KA4)",
+    "rootAuthority": "Apple Root CA",
+    "rfc3161Timestamped": true
+  },
+  "updateZipSha256": "86c8a8f780c90b42b79fafc24da90c7e991f69c0705bb8fd872992165c88a370",
+  "distribution": {
+    "status": "paused",
+    "pausedAt": "2026-11-10",
+    "notice": "桌面客户端正在从源码重新构建，暂停下载与自动更新。新版本准备好后恢复。",
+    "noticeEn": "The desktop client is being rebuilt from source. Downloads and auto-update are paused until the new version is ready."
+  }
+}
