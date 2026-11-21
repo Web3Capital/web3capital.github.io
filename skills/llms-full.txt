@@ -1,0 +1,621 @@
+# MYRILUM AI Skills Manifold — Full Corpus (llms-full.txt)
+
+Origin: https://myrilum.com
+Region Profile: GLOBAL
+Workbench Href: https://app.myrilum.com/sign-in
+Snapshot Date: 2026-11-21
+Snapshot Version: 1.0.0
+Snapshot SHA-256: e3b0c44298fc1c149afbf4c8996fb924
+Indexed Catalog Count: 36
+Catalog Entries Included: 36
+
+## Executive Summary
+EN: AI Skills Full Corpus (GLOBAL) top 3: find-skills / deepseek-r1-reasoning-distiller / vercel-react-best-practices. Peak lift: skill-telemetry-probe (28.0%/1k tok). Fork alert: frontend-design-mega-bundle flags bloat; myrilum-geo-citation-auditor is a high-lift sleeper.
+ZH: AI Skills 全量语料（GLOBAL）前三：find-skills / deepseek-r1-reasoning-distiller / vercel-react-best-practices；最高单位增益 skill-telemetry-probe（28.0%/1k tok）。分叉预警：frontend-design-mega-bundle 属上下文膨胀，myrilum-geo-citation-auditor 属高增益黑马。
+
+## Evaluation Methodology
+- Confidence Decay: 90-day half-life exponential decay anchored to snapshot verification timestamps.
+- Token Efficiency (liftPer1kTokens): (netCapabilityLiftPct / contextTokenCost) * 1000.
+- Manifold Score: Riemannian weighted combination of token efficiency, log adoption, 24h/8w velocity, regional model affinity, and 3-engine static hygiene.
+- Paraconsistent Forks: CONVERGENT_LEADER, PRODUCTION_WORKHORSE, CONTEXT_BLOAT_WARNING, HIGH_LIFT_SLEEPER.
+
+## Topics
+- react [engineering]: React & UI Architecture / React 与组件架构 — https://myrilum.com/skills/topics/react
+- nextjs [engineering]: Next.js App Router / Next.js 全栈路由 — https://myrilum.com/skills/topics/nextjs
+- design [engineering]: Design Systems & Tokens / 设计系统与界面令牌 — https://myrilum.com/skills/topics/design
+- mobile [engineering]: Mobile & Mini-App UX / 移动端与多端适配 — https://myrilum.com/skills/topics/mobile
+- agent-workflows [engineering]: Agent Workflows & MCP / 智能体工作流与 MCP — https://myrilum.com/skills/topics/agent-workflows
+- databases [engineering]: Databases, RLS & Vector / 数据库、RLS 与向量检索 — https://myrilum.com/skills/topics/databases
+- testing [engineering]: Testing & Verification Gates / 自动化测试与验证门禁 — https://myrilum.com/skills/topics/testing
+- marketing [engineering]: Growth Engineering & GEO / 增长工程与 GEO 索引 — https://myrilum.com/skills/topics/marketing
+- strategic-research [business-role]: Strategic Research & Scoping / 战略研究与需求澄清 — https://myrilum.com/skills/topics/strategic-research
+- commercial-legal [business-role]: Commercial & Legal Review / 商业交易与风控法务 — https://myrilum.com/skills/topics/commercial-legal
+- marketing-media [business-role]: Marketing & Media Delivery / 内容增长与多模态传播 — https://myrilum.com/skills/topics/marketing-media
+- compliance-filing [business-role]: Compliance & Cell Governance / 合规备案与双区治理 — https://myrilum.com/skills/topics/compliance-filing
+- digital-engineering [business-role]: Digital Engineering Delivery / 数字工程全链交付 — https://myrilum.com/skills/topics/digital-engineering
+
+## Model Families
+- DeepSeek (deepseek · DeepSeek): https://myrilum.com/skills/models/deepseek — Excels at structured reasoning, falsifiable claim distillation, and lean token budgets.
+- Qwen (qwen · Alibaba Cloud): https://myrilum.com/skills/models/qwen — Balances Chinese enterprise RAG grounding, strict MCP tool schemas, and full-stack SSR.
+- Doubao (doubao · ByteDance): https://myrilum.com/skills/models/doubao — Tuned for Feishu workflows, multimodal campaign framing, and high-concurrency social routing.
+- Claude (claude · Anthropic): https://myrilum.com/skills/models/claude — Strong consistency on MCP scaffolding, Postgres RLS auditing, and strict instruction adherence.
+- Gemini (gemini · Google): https://myrilum.com/skills/models/gemini — Suited to multi-surface E2E verification, long-context synthesis, and GEO schema audits.
+- GPT (gpt · OpenAI): https://myrilum.com/skills/models/gpt — Broad ecosystem reliability on payment integrations, typed API scaffolds, and CI test specs.
+
+## Complete Projected Skills Catalog
+
+### #1 Find Skills Discovery CLI / 技能发现与按需检索器 (find-skills)
+- Detail URL: https://myrilum.com/skills/s/vercel-labs/skills/find-skills
+- Security Audit URL: https://myrilum.com/skills/s/vercel-labs/skills/find-skills/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: vercel-labs/skills | SemVer: 2.4.1 | RoleScope: digital-engineering
+- SHA-256: a4e8c12d9f30b6e41c7a52d8b093e612f74c18a20d5e9b34a6c71f82e3d4901a | First Seen: 2025-11-12 | Verified: 2026-11-20T09:30:00.000Z
+- Telemetry: manifoldScore=87.7 | decayedConfidence=0.9954 | installs=482000 | contextTokenCost=1380 | netLiftPct=24.6% | liftPer1kTokens=17.83%
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Adoption (#1) and token efficiency (17.83% lift/1k tokens, #10) converge at the frontier.
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add vercel-labs/skills@find-skills`
+- Topics: agent-workflows, nextjs, react, digital-engineering | Agents: claude-code, cursor, codex, github-copilot, windsurf, gemini, cline, amp, antigravity, opencode, roo, trae, vscode, zed, linghe-os
+- Summary (EN): Discovers SKILL.md manifests by task intent and verifies pinned digests before loading prompts into agent context.
+- Summary (ZH): 按任务意图检索兼容 SKILL.md 规范的能力包并校验 SHA-256 锁定摘要，避免盲目全量注入上下文。
+- Capabilities: Matches lean skill manifests by task keywords and model affinity; Verifies declared capability permissions and SHA-256 checksums before install; Syncs skill directories cleanly across 21 supported coding agents
+
+### #2 DeepSeek Reasoning Tree Distiller / DeepSeek 推理链蒸馏与证伪压缩 (deepseek-r1-reasoning-distiller)
+- Detail URL: https://myrilum.com/skills/s/deepseek-ai/deepseek-skills/deepseek-r1-reasoning-distiller
+- Security Audit URL: https://myrilum.com/skills/s/deepseek-ai/deepseek-skills/deepseek-r1-reasoning-distiller/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: deepseek-ai/deepseek-skills | SemVer: 1.8.0 | RoleScope: strategic-research
+- SHA-256: 33c4d6e8f0a213456789abcdef0123456789abcdef0123456789abcdef1003 | First Seen: 2026-02-08 | Verified: 2026-11-19T19:40:00.000Z
+- Telemetry: manifoldScore=84.5 | decayedConfidence=0.9909 | installs=174000 | contextTokenCost=1190 | netLiftPct=23.2% | liftPer1kTokens=19.5%
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Adoption (#8) and token efficiency (19.50% lift/1k tokens, #7) converge at the frontier.
+- Best Model (GLOBAL): deepseek | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add deepseek-ai/deepseek-skills@deepseek-r1-reasoning-distiller`
+- Topics: strategic-research, agent-workflows, testing | Agents: linghe-os, claude-code, cursor, codex, gemini, cline, antigravity, nous-research, opencode, trae
+- Summary (EN): Compresses long reasoning traces into falsifiable hypothesis-evidence trees tuned for DeepSeek workflows.
+- Summary (ZH): 把冗长思维链压缩为可独立证伪的假设-证据树，大幅降低深度研究场景的上下文消耗。
+- Capabilities: Distills multi-step reasoning into premise, counterexample, and verdict triples; Retains source citations while pruning repetitive chain-of-thought text
+
+### #3 Vercel React & RSC Best Practices / React 服务器组件性能规范 (vercel-react-best-practices)
+- Detail URL: https://myrilum.com/skills/s/vercel-labs/agent-skills/vercel-react-best-practices
+- Security Audit URL: https://myrilum.com/skills/s/vercel-labs/agent-skills/vercel-react-best-practices/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: vercel-labs/agent-skills | SemVer: 3.1.0 | RoleScope: digital-engineering
+- SHA-256: d1e6f72a3184b056c7d231e9f5804026b91d73c5f820e4a613b95d72c0f8146e | First Seen: 2025-12-03 | Verified: 2026-11-18T11:00:00.000Z
+- Telemetry: manifoldScore=84.3 | decayedConfidence=0.9806 | installs=368000 | contextTokenCost=1480 | netLiftPct=22.8% | liftPer1kTokens=15.41%
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Adoption (#2) and token efficiency (15.41% lift/1k tokens, #13) converge at the frontier.
+- Best Model (GLOBAL): claude | CN Direct Reachable: false | CN Alternative: https://myrilum.com/skills/s/qwen-lm/qwen-agent-skills/qwen-react-ssr-kit
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add vercel-labs/agent-skills@vercel-react-best-practices`
+- Topics: react, nextjs, design, digital-engineering | Agents: claude-code, cursor, codex, github-copilot, windsurf, gemini, cline, antigravity, trae, vscode, zed
+- Summary (EN): Concise engineering rules for React 19 server-client boundaries, Suspense streaming, and hydration budget control.
+- Summary (ZH): 聚焦 React 19 并发渲染、Suspense 边界与客户端水合体积控制的精炼工程规则集。
+- Capabilities: Eliminates redundant client effect waterfalls and re-renders; Checks RSC serialization boundaries and client bundle leaks; Enforces keyboard focus order and accessible landmark semantics
+
+### #4 Linghe Case Brief & Scope Clarifier / 灵核需求澄清与任务书生成 (myrilum-case-brief)
+- Detail URL: https://myrilum.com/skills/s/myrilum/linghe-skills/myrilum-case-brief
+- Security Audit URL: https://myrilum.com/skills/s/myrilum/linghe-skills/myrilum-case-brief/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: myrilum/linghe-skills | SemVer: 2.1.0 | RoleScope: strategic-research
+- SHA-256: 31a2b4c6d8e0f123456789abcdef0123456789abcdef0123456789abcdef1001 | First Seen: 2026-01-15 | Verified: 2026-11-20T11:20:00.000Z
+- Telemetry: manifoldScore=83.6 | decayedConfidence=0.9959 | installs=136000 | contextTokenCost=1260 | netLiftPct=24.8% | liftPer1kTokens=19.68%
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Adoption (#13) and token efficiency (19.68% lift/1k tokens, #6) converge at the frontier.
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add myrilum/linghe-skills@myrilum-case-brief`
+- Topics: strategic-research, agent-workflows, commercial-legal | Agents: linghe-os, claude-code, cursor, codex, antigravity, trae, cline, roo, opencode
+- Summary (EN): Turns fuzzy intent into a structured brief with stop conditions, verification criteria, and a SHA-256 snapshot.
+- Summary (ZH): 遵循 Ask -> Plan -> Craft 闭环，将模糊业务目标收敛为带停止条件、验收依据与 SHA-256 摘要的任务书。
+- Capabilities: Separates technical verification evidence from client acceptance authority; Scopes deliverables read-only without silent orders or entitlement mutations; Generates bilingual scope briefs with explicit stop gates
+
+### #5 Postgres RLS & Policy Guard / PostgreSQL 行级安全与策略护栏 (supabase-postgres-rls-guard)
+- Detail URL: https://myrilum.com/skills/s/supabase/agent-skills/supabase-postgres-rls-guard
+- Security Audit URL: https://myrilum.com/skills/s/supabase/agent-skills/supabase-postgres-rls-guard/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: supabase/agent-skills | SemVer: 2.5.0 | RoleScope: digital-engineering
+- SHA-256: 69a4b50c1962d834e5f019a7b3682804d79f51e3b608a2c491d73f50e8b6924a | First Seen: 2025-12-19 | Verified: 2026-11-20T12:10:00.000Z
+- Telemetry: manifoldScore=82.6 | decayedConfidence=0.9962 | installs=188000 | contextTokenCost=1420 | netLiftPct=23.5% | liftPer1kTokens=16.55%
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Adoption (#7) and token efficiency (16.55% lift/1k tokens, #11) converge at the frontier.
+- Best Model (GLOBAL): claude | CN Direct Reachable: false | CN Alternative: https://myrilum.com/skills/s/myrilum/enterprise-skills/cn-payment-reconciliation-ledger
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add supabase/agent-skills@supabase-postgres-rls-guard`
+- Topics: databases, testing, digital-engineering | Agents: claude-code, cursor, codex, github-copilot, windsurf, antigravity, cline, roo, trae, linghe-os
+- Summary (EN): Guards Postgres RLS policies, SECURITY DEFINER identity checks, and policy index paths before migrations ship.
+- Summary (ZH): 强制检查 FORCE ROW LEVEL SECURITY 上下文注入、SECURITY DEFINER 鉴权与索引命中率的数据库技能。
+- Capabilities: Catches missing session context causing silent zero-row FORCE RLS reads; Audits caller authorization inside SECURITY DEFINER write functions; Checks indexed tenant columns backing high-frequency RLS predicates
+
+### #6 Feishu Docs & Bitable Copilot / 飞书文档与多维表格结构化协同 (feishu-doc-copilot)
+- Detail URL: https://myrilum.com/skills/s/feishu-open/feishu-agent-skills/feishu-doc-copilot
+- Security Audit URL: https://myrilum.com/skills/s/feishu-open/feishu-agent-skills/feishu-doc-copilot/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: feishu-open/feishu-agent-skills | SemVer: 2.0.4 | RoleScope: strategic-research
+- SHA-256: 32b3c5d7e9f1023456789abcdef0123456789abcdef0123456789abcdef1002 | First Seen: 2026-01-24 | Verified: 2026-11-20T08:15:00.000Z
+- Telemetry: manifoldScore=81.9 | decayedConfidence=0.995 | installs=192000 | contextTokenCost=1440 | netLiftPct=21.6% | liftPer1kTokens=15%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #6 adoption and 15.00% lift/1k tokens (#16 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add feishu-open/feishu-agent-skills@feishu-doc-copilot`
+- Topics: strategic-research, agent-workflows, marketing-media | Agents: linghe-os, trae, cursor, claude-code, codex, antigravity, vscode, zed, opencode
+- Summary (EN): Maps Feishu Docs and Bitable schemas into structured action logs with direct CN open-platform compatibility.
+- Summary (ZH): 将会议纪要、飞书文档与多维表格字段映射为可复核行动项，支持中国区直连开放接口规范。
+- Capabilities: Extracts decisions, owners, and due dates while preserving doc anchors; Generates read-only field diff previews before Bitable updates
+
+### #7 GEO Citation & llms.txt Auditor / GEO 生成式搜索引用与 llms.txt 审计 (myrilum-geo-citation-auditor)
+- Detail URL: https://myrilum.com/skills/s/myrilum/linghe-skills/myrilum-geo-citation-auditor
+- Security Audit URL: https://myrilum.com/skills/s/myrilum/linghe-skills/myrilum-geo-citation-auditor/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: myrilum/linghe-skills | SemVer: 2.0.1 | RoleScope: marketing-media
+- SHA-256: 39c0d2e4f6a879abcdef0123456789abcdef0123456789abcdef0123451009 | First Seen: 2026-02-27 | Verified: 2026-11-20T13:50:00.000Z
+- Telemetry: manifoldScore=81.5 | decayedConfidence=0.9967 | installs=84000 | contextTokenCost=1240 | netLiftPct=22.9% | liftPer1kTokens=18.47%
+- Paraconsistent Fork: HIGH_LIFT_SLEEPER (High-Lift Sleeper) — Delivers 18.47% lift/1k tokens (#9 efficiency) in 1,240 tokens while ranking #18 in adoption.
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add myrilum/linghe-skills@myrilum-geo-citation-auditor`
+- Topics: marketing, marketing-media, nextjs | Agents: linghe-os, claude-code, cursor, codex, antigravity, gemini, trae, vscode, windsurf
+- Summary (EN): Audits self-contained executive digests, Schema.org Dataset JSON-LD, llms.txt, and bilingual canonical parity.
+- Summary (ZH): 检查官网摘要密度、Schema.org Dataset 结构化数据、llms.txt 与中英文 canonical 一致性的增长技能。
+- Capabilities: Asserts strict origin isolation between CN and GLOBAL site exports; Checks direct-answer summary density and semantic HTML table coverage
+
+### #8 MCP Slim Schema Validator / MCP 精简 Schema 校验内核 (mcp-schema-validation-slim)
+- Detail URL: https://myrilum.com/skills/s/modelcontextprotocol/registry-skills/mcp-schema-validation-slim
+- Security Audit URL: https://myrilum.com/skills/s/modelcontextprotocol/registry-skills/mcp-schema-validation-slim/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: modelcontextprotocol/registry-skills | SemVer: 1.2.1 | RoleScope: digital-engineering
+- SHA-256: 92d7e83f4295a167b8c342d0e6915137a02c84b6e931d5f724a06c83b1e9257d | First Seen: 2026-08-05 | Verified: 2026-11-20T20:00:00.000Z
+- Telemetry: manifoldScore=81.3 | decayedConfidence=0.9987 | installs=12400 | contextTokenCost=1040 | netLiftPct=28.4% | liftPer1kTokens=27.31%
+- Paraconsistent Fork: HIGH_LIFT_SLEEPER (High-Lift Sleeper) — Delivers 27.31% lift/1k tokens (#2 efficiency) in 1,040 tokens while ranking #33 in adoption.
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add modelcontextprotocol/registry-skills@mcp-schema-validation-slim`
+- Topics: agent-workflows, testing, databases | Agents: claude-code, cursor, codex, gemini, amp, antigravity, goose, nous-research, opencode, linghe-os
+- Summary (EN): Ultra-compact 1.04k-token skill yielding +28.4% tool-call schema accuracy with minimal context budget.
+- Summary (ZH): 仅占 1.04k tokens 却实现 28.4% 工具参数准确率提升的轻量规范技能，单位收益位居榜首前列。
+- Capabilities: Removes nested optional schema ambiguity and verbose tool text; Rejects out-of-range inputs and undeclared enums before dispatch
+
+### #9 Commercial Contract Redline Sentinel / 商业合同红线比对与风险清单 (myrilum-contract-redline-sentinel)
+- Detail URL: https://myrilum.com/skills/s/myrilum/enterprise-skills/myrilum-contract-redline-sentinel
+- Security Audit URL: https://myrilum.com/skills/s/myrilum/enterprise-skills/myrilum-contract-redline-sentinel/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: myrilum/enterprise-skills | SemVer: 1.4.0 | RoleScope: commercial-legal
+- SHA-256: 35e6f8a0b2c4356789abcdef0123456789abcdef0123456789abcdef1005 | First Seen: 2026-07-14 | Verified: 2026-11-20T16:45:00.000Z
+- Telemetry: manifoldScore=81.1 | decayedConfidence=0.9977 | installs=13600 | contextTokenCost=1110 | netLiftPct=29.2% | liftPer1kTokens=26.31%
+- Paraconsistent Fork: HIGH_LIFT_SLEEPER (High-Lift Sleeper) — Delivers 26.31% lift/1k tokens (#4 efficiency) in 1,110 tokens while ranking #32 in adoption.
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add myrilum/enterprise-skills@myrilum-contract-redline-sentinel`
+- Topics: commercial-legal, compliance-filing | Agents: linghe-os, claude-code, cursor, codex, antigravity, goose, opencode, trae
+- Summary (EN): Compact 1.11k-token clause diffing for SLA caps, IP ownership, and termination risk (review aid, not legal advice).
+- Summary (ZH): 仅耗 1.11k tokens 即可逐条核对违约上限、IP 归属与单方终止条款（仅作审阅辅助，不替代持牌律师）。
+- Capabilities: Flags uncapped indemnity and silent auto-renewal clauses against playbooks; Generates clause-anchored redline drafts for qualified human counsel review
+
+### #10 MCP Server Protocol Scaffold / MCP 工具服务标准脚手架 (mcp-server-scaffold)
+- Detail URL: https://myrilum.com/skills/s/anthropics/claude-skills/mcp-server-scaffold
+- Security Audit URL: https://myrilum.com/skills/s/anthropics/claude-skills/mcp-server-scaffold/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: anthropics/claude-skills | SemVer: 2.0.3 | RoleScope: digital-engineering
+- SHA-256: 14b9c05d6417e389f0a564b2c8137359e24a06f8c153b7d946e28a05f3c1479b | First Seen: 2025-11-28 | Verified: 2026-11-16T12:20:00.000Z
+- Telemetry: manifoldScore=81 | decayedConfidence=0.966 | installs=215000 | contextTokenCost=1560 | netLiftPct=21.2% | liftPer1kTokens=13.59%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #5 adoption and 13.59% lift/1k tokens (#21 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: false | CN Alternative: https://myrilum.com/skills/s/aliyun-bailian/bailian-skills/bailian-mcp-orchestrator
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add anthropics/claude-skills@mcp-server-scaffold`
+- Topics: agent-workflows, digital-engineering | Agents: claude-code, cursor, codex, cline, amp, antigravity, goose, opencode, roo, zed
+- Summary (EN): Guides type-safe Model Context Protocol tool definitions, resource URIs, and fail-closed schema validation.
+- Summary (ZH): 构建类型安全的 Model Context Protocol 工具、资源与输入 Schema 校验边界的标准指南。
+- Capabilities: Enforces strict JSON Schema inputs and structured error payloads; Separates read-only resources from gated write actions; Includes stdio and Streamable HTTP verification harnesses
+
+### #11 Context Token Efficiency Probe / 上下文 Token 开销探针 (skill-telemetry-probe)
+- Detail URL: https://myrilum.com/skills/s/vercel-labs/skills/skill-telemetry-probe
+- Security Audit URL: https://myrilum.com/skills/s/vercel-labs/skills/skill-telemetry-probe/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: vercel-labs/skills | SemVer: 1.3.4 | RoleScope: digital-engineering
+- SHA-256: c9d4e81f2073a945b6c120d8e47f3915a80c62b4e719d3f502a84c61b9e7035d | First Seen: 2026-06-09 | Verified: 2026-11-20T18:15:00.000Z
+- Telemetry: manifoldScore=80.6 | decayedConfidence=0.9982 | installs=11400 | contextTokenCost=980 | netLiftPct=27.4% | liftPer1kTokens=27.96%
+- Paraconsistent Fork: HIGH_LIFT_SLEEPER (High-Lift Sleeper) — Delivers 27.96% lift/1k tokens (#1 efficiency) in 980 tokens while ranking #34 in adoption.
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add vercel-labs/skills@skill-telemetry-probe`
+- Topics: testing, agent-workflows, digital-engineering | Agents: claude-code, cursor, codex, antigravity, droid, goose, kilo, linghe-os
+- Summary (EN): Benchmarks prompt overhead and lift-per-1k-tokens efficiency under a sub-1k token footprint to isolate bloat.
+- Summary (ZH): 用不足 1k token 预算测量提示词冗余度与每千 token 净增益，快速识别高膨胀低效技能包。
+- Capabilities: Measures context window occupancy and redundant instruction ratio; Flags high-install skill packs delivering weak marginal lift; Suggests modular lazy-loading splits without losing task accuracy
+
+### #12 CN Static Export & ICP Preflight / 中国区静态导出与 ICP 页脚隔离检查 (cn-icp-filing-preflight)
+- Detail URL: https://myrilum.com/skills/s/aliyun-bailian/bailian-skills/cn-icp-filing-preflight
+- Security Audit URL: https://myrilum.com/skills/s/aliyun-bailian/bailian-skills/cn-icp-filing-preflight/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: aliyun-bailian/bailian-skills | SemVer: 1.3.0 | RoleScope: compliance-filing
+- SHA-256: 34b5c7d9e1f324abcdef0123456789abcdef0123456789abcdef0123451014 | First Seen: 2026-08-01 | Verified: 2026-11-20T17:30:00.000Z
+- Telemetry: manifoldScore=79.7 | decayedConfidence=0.9979 | installs=7400 | contextTokenCost=1020 | netLiftPct=27.6% | liftPer1kTokens=27.06%
+- Paraconsistent Fork: HIGH_LIFT_SLEEPER (High-Lift Sleeper) — Delivers 27.06% lift/1k tokens (#3 efficiency) in 1,020 tokens while ranking #36 in adoption.
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add aliyun-bailian/bailian-skills@cn-icp-filing-preflight`
+- Topics: compliance-filing, nextjs, digital-engineering | Agents: linghe-os, trae, claude-code, cursor, codex, antigravity, kiro-cli, opencode
+- Summary (EN): Compact 1.02k-token preflight checking OSS static HTML exports for cell isolation, canonicals, and clean links.
+- Summary (ZH): 用 1.02k tokens 在 OSS 静态构建后逐页检查 CN/GLOBAL 主体归属隔离、canonical 源站与外链净度。
+- Capabilities: Blocks GLOBAL app hrefs or cross-cell entity disclosures in CN exports; Checks trailing-slash index.html generation and single canonical tags
+
+### #13 Zero Trust Tunnel Policy Verifier / 零信任通道与访问策略校验 (cloudflare-tunnel-zero-trust)
+- Detail URL: https://myrilum.com/skills/s/cloudflare/workers-skills/cloudflare-tunnel-zero-trust
+- Security Audit URL: https://myrilum.com/skills/s/cloudflare/workers-skills/cloudflare-tunnel-zero-trust/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: cloudflare/workers-skills | SemVer: 1.4.0 | RoleScope: digital-engineering
+- SHA-256: 58f3a49b0851c723d4e908f6a2571793c68e40d2a597f1b380c62e49d7a5813f | First Seen: 2026-07-19 | Verified: 2026-11-20T15:00:00.000Z
+- Telemetry: manifoldScore=79.5 | decayedConfidence=0.9971 | installs=8800 | contextTokenCost=1080 | netLiftPct=26.4% | liftPer1kTokens=24.44%
+- Paraconsistent Fork: HIGH_LIFT_SLEEPER (High-Lift Sleeper) — Delivers 24.44% lift/1k tokens (#5 efficiency) in 1,080 tokens while ranking #35 in adoption.
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add cloudflare/workers-skills@cloudflare-tunnel-zero-trust`
+- Topics: agent-workflows, testing, digital-engineering | Agents: claude-code, codex, kiro-cli, goose, zed, antigravity
+- Summary (EN): Compact 1.08k-token playbook for least-privilege ingress tunnel policies and mTLS verification checks.
+- Summary (ZH): 用 1.08k tokens 精确生成内网服务最小权限隧道策略与 mTLS 验证规则，高增益低安装黑马技能。
+- Capabilities: Verifies least-privilege ingress routes and default-deny fallbacks; Audits service token rotation and mTLS header validation
+
+### #14 Next.js App Router & Static Audit / Next.js App Router 路由与缓存审计 (nextjs-app-router-audit)
+- Detail URL: https://myrilum.com/skills/s/vercel-labs/agent-skills/nextjs-app-router-audit
+- Security Audit URL: https://myrilum.com/skills/s/vercel-labs/agent-skills/nextjs-app-router-audit/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: vercel-labs/agent-skills | SemVer: 2.2.0 | RoleScope: digital-engineering
+- SHA-256: e2f7a83b4295c167d8e342f0a6915137c02e84d6a931f5b724c06e83d1a9257f | First Seen: 2026-01-29 | Verified: 2026-11-17T16:40:00.000Z
+- Telemetry: manifoldScore=79.3 | decayedConfidence=0.9749 | installs=164000 | contextTokenCost=1460 | netLiftPct=19.8% | liftPer1kTokens=13.56%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #9 adoption and 13.56% lift/1k tokens (#22 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: false | CN Alternative: https://myrilum.com/skills/s/qwen-lm/qwen-agent-skills/qwen-react-ssr-kit
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add vercel-labs/agent-skills@nextjs-app-router-audit`
+- Topics: nextjs, react, testing, digital-engineering | Agents: claude-code, cursor, codex, windsurf, antigravity, opencode, vscode, zed
+- Summary (EN): Audits generateStaticParams, trailing-slash canonical alignment, and static export compatibility for App Router.
+- Summary (ZH): 检查动态路由静态参数、canonical 无尾斜杠一致性与静态导出兼容性的工程约束包。
+- Capabilities: Verifies dynamicParams = false and complete generateStaticParams; Prevents server env leaks across client bundle boundaries; Aligns canonical metadata and structured JSON-LD paths
+
+### #15 Stripe Webhook Idempotency Guard / 支付 Webhook 幂等与乱序收敛 (stripe-webhook-idempotency)
+- Detail URL: https://myrilum.com/skills/s/stripe/agent-toolkit/stripe-webhook-idempotency
+- Security Audit URL: https://myrilum.com/skills/s/stripe/agent-toolkit/stripe-webhook-idempotency/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: stripe/agent-toolkit | SemVer: 2.3.1 | RoleScope: digital-engineering
+- SHA-256: 70b5c61d2073e945f6a120b8c4793915e80a62f4c719b3d502e84a61f9c7035b | First Seen: 2026-01-08 | Verified: 2026-11-18T17:30:00.000Z
+- Telemetry: manifoldScore=79.2 | decayedConfidence=0.9827 | installs=129000 | contextTokenCost=1390 | netLiftPct=19.8% | liftPer1kTokens=14.24%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #14 adoption and 14.24% lift/1k tokens (#18 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: false | CN Alternative: https://myrilum.com/skills/s/myrilum/enterprise-skills/cn-payment-reconciliation-ledger
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add stripe/agent-toolkit@stripe-webhook-idempotency`
+- Topics: databases, testing, agent-workflows | Agents: claude-code, cursor, codex, windsurf, antigravity, vscode, kilo, kiro-cli
+- Summary (EN): Prevents out-of-order webhook corruption via signature verification, idempotent keys, and real event fixtures.
+- Summary (ZH): 聚焦签名验真、至少一次乱序投递收敛、终局态不可逆保护与真实事件夹具校验的支付集成技能。
+- Capabilities: Enforces real provider payload shapes instead of synthetic mock objects; Locks terminal state transitions against replayed or stale events
+
+### #16 Skills Lockfile Integrity Guard / 技能锁文件完整性校验 (skills-lock-verify)
+- Detail URL: https://myrilum.com/skills/s/vercel-labs/skills/skills-lock-verify
+- Security Audit URL: https://myrilum.com/skills/s/vercel-labs/skills/skills-lock-verify/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: vercel-labs/skills | SemVer: 1.9.0 | RoleScope: digital-engineering
+- SHA-256: b7c2d94e1a60f832d5e419c70b28a461e93f05c17d8a2b46c19e70f38a5b624c | First Seen: 2026-01-18 | Verified: 2026-11-19T14:00:00.000Z
+- Telemetry: manifoldScore=79.2 | decayedConfidence=0.9891 | installs=118000 | contextTokenCost=1180 | netLiftPct=18.2% | liftPer1kTokens=15.42%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #15 adoption and 15.42% lift/1k tokens (#12 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add vercel-labs/skills@skills-lock-verify`
+- Topics: agent-workflows, testing, digital-engineering | Agents: claude-code, cursor, codex, github-copilot, windsurf, antigravity, opencode, zed, linghe-os
+- Summary (EN): Enforces deterministic skills-lock.json SHA-256 verification and pinned references in local and CI runs.
+- Summary (ZH): 在 CI 与本地工作区校验 skills-lock.json 哈希一致性和远程引用固定状态，阻断隐式漂移。
+- Capabilities: Diffs locked hashes against workspace skill manifests; Flags unpinned git refs and floating remote includes; Produces deterministic verification summaries for review
+
+### #17 Lihe Design Tokens & Visual Lock / Lihe 设计令牌与零硬编码样式门禁 (myrilum-lihe-design-tokens)
+- Detail URL: https://myrilum.com/skills/s/myrilum/linghe-skills/myrilum-lihe-design-tokens
+- Security Audit URL: https://myrilum.com/skills/s/myrilum/linghe-skills/myrilum-lihe-design-tokens/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: myrilum/linghe-skills | SemVer: 2.2.2 | RoleScope: digital-engineering
+- SHA-256: 38f9a1b3c5d768abcdef0123456789abcdef0123456789abcdef0123451018 | First Seen: 2026-05-06 | Verified: 2026-11-20T14:30:00.000Z
+- Telemetry: manifoldScore=79.2 | decayedConfidence=0.997 | installs=28500 | contextTokenCost=1140 | netLiftPct=21.9% | liftPer1kTokens=19.21%
+- Paraconsistent Fork: HIGH_LIFT_SLEEPER (High-Lift Sleeper) — Delivers 19.21% lift/1k tokens (#8 efficiency) in 1,140 tokens while ranking #30 in adoption.
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add myrilum/linghe-skills@myrilum-lihe-design-tokens`
+- Topics: design, mobile, react, digital-engineering | Agents: linghe-os, claude-code, cursor, codex, antigravity, trae, vscode, zed
+- Summary (EN): Enforces token-only CSS custom properties, zero raw color literals, and accessible light-dark contrast parity.
+- Summary (ZH): 强制页面仅消费既有视觉锁定 CSS 变量，杜绝散落色值、渐变字面量与移动端布局溢出。
+- Capabilities: Rejects raw hex color literals and unapproved gradient declarations; Preserves keyboard focus rings and clean mobile reflow across themes
+
+### #18 Cloudflare Workers & D1 Edge Runtime / Cloudflare Workers 与 D1 边缘运行时 (cloudflare-workers-d1-edge)
+- Detail URL: https://myrilum.com/skills/s/cloudflare/workers-skills/cloudflare-workers-d1-edge
+- Security Audit URL: https://myrilum.com/skills/s/cloudflare/workers-skills/cloudflare-workers-d1-edge/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: cloudflare/workers-skills | SemVer: 2.1.2 | RoleScope: digital-engineering
+- SHA-256: 47e2f38a9740b612c3d897e5f1460682b57d39c1f486e0a279b51d38c6f4702e | First Seen: 2026-01-11 | Verified: 2026-11-19T08:45:00.000Z
+- Telemetry: manifoldScore=79.1 | decayedConfidence=0.9875 | installs=142000 | contextTokenCost=1380 | netLiftPct=19.2% | liftPer1kTokens=13.91%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #12 adoption and 13.91% lift/1k tokens (#19 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add cloudflare/workers-skills@cloudflare-workers-d1-edge`
+- Topics: databases, nextjs, digital-engineering | Agents: claude-code, cursor, codex, github-copilot, windsurf, antigravity, opencode, kiro-cli, vscode
+- Summary (EN): Compact constraints for Workers isolates, D1 batch transactions, KV eventual consistency, and bundle limits.
+- Summary (ZH): 围绕 Workers isolate 约束、D1 事务批处理、KV 一致性窗口与零 Node 兼容陷阱的紧凑工程准则。
+- Capabilities: Prevents accidental imports of unsupported Node.js core APIs; Enforces parameterized D1 prepared statements and batch guards; Aligns edge cache keys and immutable asset headers
+
+### #19 Qwen React SSR & Mobile Viewport Kit / Qwen React SSR 与移动端首屏规范 (qwen-react-ssr-kit)
+- Detail URL: https://myrilum.com/skills/s/qwen-lm/qwen-agent-skills/qwen-react-ssr-kit
+- Security Audit URL: https://myrilum.com/skills/s/qwen-lm/qwen-agent-skills/qwen-react-ssr-kit/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: qwen-lm/qwen-agent-skills | SemVer: 2.2.1 | RoleScope: digital-engineering
+- SHA-256: 36d7e9f1a3b546abcdef0123456789abcdef0123456789abcdef0123451016 | First Seen: 2026-01-30 | Verified: 2026-11-19T16:10:00.000Z
+- Telemetry: manifoldScore=79 | decayedConfidence=0.9898 | installs=112000 | contextTokenCost=1460 | netLiftPct=20.8% | liftPer1kTokens=14.25%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #16 adoption and 14.25% lift/1k tokens (#17 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add qwen-lm/qwen-agent-skills@qwen-react-ssr-kit`
+- Topics: react, nextjs, mobile, digital-engineering | Agents: linghe-os, trae, cursor, claude-code, codex, antigravity, windsurf, vscode, zed
+- Summary (EN): CN-mirror-ready React SSR rules covering streaming boundaries, hydration control, and mobile viewport safety.
+- Summary (ZH): 适配国内镜像构建环境的 React 服务端渲染、首屏水合控制与移动端零横向溢出工程规范。
+- Capabilities: Ensures responsive tables and subnav tabs reflow cleanly at 375px; Verifies async route params and canonical path generation
+
+### #20 Playwright Deterministic E2E / Playwright 零片状端到端测试 (playwright-deterministic-e2e)
+- Detail URL: https://myrilum.com/skills/s/playwright-community/playwright-skills/playwright-deterministic-e2e
+- Security Audit URL: https://myrilum.com/skills/s/playwright-community/playwright-skills/playwright-deterministic-e2e/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: playwright-community/playwright-skills | SemVer: 1.8.2 | RoleScope: digital-engineering
+- SHA-256: 81c6d72e3184f056a7b231c9d5804026f91b73a5d820c4e613f95b72a0d8146c | First Seen: 2026-02-04 | Verified: 2026-11-17T09:15:00.000Z
+- Telemetry: manifoldScore=78.9 | decayedConfidence=0.9725 | installs=154000 | contextTokenCost=1440 | netLiftPct=19.6% | liftPer1kTokens=13.61%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #10 adoption and 13.61% lift/1k tokens (#20 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add playwright-community/playwright-skills@playwright-deterministic-e2e`
+- Topics: testing, react, nextjs | Agents: claude-code, cursor, codex, github-copilot, windsurf, cline, antigravity, trae, vscode
+- Summary (EN): Eliminates flaky browser suites with role locators, deterministic assertions, and zero arbitrary sleeps.
+- Summary (ZH): 用无障碍角色定位器、确定性网络拦截与消除固定 sleep 的规范，提升端到端验收稳定性。
+- Capabilities: Prefers getByRole and accessible semantic selectors over fragile CSS; Replaces fixed waits with web-first retrying assertions
+
+### #21 QQ Agent Bot Router & Handover / QQ 开放智能体事件路由与人工接管 (qq-enterprise-bot-router)
+- Detail URL: https://myrilum.com/skills/s/tencent-agent/qq-agent-skills/qq-enterprise-bot-router
+- Security Audit URL: https://myrilum.com/skills/s/tencent-agent/qq-agent-skills/qq-enterprise-bot-router/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: tencent-agent/qq-agent-skills | SemVer: 1.9.3 | RoleScope: marketing-media
+- SHA-256: 30d1e3f5a7b980abcdef0123456789abcdef0123456789abcdef0123451010 | First Seen: 2026-02-02 | Verified: 2026-11-19T06:30:00.000Z
+- Telemetry: manifoldScore=78.6 | decayedConfidence=0.9868 | installs=148000 | contextTokenCost=1480 | netLiftPct=19.2% | liftPer1kTokens=12.97%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #11 adoption and 12.97% lift/1k tokens (#23 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add tencent-agent/qq-agent-skills@qq-enterprise-bot-router`
+- Topics: marketing, marketing-media, agent-workflows, mobile | Agents: linghe-os, trae, cursor, claude-code, codex, antigravity, github-copilot, kilo, vscode
+- Summary (EN): Routes QQ Agent events, mobile card payloads, and bounded human-handover escalation paths cleanly.
+- Summary (ZH): 适配 agent.qq.com 消息事件、移动端卡片回复格式与高风险会话人工接管阈值的轻量技能。
+- Capabilities: Enforces mobile card payload limits and deterministic button schemas; Triggers human handover callbacks on pricing commitments or escalations
+
+### #22 Dual-Cell PIPL & GDPR Flow Audit / 双区数据流与 PIPL/GDPR 自查清单 (gdpr-pipl-crossborder-audit)
+- Detail URL: https://myrilum.com/skills/s/myrilum/enterprise-skills/gdpr-pipl-crossborder-audit
+- Security Audit URL: https://myrilum.com/skills/s/myrilum/enterprise-skills/gdpr-pipl-crossborder-audit/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: myrilum/enterprise-skills | SemVer: 1.8.0 | RoleScope: compliance-filing
+- SHA-256: 33a4b6c8d0e213abcdef0123456789abcdef0123456789abcdef0123451013 | First Seen: 2026-02-19 | Verified: 2026-11-19T17:10:00.000Z
+- Telemetry: manifoldScore=77.6 | decayedConfidence=0.9902 | installs=38000 | contextTokenCost=1410 | netLiftPct=21.4% | liftPer1kTokens=15.18%
+- Paraconsistent Fork: HIGH_LIFT_SLEEPER (High-Lift Sleeper) — Delivers 15.18% lift/1k tokens (#15 efficiency) in 1,410 tokens while ranking #28 in adoption.
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add myrilum/enterprise-skills@gdpr-pipl-crossborder-audit`
+- Topics: compliance-filing, commercial-legal, databases | Agents: linghe-os, claude-code, cursor, codex, antigravity, nous-research, opencode, trae
+- Summary (EN): Inventories PII field flows and CN/GLOBAL cell isolation boundaries for pre-review compliance prep.
+- Summary (ZH): 盘点字段级个人敏感信息流向与 CN/GLOBAL 单元物理隔离边界，用于合规自查与工程整改。
+- Capabilities: Detects cross-region cache leaks, unmasked PII logs, and external CDN fonts; Outputs technical flow matrices for qualified compliance review
+
+### #23 Bailian Enterprise MCP Orchestrator / 百炼企业 MCP 工具编排与区域回退 (bailian-mcp-orchestrator)
+- Detail URL: https://myrilum.com/skills/s/aliyun-bailian/bailian-skills/bailian-mcp-orchestrator
+- Security Audit URL: https://myrilum.com/skills/s/aliyun-bailian/bailian-skills/bailian-mcp-orchestrator/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: aliyun-bailian/bailian-skills | SemVer: 1.9.0 | RoleScope: digital-engineering
+- SHA-256: 37e8f0a2b4c657abcdef0123456789abcdef0123456789abcdef0123451017 | First Seen: 2026-02-22 | Verified: 2026-11-19T10:40:00.000Z
+- Telemetry: manifoldScore=76.3 | decayedConfidence=0.9881 | installs=79000 | contextTokenCost=1540 | netLiftPct=18.8% | liftPer1kTokens=12.21%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #19 adoption and 12.21% lift/1k tokens (#24 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add aliyun-bailian/bailian-skills@bailian-mcp-orchestrator`
+- Topics: agent-workflows, databases, digital-engineering | Agents: linghe-os, trae, claude-code, cursor, codex, antigravity, amp, cline, opencode
+- Summary (EN): Provides strict tool schema validation, circuit breakers, and CN-endpoint routing for enterprise MCP servers.
+- Summary (ZH): 为中国区企业内部署 MCP 服务提供参数强校验、超时熔断与区域终端回退的工程技能包。
+- Capabilities: Validates tool arguments strictly and fails closed on upstream timeout; Separates read discovery from human-confirmed write actions
+
+### #24 ModelScope SPDX & Clean-Room Audit / 魔搭开源协议与洁净室溯源校验 (modelscope-license-provenance)
+- Detail URL: https://myrilum.com/skills/s/modelscope/modelscope-skills/modelscope-license-provenance
+- Security Audit URL: https://myrilum.com/skills/s/modelscope/modelscope-skills/modelscope-license-provenance/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: modelscope/modelscope-skills | SemVer: 1.4.3 | RoleScope: compliance-filing
+- SHA-256: 35c6d8e0f2a435abcdef0123456789abcdef0123456789abcdef0123451015 | First Seen: 2026-04-28 | Verified: 2026-11-18T08:30:00.000Z
+- Telemetry: manifoldScore=76.2 | decayedConfidence=0.9798 | installs=31000 | contextTokenCost=1290 | netLiftPct=19.6% | liftPer1kTokens=15.19%
+- Paraconsistent Fork: HIGH_LIFT_SLEEPER (High-Lift Sleeper) — Delivers 15.19% lift/1k tokens (#14 efficiency) in 1,290 tokens while ranking #29 in adoption.
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add modelscope/modelscope-skills@modelscope-license-provenance`
+- Topics: compliance-filing, testing, agent-workflows | Agents: linghe-os, claude-code, cursor, codex, antigravity, goose, nous-research, trae
+- Summary (EN): Checks SPDX license compatibility, SHA-256 checksum pinning, and clean-room boundary integrity.
+- Summary (ZH): 扫描模型权重、技能包依赖的 SPDX 许可证兼容性、SHA-256 锁定与洁净室源码隔离边界。
+- Capabilities: Flags copyleft obligations and restricted model weight license clauses; Produces verifiable SBOM summaries and provenance digests
+
+### #25 Doubao Multimodal Campaign Matrix / 豆包多模态传播矩阵与视觉脚本 (doubao-multimodal-campaign-copy)
+- Detail URL: https://myrilum.com/skills/s/bytedance/doubao-enterprise-kit/doubao-multimodal-campaign-copy
+- Security Audit URL: https://myrilum.com/skills/s/bytedance/doubao-enterprise-kit/doubao-multimodal-campaign-copy/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: bytedance/doubao-enterprise-kit | SemVer: 1.6.5 | RoleScope: marketing-media
+- SHA-256: 32f3a5b7c9d102abcdef0123456789abcdef0123456789abcdef0123451012 | First Seen: 2026-03-14 | Verified: 2026-11-18T10:25:00.000Z
+- Telemetry: manifoldScore=73.9 | decayedConfidence=0.9804 | installs=91000 | contextTokenCost=1920 | netLiftPct=17.1% | liftPer1kTokens=8.91%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #17 adoption and 8.91% lift/1k tokens (#27 efficiency).
+- Best Model (GLOBAL): gemini | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add bytedance/doubao-enterprise-kit@doubao-multimodal-campaign-copy`
+- Topics: marketing, marketing-media, design | Agents: linghe-os, trae, cursor, claude-code, codex, antigravity, gemini, clawdbot, droid
+- Summary (EN): Generates grounded bilingual campaign copy, storyboard scripts, and accessible image alt descriptions.
+- Summary (ZH): 围绕真实产品边界生成中英双语海报文案、短视频分镜脚本与无障碍图文替代文本。
+- Capabilities: Keeps Chinese and English campaign messaging semantically aligned; Outputs contrast-safe token constraints and descriptive alt copy
+
+### #26 CN Payment & Invoice Ledger Guard / 微信支付宝对账与开票幂等核验 (cn-payment-reconciliation-ledger)
+- Detail URL: https://myrilum.com/skills/s/myrilum/enterprise-skills/cn-payment-reconciliation-ledger
+- Security Audit URL: https://myrilum.com/skills/s/myrilum/enterprise-skills/cn-payment-reconciliation-ledger/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: myrilum/enterprise-skills | SemVer: 1.7.1 | RoleScope: commercial-legal
+- SHA-256: 36f7a9b1c3d546789abcdef0123456789abcdef0123456789abcdef1006 | First Seen: 2026-03-21 | Verified: 2026-11-18T14:20:00.000Z
+- Telemetry: manifoldScore=73.7 | decayedConfidence=0.9817 | installs=49000 | contextTokenCost=1760 | netLiftPct=18.4% | liftPer1kTokens=10.45%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #25 adoption and 10.45% lift/1k tokens (#25 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add myrilum/enterprise-skills@cn-payment-reconciliation-ledger`
+- Topics: commercial-legal, databases, testing | Agents: linghe-os, claude-code, cursor, codex, antigravity, trae, windsurf, zed
+- Summary (EN): Audits WeChat Pay, Alipay callback idempotency, settlement splits, and invoice reversal state invariants.
+- Summary (ZH): 面向国内对公收款、微信/支付宝回调验签、分账对账与红冲发票状态机的只读核验技能。
+- Capabilities: Verifies async callback idempotency keys and integer minor-unit math; Reconciles T+1 settlement diffs without silent ledger replays
+
+### #27 Agent Tool-Use Eval Harness / 智能体工具调用回归评测台 (agent-tool-eval-harness)
+- Detail URL: https://myrilum.com/skills/s/anthropics/claude-skills/agent-tool-eval-harness
+- Security Audit URL: https://myrilum.com/skills/s/anthropics/claude-skills/agent-tool-eval-harness/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: anthropics/claude-skills | SemVer: 1.6.2 | RoleScope: digital-engineering
+- SHA-256: 25c0d16e7528f490a1b675c3d9248460f35b17a9d264c8e057f39b16a4d2580c | First Seen: 2026-02-14 | Verified: 2026-11-15T10:05:00.000Z
+- Telemetry: manifoldScore=73.3 | decayedConfidence=0.9579 | installs=74000 | contextTokenCost=1980 | netLiftPct=16.8% | liftPer1kTokens=8.48%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #20 adoption and 8.48% lift/1k tokens (#28 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: false | CN Alternative: https://myrilum.com/skills/s/deepseek-ai/deepseek-skills/deepseek-r1-reasoning-distiller
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add anthropics/claude-skills@agent-tool-eval-harness`
+- Topics: agent-workflows, testing, digital-engineering | Agents: claude-code, codex, gemini, antigravity, clawdbot, droid, goose, nous-research
+- Summary (EN): Builds falsifiable tool-call benchmarks testing completion, refusal boundaries, takeover triggers, and stop gates.
+- Summary (ZH): 围绕完成率、拒绝越权边界、人工接管触发与停止条件构建可证伪的 Agent 评估基准。
+- Capabilities: Constructs realistic fixture assertions instead of permissive mocks; Tests fail-closed refusal on unauthorized external mutations; Tracks multi-turn token overhead and pass-rate variance
+
+### #28 Qdrant Hybrid Vector Recall / Qdrant 稠密稀疏混合检索调优 (qdrant-hybrid-vector-recall)
+- Detail URL: https://myrilum.com/skills/s/qdrant/qdrant-skills/qdrant-hybrid-vector-recall
+- Security Audit URL: https://myrilum.com/skills/s/qdrant/qdrant-skills/qdrant-hybrid-vector-recall/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: qdrant/qdrant-skills | SemVer: 1.7.3 | RoleScope: digital-engineering
+- SHA-256: 14f9a05b6417c389d0e564f2a8137359c24e06d8a153f7b946c28e05d3a1479f | First Seen: 2026-04-02 | Verified: 2026-11-18T09:50:00.000Z
+- Telemetry: manifoldScore=72.8 | decayedConfidence=0.9802 | installs=44000 | contextTokenCost=1940 | netLiftPct=17.9% | liftPer1kTokens=9.23%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #26 adoption and 9.23% lift/1k tokens (#26 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add qdrant/qdrant-skills@qdrant-hybrid-vector-recall`
+- Topics: databases, agent-workflows, strategic-research | Agents: claude-code, cursor, codex, gemini, antigravity, clawdbot, droid, nous-research
+- Summary (EN): Tunes dense plus sparse BM25 Reciprocal Rank Fusion pipelines for reproducible hybrid retrieval.
+- Summary (ZH): 结合稠密向量与 BM25 稀疏倒排融合的 RRF 召回调优策略，提升代码与知识库检索命中率。
+- Capabilities: Tunes tenant payload filter indexes alongside HNSW recall; Scores Recall@10 gains against pinned evaluation sets
+
+### #29 Alibaba Bailian RAG Knowledge Sync / 阿里云百炼知识库分块与引用对齐 (bailian-rag-knowledge-sync)
+- Detail URL: https://myrilum.com/skills/s/aliyun-bailian/bailian-skills/bailian-rag-knowledge-sync
+- Security Audit URL: https://myrilum.com/skills/s/aliyun-bailian/bailian-skills/bailian-rag-knowledge-sync/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: aliyun-bailian/bailian-skills | SemVer: 1.6.0 | RoleScope: strategic-research
+- SHA-256: 34d5e7f9a1b32456789abcdef0123456789abcdef0123456789abcdef1004 | First Seen: 2026-03-04 | Verified: 2026-11-17T13:10:00.000Z
+- Telemetry: manifoldScore=72.3 | decayedConfidence=0.9738 | installs=68000 | contextTokenCost=1960 | netLiftPct=16.5% | liftPer1kTokens=8.42%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #21 adoption and 8.42% lift/1k tokens (#29 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add aliyun-bailian/bailian-skills@bailian-rag-knowledge-sync`
+- Topics: strategic-research, databases, digital-engineering | Agents: linghe-os, trae, cursor, claude-code, codex, antigravity, kilo, kiro-cli
+- Summary (EN): Aligns Bailian knowledge base chunking, metadata tags, and verifiable citation anchors for enterprise RAG.
+- Summary (ZH): 规范百炼知识库文档切片边界、元信息标签与可溯源引用锚点，减少长文档问答幻觉。
+- Capabilities: Chunks by heading hierarchy while preserving file version and page anchors; Requires verbatim source anchors and explicit abstention when absent
+
+### #30 Enterprise RFP Disqualification Matrix / 政企招投标废标项与评分矩阵拆解 (zhipu-bidding-rfp-matrix)
+- Detail URL: https://myrilum.com/skills/s/zhipuai/glm-enterprise-skills/zhipu-bidding-rfp-matrix
+- Security Audit URL: https://myrilum.com/skills/s/zhipuai/glm-enterprise-skills/zhipu-bidding-rfp-matrix/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: zhipuai/glm-enterprise-skills | SemVer: 1.5.2 | RoleScope: commercial-legal
+- SHA-256: 37a8b0c2d4e65789abcdef0123456789abcdef0123456789abcdef01231007 | First Seen: 2026-04-11 | Verified: 2026-11-16T09:00:00.000Z
+- Telemetry: manifoldScore=70.5 | decayedConfidence=0.965 | installs=53000 | contextTokenCost=2040 | netLiftPct=15.8% | liftPer1kTokens=7.75%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #24 adoption and 7.75% lift/1k tokens (#30 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add zhipuai/glm-enterprise-skills@zhipu-bidding-rfp-matrix`
+- Topics: commercial-legal, strategic-research | Agents: linghe-os, trae, cursor, claude-code, codex, antigravity, amp, droid
+- Summary (EN): Extracts mandatory RFP eligibility gates, evidence gaps, and scoring matrices for human bid review.
+- Summary (ZH): 针对长篇招标书自动抽取实质性响应门槛、资质缺口与评分权重对照表，辅助人工投标复核。
+- Capabilities: Maps mandatory tender clauses against available attestation records; Blocks unverified credentials, revenue figures, or case assertions
+
+### #31 Neon Branching SQL Migrations / Serverless Postgres 分支迁移 (neon-branching-migrations)
+- Detail URL: https://myrilum.com/skills/s/neondatabase/neon-skills/neon-branching-migrations
+- Security Audit URL: https://myrilum.com/skills/s/neondatabase/neon-skills/neon-branching-migrations/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: neondatabase/neon-skills | SemVer: 1.5.0 | RoleScope: digital-engineering
+- SHA-256: 03e8f94a5306b278c9d453e1f7026248b13d95c7f042e6a835b17d94c2f0368e | First Seen: 2026-03-10 | Verified: 2026-11-14T15:20:00.000Z
+- Telemetry: manifoldScore=70 | decayedConfidence=0.9522 | installs=58000 | contextTokenCost=2050 | netLiftPct=14.2% | liftPer1kTokens=6.93%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #23 adoption and 6.93% lift/1k tokens (#31 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: false | CN Alternative: https://myrilum.com/skills/s/aliyun-bailian/bailian-skills/bailian-rag-knowledge-sync
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add neondatabase/neon-skills@neon-branching-migrations`
+- Topics: databases, nextjs, digital-engineering | Agents: claude-code, cursor, codex, windsurf, zed, kiro-cli, antigravity
+- Summary (EN): Runs DDL migrations, backfill invariants, and lock-timeout checks inside ephemeral database branches first.
+- Summary (ZH): 为每个 PR 建立隔离 Postgres 分支先试跑结构迁移、回填断言与索引锁校验的规范技能。
+- Capabilities: Enforces lock_timeout and statement_timeout guards on DDL; Enforces additive expand-contract migration ordering
+
+### #32 WeChat MP Mobile Editorial Polish / 公众号与移动端图文排版校对 (wechat-mp-editorial-polish)
+- Detail URL: https://myrilum.com/skills/s/tencent-agent/qq-agent-skills/wechat-mp-editorial-polish
+- Security Audit URL: https://myrilum.com/skills/s/tencent-agent/qq-agent-skills/wechat-mp-editorial-polish/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: tencent-agent/qq-agent-skills | SemVer: 1.3.1 | RoleScope: marketing-media
+- SHA-256: 31e2f4a6b8c091abcdef0123456789abcdef0123456789abcdef0123451011 | First Seen: 2026-04-20 | Verified: 2026-11-15T12:00:00.000Z
+- Telemetry: manifoldScore=66.1 | decayedConfidence=0.9585 | installs=62000 | contextTokenCost=2120 | netLiftPct=14.4% | liftPer1kTokens=6.79%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #22 adoption and 6.79% lift/1k tokens (#33 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Warn (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=true
+- Install: `npx skills add tencent-agent/qq-agent-skills@wechat-mp-editorial-polish`
+- Topics: marketing, marketing-media, design, mobile | Agents: linghe-os, trae, cursor, claude-code, antigravity, windsurf, roo, vscode
+- Summary (EN): Optimizes mobile article pacing and claim checks; marked Warn for external draft-box sync and token read.
+- Summary (ZH): 优化移动端长图文段落节奏、禁用夸大宣传词并对齐草稿箱推送接口；因同步草稿外网调用标为 Warn。
+- Capabilities: Scans for exaggerated claims, unverified numbers, and mobile legibility; Restricts API mutations to draft staging without auto-publishing
+
+### #33 Dagger Go Pipeline Runner / Dagger 容器化 Go 流水线执行 (dagger-go-pipeline-runner)
+- Detail URL: https://myrilum.com/skills/s/dagger/dagger-skills/dagger-go-pipeline-runner
+- Security Audit URL: https://myrilum.com/skills/s/dagger/dagger-skills/dagger-go-pipeline-runner/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: dagger/dagger-skills | SemVer: 1.4.2 | RoleScope: digital-engineering
+- SHA-256: 25a0b16c7528d490e1f675a3b9248460d35f17e9b264a8c057d39f16e4b2580a | First Seen: 2026-05-12 | Verified: 2026-11-15T19:00:00.000Z
+- Telemetry: manifoldScore=65.9 | decayedConfidence=0.9607 | installs=41000 | contextTokenCost=2140 | netLiftPct=14.6% | liftPer1kTokens=6.82%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #27 adoption and 6.82% lift/1k tokens (#32 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Warn (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=true | net=true
+- Install: `npx skills add dagger/dagger-skills@dagger-go-pipeline-runner`
+- Topics: testing, agent-workflows, digital-engineering | Agents: claude-code, codex, github-copilot, cline, droid, goose, kilo, opencode, zed
+- Summary (EN): Authors reproducible containerized CI pipelines in Go; flagged Warn for shell and registry network execution.
+- Summary (ZH): 用 Go SDK 定义可复现容器构建与本地验证流水线；因需触发容器 Shell 与镜像拉取已标为 Warn。
+- Capabilities: Runs reproducible CI checks inside cached local containers; Declares container shell and registry scopes for sandbox approval
+
+### #34 Unpinned ERP Webhook Bridge / 外部 ERP Webhook 同步桥接脚本 (unpinned-erp-webhook-bridge)
+- Detail URL: https://myrilum.com/skills/s/bytedance/doubao-enterprise-kit/unpinned-erp-webhook-bridge
+- Security Audit URL: https://myrilum.com/skills/s/bytedance/doubao-enterprise-kit/unpinned-erp-webhook-bridge/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: bytedance/doubao-enterprise-kit | SemVer: 0.8.3 | RoleScope: commercial-legal
+- SHA-256: 38b9c1d3e5f7689abcdef0123456789abcdef0123456789abcdef012341008 | First Seen: 2026-05-29 | Verified: 2026-10-08T07:00:00.000Z
+- Telemetry: manifoldScore=53.5 | decayedConfidence=0.7142 | installs=19200 | contextTokenCost=2380 | netLiftPct=10.4% | liftPer1kTokens=4.37%
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Balanced production telemetry at #31 adoption and 4.37% lift/1k tokens (#34 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: true
+- Hygiene: overall=Review (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=true | net=true
+- Install: `npx skills add bytedance/doubao-enterprise-kit@unpinned-erp-webhook-bridge`
+- Topics: commercial-legal, agent-workflows | Agents: trae, cursor, claude-code, cline, clawdbot, kilo
+- Summary (EN): Legacy ERP approval webhook bridge; marked Review due to shell execution, env secret reads, and unpinned refs.
+- Summary (ZH): 支持对接传统 ERP 审批回调的桥接模板；因涉及 Shell 执行、环境变量读取及工作区外写入被标为 Review。
+- Capabilities: Templates ERP callback relay requiring strict secret allowlisting; Flagged by static scanners for elevated permissions pending review
+
+### #35 All-in-One Frontend Design Mega Bundle / 全栈前端视觉大杂烩包 (frontend-design-mega-bundle)
+- Detail URL: https://myrilum.com/skills/s/vercel-labs/agent-skills/frontend-design-mega-bundle
+- Security Audit URL: https://myrilum.com/skills/s/vercel-labs/agent-skills/frontend-design-mega-bundle/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: vercel-labs/agent-skills | SemVer: 1.0.9 | RoleScope: digital-engineering
+- SHA-256: f3a8b94c5306d278e9f453a1b7026248d13f95e7b042a6c835d17f94e2b0368a | First Seen: 2025-10-14 | Verified: 2026-08-12T08:00:00.000Z
+- Telemetry: manifoldScore=37.8 | decayedConfidence=0.4606 | installs=312000 | contextTokenCost=6400 | netLiftPct=2.1% | liftPer1kTokens=0.33%
+- Paraconsistent Fork: CONTEXT_BLOAT_WARNING (Context Bloat Warning) — Ranks #3 in installs yet consumes 6,400 tokens at 0.33% lift/1k tokens (#36 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: false | CN Alternative: https://myrilum.com/skills/s/myrilum/linghe-skills/myrilum-lihe-design-tokens
+- Hygiene: overall=Unverified (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add vercel-labs/agent-skills@frontend-design-mega-bundle`
+- Topics: design, react, nextjs, mobile | Agents: claude-code, cursor, github-copilot, windsurf, vscode, trae
+- Summary (EN): Legacy omnibus UI prompt pack; high historical installs but injects 6.4k tokens for modest 2.1% benchmark lift.
+- Summary (ZH): 早期打包数百条样式范例的单体技能包；安装量高但上下文高达 6.4k tokens，实测增益偏弱。
+- Capabilities: Bundles verbose layout boilerplate and generic grid rules; Recommended to replace with focused token-governed design skills
+
+### #36 Monolith Engineering Prompt Kitchen Sink / 通用大杂烩工程提示词包 (monolith-prompt-kitchen-sink)
+- Detail URL: https://myrilum.com/skills/s/anthropics/claude-skills/monolith-prompt-kitchen-sink
+- Security Audit URL: https://myrilum.com/skills/s/anthropics/claude-skills/monolith-prompt-kitchen-sink/security
+- Workbench URL: https://app.myrilum.com/sign-in
+- Provenance: anthropics/claude-skills | SemVer: 0.9.4 | RoleScope: digital-engineering
+- SHA-256: 36d1e27f8639a501b2c786d4e0359571a46c28b0e375d9f168a40c27b5e3691d | First Seen: 2025-09-22 | Verified: 2026-06-15T00:00:00.000Z
+- Telemetry: manifoldScore=36.7 | decayedConfidence=0.2939 | installs=294000 | contextTokenCost=5950 | netLiftPct=2.2% | liftPer1kTokens=0.37%
+- Paraconsistent Fork: CONTEXT_BLOAT_WARNING (Context Bloat Warning) — Ranks #4 in installs yet consumes 5,950 tokens at 0.37% lift/1k tokens (#35 efficiency).
+- Best Model (GLOBAL): claude | CN Direct Reachable: false | CN Alternative: https://myrilum.com/skills/s/deepseek-ai/deepseek-skills/deepseek-r1-reasoning-distiller
+- Hygiene: overall=Warn (GenAgent=Unverified, Socket=Unverified, Snyk=Unverified) | shell=false | net=false
+- Install: `npx skills add anthropics/claude-skills@monolith-prompt-kitchen-sink`
+- Topics: agent-workflows, react, databases | Agents: claude-code, cursor, github-copilot, vscode, cline
+- Summary (EN): Early omnibus coding prompt with 294k installs; injects 5.95k tokens with unpinned refs for just 2.2% lift.
+- Summary (ZH): 早期高安装量全科长提示词集合；消耗 5.95k tokens 且含未固定远程引用，单位净增益仅 0.37%/1k。
+- Capabilities: Mixes broad language rules that crowd out repository context; Contains unpinned remote references flagged by static audit

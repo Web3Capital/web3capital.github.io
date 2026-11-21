@@ -1,23 +1,23 @@
 {
   "productName": "MYRILUM 灵核OS",
   "appId": "com.myrilum.lingheos",
-  "version": "1.9.12",
+  "version": "2.0.1",
   "platform": "darwin-arm64",
   "builtAt": "2026-11-04T02:00:05.653Z",
   "artifacts": {
     "installedAppPath": "/Applications/MYRILUM-LingheOS.app",
     "distAppPath": "apps/desktop-client/dist/MYRILUM-LingheOS.app",
     "dmgPath": "apps/desktop-client/dist/MYRILUM-LingheOS-macOS-arm64.dmg",
-    "dmgSizeBytes": 364642428,
-    "dmgSha256": "989eaf507731a835e1cff9aa3035cbfa44203edbfdb828e9c345eb7b9042ecf6",
-    "updateZipPath": "apps/desktop-client/dist/MyrilumOS-1.9.12.zip",
-    "updateZipArm64Path": "apps/desktop-client/dist/MyrilumOS-1.9.12-mac-arm64.zip",
-    "updateZipSizeBytes": 331898284,
-    "updateZipSha256": "86c8a8f780c90b42b79fafc24da90c7e991f69c0705bb8fd872992165c88a370",
+    "dmgSizeBytes": 129306285,
+    "dmgSha256": "268ab77f266faba6a2cc0f93b468bd5368e0677d32f8c7f47cc6f5629592c2e2",
+    "updateZipPath": "apps/desktop-client/dist/MyrilumOS-2.0.1.zip",
+    "updateZipArm64Path": "apps/desktop-client/dist/MyrilumOS-2.0.1-mac-arm64.zip",
+    "updateZipSizeBytes": 114475936,
+    "updateZipSha256": "5bbd780c44f79759338d977ca2dfc7172c962692ceb80c2f897ef4193fb84c6c",
     "updateFeedPath": "apps/desktop-client/dist/latest-mac.json",
-    "electronAsarHeaderSha256": "af00ca249cccce76debcd1a79ce662ec19b55ea9582e1bc29e4bcd1943d6fa0e",
-    "appAsarFileSha256": "1549ee75fe5f4f5b715012cddf25ae395a8e9dc283dc4e2b2d894f32c1594c7e",
-    "infoPlistSha256": "ddf0e5501b8ef8b74ffbbb2723fb450487b6215bc26ab44b60a1a2eceff868d2"
+    "electronAsarHeaderSha256": "8b21001b9630a49f2f5efaa039feb8083e5bf4e8cc72af1af5adb26fe10006f1",
+    "appAsarFileSha256": "2940a713a000558fe544a0c7c057d6b64fe0530c2b2f8565a5e86f8afc5c6211",
+    "infoPlistSha256": "0f11142d2eb70e9b43a301a186e79b85d91513340b80f5049f863d4bb08c5cf5"
   },
   "defaultModel": {
     "id": "qwen3.7-plus",
@@ -35,7 +35,7 @@
     "Upgraded UI/UX & Typography to MYRILUM LingheOS Sovereign Design System (LIHE v2.2.2 Tianzhang): embedded Linghe Sans Flex / Linghe Sans Text / Linghe Sans Code / Linghe Symbols fonts, 5-tier LIHE light/dark surface palette (#FDFCFC/#FAF9F9/#F2F0F0/#FFFFFF & #000000/#0F0F0F/#171717/#1F1F1F), borderless tonal sidebar (250px, 36px rows, 8px pill selection), 780px centered chat column, 24px user prompt bubble, 16px borderless code blocks, and 28px elevated pill composer with 20px soft Tianshu shadow"
   ],
   "designSystem": "MYRILUM LingheOS LIHE v2.2.2 Tianzhang — 6-Agent 3-Round Verified Unified 4-Corner Large Radius System",
-  "updatedAt": "2026-11-04T02:00:05.653Z",
+  "updatedAt": "2026-11-16T16:00:50.581Z",
   "themeSourcePath": "apps/desktop-client/theme/lihe-v222-tianzhang-master.css",
   "auditSummary": {
     "agents": 6,
@@ -44,7 +44,7 @@
     "verifiedStandaloneWindows": 11,
     "pollutedCssCount": 0,
     "fontFaceCountInHtml": 6,
-    "asarHeaderSha256": "3c39ba869f904c6862ea0075f7b735d5c90db994fe7500f74550518a0b542649",
+    "asarHeaderSha256": "8b21001b9630a49f2f5efaa039feb8083e5bf4e8cc72af1af5adb26fe10006f1",
     "liheStyleBlocksInHtml": 1
   },
   "securityHardening": {
@@ -53,11 +53,11 @@
     "autoUpdaterFused": true,
     "fullscreenAdaptiveGeometry": true
   },
-  "round": "Round-12-Linghe-Omega-v2.0-Superintelligent-Fusion-Into-v1.9.12",
-  "asarHeaderSha256": "af00ca249cccce76debcd1a79ce662ec19b55ea9582e1bc29e4bcd1943d6fa0e",
-  "dmgSha256": "989eaf507731a835e1cff9aa3035cbfa44203edbfdb828e9c345eb7b9042ecf6",
-  "productVersion": "1.9.12",
-  "genieVersion": "1.9.12",
+  "round": "Round-13-LingheOS-v2.0-DO178C-CleanRoom-Flagship",
+  "asarHeaderSha256": "8b21001b9630a49f2f5efaa039feb8083e5bf4e8cc72af1af5adb26fe10006f1",
+  "dmgSha256": "268ab77f266faba6a2cc0f93b468bd5368e0677d32f8c7f47cc6f5629592c2e2",
+  "productVersion": "2.0.1",
+  "genieVersion": "2.0.1",
   "versionGovernance": {
     "versionSynchronizedPlaces": [
       "/Applications/MYRILUM-LingheOS.app/Contents/Info.plist",
@@ -76,10 +76,10 @@
     "rootAuthority": "Apple Root CA",
     "rfc3161Timestamped": true
   },
-  "updateZipSha256": "86c8a8f780c90b42b79fafc24da90c7e991f69c0705bb8fd872992165c88a370",
+  "updateZipSha256": "5bbd780c44f79759338d977ca2dfc7172c962692ceb80c2f897ef4193fb84c6c",
   "distribution": {
     "status": "paused",
-    "pausedAt": "2026-11-10",
+    "pausedAt": "2026-11-16",
     "notice": "桌面客户端正在从源码重新构建，暂停下载与自动更新。新版本准备好后恢复。",
     "noticeEn": "The desktop client is being rebuilt from source. Downloads and auto-update are paused until the new version is ready."
   }

@@ -1,0 +1,72 @@
+# MYRILUM
+
+> Bilingual AI-native full-stack delivery platform and regional AI Skills Manifold index (GLOBAL build, snapshot 2026-11-21, 36 benchmark-indexed canonical skills).
+
+Executive Digest (EN): AI Skills Leaderboard (GLOBAL) top 3: find-skills / deepseek-r1-reasoning-distiller / vercel-react-best-practices. Peak lift: skill-telemetry-probe (28.0%/1k tok). Fork alert: frontend-design-mega-bundle flags bloat; myrilum-geo-citation-auditor is a high-lift sleeper.
+Executive Digest (ZH): AI Skills 排行榜（GLOBAL）前三：find-skills / deepseek-r1-reasoning-distiller / vercel-react-best-practices；最高单位增益 skill-telemetry-probe（28.0%/1k tok）。分叉预警：frontend-design-mega-bundle 属上下文膨胀，myrilum-geo-citation-auditor 属高增益黑马。
+
+## Core Official Surfaces
+- [Home](https://myrilum.com/): MYRILUM bilingual official overview
+- [Products & Services](https://myrilum.com/market): Curated non-transactional capability directory
+- [AI Services](https://myrilum.com/services): 12-domain AI service architecture
+- [Solutions](https://myrilum.com/solutions): Industry and functional solution blueprints
+- [System Architecture](https://myrilum.com/system): Underlying trust and verification architecture
+- [Regional Workbench](https://app.myrilum.com/sign-in): Outbound authenticated MYRILUM Workbench (GLOBAL)
+
+## AI Skills Manifold Directory
+- [Leaderboard](https://myrilum.com/skills): Regional Riemannian manifold skill rankings
+- [Trending (24h)](https://myrilum.com/skills/trending): 24-hour adoption velocity index
+- [Hot Momentum](https://myrilum.com/skills/hot): Hourly delta and 8-week momentum
+- [Daily Picks](https://myrilum.com/skills/picks): Curated daily skill highlights
+- [Curated Packs](https://myrilum.com/skills/packs): Role-scoped multi-skill bundles
+- [Topics](https://myrilum.com/skills/topics): Engineering and business-role taxonomies
+- [Supported Agents](https://myrilum.com/skills/agents): 21 compatible IDE, CLI, and OS agents
+- [Model Matrix](https://myrilum.com/skills/models): Affinity benchmarks across 6 model families
+- [Official Makers](https://myrilum.com/skills/official): Verified publisher organizations
+- [Verified Site Sources](https://myrilum.com/skills/sites): .well-known skill source domains
+- [Package Ecosystems](https://myrilum.com/skills/ecosystems): npm, pip, cargo, and go skill packages
+- [Static Hygiene Audits](https://myrilum.com/skills/audits): 3-engine security and 5-dimension hygiene checks
+- [Comparisons](https://myrilum.com/skills/compare): Side-by-side paraconsistent skill trade-offs
+- [Documentation](https://myrilum.com/skills/docs): CLI, Packs, API, FAQ, and customization guides
+
+## Machine-Readable Indexes
+- [Full Skills Corpus (llms-full.txt)](https://myrilum.com/skills/llms-full.txt)
+- [Skills JSON Index (v1)](https://myrilum.com/skills/api/v1/index.json)
+- [XML Sitemap](https://myrilum.com/sitemap.xml)
+
+## Top Projected Skills (GLOBAL)
+- [#1 Find Skills Discovery CLI](https://myrilum.com/skills/s/vercel-labs/skills/find-skills): vercel-labs/skills | score=87.7 | lift=17.83%/1k tok | fork=CONVERGENT_LEADER | best=claude
+- [#2 DeepSeek Reasoning Tree Distiller](https://myrilum.com/skills/s/deepseek-ai/deepseek-skills/deepseek-r1-reasoning-distiller): deepseek-ai/deepseek-skills | score=84.5 | lift=19.5%/1k tok | fork=CONVERGENT_LEADER | best=deepseek
+- [#3 Vercel React & RSC Best Practices](https://myrilum.com/skills/s/vercel-labs/agent-skills/vercel-react-best-practices): vercel-labs/agent-skills | score=84.3 | lift=15.41%/1k tok | fork=CONVERGENT_LEADER | best=claude
+- [#4 Linghe Case Brief & Scope Clarifier](https://myrilum.com/skills/s/myrilum/linghe-skills/myrilum-case-brief): myrilum/linghe-skills | score=83.6 | lift=19.68%/1k tok | fork=CONVERGENT_LEADER | best=claude
+- [#5 Postgres RLS & Policy Guard](https://myrilum.com/skills/s/supabase/agent-skills/supabase-postgres-rls-guard): supabase/agent-skills | score=82.6 | lift=16.55%/1k tok | fork=CONVERGENT_LEADER | best=claude
+- [#6 Feishu Docs & Bitable Copilot](https://myrilum.com/skills/s/feishu-open/feishu-agent-skills/feishu-doc-copilot): feishu-open/feishu-agent-skills | score=81.9 | lift=15%/1k tok | fork=PRODUCTION_WORKHORSE | best=claude
+- [#7 GEO Citation & llms.txt Auditor](https://myrilum.com/skills/s/myrilum/linghe-skills/myrilum-geo-citation-auditor): myrilum/linghe-skills | score=81.5 | lift=18.47%/1k tok | fork=HIGH_LIFT_SLEEPER | best=claude
+- [#8 MCP Slim Schema Validator](https://myrilum.com/skills/s/modelcontextprotocol/registry-skills/mcp-schema-validation-slim): modelcontextprotocol/registry-skills | score=81.3 | lift=27.31%/1k tok | fork=HIGH_LIFT_SLEEPER | best=claude
+- [#9 Commercial Contract Redline Sentinel](https://myrilum.com/skills/s/myrilum/enterprise-skills/myrilum-contract-redline-sentinel): myrilum/enterprise-skills | score=81.1 | lift=26.31%/1k tok | fork=HIGH_LIFT_SLEEPER | best=claude
+- [#10 MCP Server Protocol Scaffold](https://myrilum.com/skills/s/anthropics/claude-skills/mcp-server-scaffold): anthropics/claude-skills | score=81 | lift=13.59%/1k tok | fork=PRODUCTION_WORKHORSE | best=claude
+- [#11 Context Token Efficiency Probe](https://myrilum.com/skills/s/vercel-labs/skills/skill-telemetry-probe): vercel-labs/skills | score=80.6 | lift=27.96%/1k tok | fork=HIGH_LIFT_SLEEPER | best=claude
+- [#12 CN Static Export & ICP Preflight](https://myrilum.com/skills/s/aliyun-bailian/bailian-skills/cn-icp-filing-preflight): aliyun-bailian/bailian-skills | score=79.7 | lift=27.06%/1k tok | fork=HIGH_LIFT_SLEEPER | best=claude
+
+## Topic Collections
+- [React & UI Architecture (React 与组件架构)](https://myrilum.com/skills/topics/react): React 19 concurrent rendering, component boundaries, and hydration controls.
+- [Next.js App Router (Next.js 全栈路由)](https://myrilum.com/skills/topics/nextjs): App Router static params, canonical URL alignment, and static export safety.
+- [Design Systems & Tokens (设计系统与界面令牌)](https://myrilum.com/skills/topics/design): Token-governed design systems, contrast parity, and layout discipline.
+- [Mobile & Mini-App UX (移动端与多端适配)](https://myrilum.com/skills/topics/mobile): Mobile reflow, mini-app payloads, and zero horizontal overflow rules.
+- [Agent Workflows & MCP (智能体工作流与 MCP)](https://myrilum.com/skills/topics/agent-workflows): MCP tool schemas, skills lockfiles, sandbox gates, and eval harnesses.
+- [Databases, RLS & Vector (数据库、RLS 与向量检索)](https://myrilum.com/skills/topics/databases): Postgres RLS policies, edge SQL, hybrid retrieval, and safe DDL migrations.
+- [Testing & Verification Gates (自动化测试与验证门禁)](https://myrilum.com/skills/topics/testing): Deterministic E2E suites, tool-call evals, and reproducible CI runners.
+- [Growth Engineering & GEO (增长工程与 GEO 索引)](https://myrilum.com/skills/topics/marketing): llms.txt curation, Schema.org Dataset JSON-LD, and bilingual copy checks.
+- [Strategic Research & Scoping (战略研究与需求澄清)](https://myrilum.com/skills/topics/strategic-research): Goal diagnosis, case briefs, reasoning trees, and enterprise RAG sync.
+- [Commercial & Legal Review (商业交易与风控法务)](https://myrilum.com/skills/topics/commercial-legal): Contract clause diffing, RFP matrices, and ledger reconciliation review.
+- [Marketing & Media Delivery (内容增长与多模态传播)](https://myrilum.com/skills/topics/marketing-media): GEO citation audits, editorial checks, and enterprise social routing.
+- [Compliance & Cell Governance (合规备案与双区治理)](https://myrilum.com/skills/topics/compliance-filing): PIPL/GDPR data-flow checks, CN static export preflight, and SPDX audits.
+- [Digital Engineering Delivery (数字工程全链交付)](https://myrilum.com/skills/topics/digital-engineering): Core full-stack architecture, security guards, and design-system gates.
+
+## Model Families
+- [DeepSeek](https://myrilum.com/skills/models/deepseek) (DeepSeek)
+- [Qwen](https://myrilum.com/skills/models/qwen) (Alibaba Cloud)
+- [Doubao](https://myrilum.com/skills/models/doubao) (ByteDance)
+- [Claude](https://myrilum.com/skills/models/claude) (Anthropic)
+- [Gemini](https://myrilum.com/skills/models/gemini) (Google)
+- [GPT](https://myrilum.com/skills/models/gpt) (OpenAI)
