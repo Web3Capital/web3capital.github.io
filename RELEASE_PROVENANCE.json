@@ -2,7 +2,7 @@
   "schema": "myrilum.global-static-release.v1",
   "domain": "https://myrilum.com",
   "region": "GLOBAL",
-  "sourceCommit": "ce0175c245b22821c6e1eb465a29889b097e1f59",
+  "sourceCommit": "3576b15ddbc71bd56cc2e8e7fc1656ed44dfe771",
   "publisher": {
     "legalName": "MYRILUM LIMITED",
     "jurisdiction": "Hong Kong SAR",
@@ -10,7 +10,7 @@
     "businessRegistrationNumber": "80912065-000-07-26-0",
     "contactEmail": "info@myrilum.com"
   },
-  "fileCount": 6880,
-  "merkleRootSha256": "4bec20cfb617868f66e8d29ecf56c5a12c2a9d2a3b54881dd9b6013df8b67aa4",
-  "builtAt": "2026-11-21T07:11:42.000Z"
+  "fileCount": 7959,
+  "merkleRootSha256": "0ee9d427c56479dd230518dce68ea3cf2cbc36ac90feabd3c242ec5fdcb2619a",
+  "builtAt": "2026-11-21T12:19:45.089Z"
 }
