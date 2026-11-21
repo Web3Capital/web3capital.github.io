@@ -1,11 +1,11 @@
 # MYRILUM
 
-> Bilingual AI-native full-stack delivery platform, regional AI Skills Manifold index (GLOBAL build, snapshot 2026-11-21, 36 benchmark-indexed canonical skills), and regional AI Router Manifold index (20 canonical models).
+> Bilingual AI-native full-stack delivery platform, regional AI Skills Manifold index (GLOBAL build, snapshot 2026-11-21, 36 benchmark-indexed canonical skills), and regional AI Router Manifold index (40 canonical models).
 
 Executive Digest (EN): AI Skills Leaderboard (GLOBAL) top 3: find-skills / deepseek-r1-reasoning-distiller / vercel-react-best-practices. Peak lift: skill-telemetry-probe (28.0%/1k tok). Fork alert: frontend-design-mega-bundle flags bloat; myrilum-geo-citation-auditor is a high-lift sleeper.
 Executive Digest (ZH): AI Skills 排行榜（GLOBAL）前三：find-skills / deepseek-r1-reasoning-distiller / vercel-react-best-practices；最高单位增益 skill-telemetry-probe（28.0%/1k tok）。分叉预警：frontend-design-mega-bundle 属上下文膨胀，myrilum-geo-citation-auditor 属高增益黑马。
-Router Digest (EN): AI Router Manifold Index (GLOBAL ref baseline) top 3: google/gemini-3-flash / meta-llama/llama-4-maverick-400b / openai/gpt-5-mini. Peak value: minimax/minimax-m2-flash (455.2/$). Fork alert: anthropic/claude-opus-4-5 flags ref latency degradation; meta-llama/llama-4-maverick-400b is a high-value sleeper (unmeasured baseline).
-Router Digest (ZH): AI 模型路由流形总榜（GLOBAL 参考基线）前三：google/gemini-3-flash / meta-llama/llama-4-maverick-400b / openai/gpt-5-mini；峰值标价性价比 minimax/minimax-m2-flash（455.2/$）。分叉预警：anthropic/claude-opus-4-5 属高基准参考延迟退化，meta-llama/llama-4-maverick-400b 属高性价比黑马（非实时遥测）。
+Router Digest (EN): AI Router Manifold Index (GLOBAL ref baseline) top 3: openai/gpt-6-luna / google/gemini-3-flash / deepseek/deepseek-v4-1-flash. Peak value: openai/gpt-6-luna (507.8/$). Fork alert: openai/gpt-6-2-astra flags ref latency degradation; meta-llama/llama-4-maverick-400b is a high-value sleeper (unmeasured baseline).
+Router Digest (ZH): AI 模型路由流形总榜（GLOBAL 参考基线）前三：openai/gpt-6-luna / google/gemini-3-flash / deepseek/deepseek-v4-1-flash；峰值标价性价比 openai/gpt-6-luna（507.8/$）。分叉预警：openai/gpt-6-2-astra 属高基准参考延迟退化，meta-llama/llama-4-maverick-400b 属高性价比黑马（非实时遥测）。
 
 ## Core Official Surfaces
 - [Home](https://myrilum.com/): MYRILUM bilingual official overview
@@ -53,16 +53,16 @@ Router Digest (ZH): AI 模型路由流形总榜（GLOBAL 参考基线）前三�
 - [XML Sitemap](https://myrilum.com/sitemap.xml)
 
 ## Top Projected Reference Models (GLOBAL)
-- [#1 Gemini 3 Flash](https://myrilum.com/router/m/google/gemini-3-flash): google/gemini-3-flash | score=88.5 | refValue=380/$ | refTtft=150ms | refTps=185 | fork=CONVERGENT_LEADER
-- [#2 Llama 4 Maverick 400B](https://myrilum.com/router/m/meta-llama/llama-4-maverick-400b): meta-llama/llama-4-maverick-400b | score=84.4 | refValue=262.43/$ | refTtft=162ms | refTps=164 | fork=HIGH_VALUE_SLEEPER
-- [#3 GPT-5 Mini](https://myrilum.com/router/m/openai/gpt-5-mini): openai/gpt-5-mini | score=82.6 | refValue=226/$ | refTtft=170ms | refTps=148 | fork=HIGH_VALUE_SLEEPER
-- [#4 MiniMax M2 Flash](https://myrilum.com/router/m/minimax/minimax-m2-flash): minimax/minimax-m2-flash | score=81.6 | refValue=455.21/$ | refTtft=148ms | refTps=158 | fork=HIGH_VALUE_SLEEPER
-- [#5 Qwen3 235B A22B](https://myrilum.com/router/m/qwen/qwen3-235b-a22b): qwen/qwen3-235b-a22b | score=79.7 | refValue=317.71/$ | refTtft=178ms | refTps=136 | fork=HIGH_VALUE_SLEEPER
-- [#6 Gemini 2.5 Flash Lite Exp](https://myrilum.com/router/m/google/gemini-2-5-flash-lite-exp): google/gemini-2-5-flash-lite-exp | score=78.8 | refValue=165.04/$ | refTtft=250ms | refTps=108 | fork=PRODUCTION_WORKHORSE
-- [#7 Gemini 3 Pro 2M](https://myrilum.com/router/m/google/gemini-3-pro): google/gemini-3-pro | score=78.7 | refValue=47.9/$ | refTtft=330ms | refTps=118 | fork=PRODUCTION_WORKHORSE
-- [#8 DeepSeek V3.2 MoE](https://myrilum.com/router/m/deepseek/deepseek-v3-2): deepseek/deepseek-v3-2 | score=77.5 | refValue=212.84/$ | refTtft=195ms | refTps=122 | fork=CONVERGENT_LEADER
-- [#9 Llama 4 Scout 17B](https://myrilum.com/router/m/meta-llama/llama-4-scout-17b): meta-llama/llama-4-scout-17b | score=76.8 | refValue=261.94/$ | refTtft=295ms | refTps=96 | fork=PRODUCTION_WORKHORSE
-- [#10 Qwen3 Coder 480B](https://myrilum.com/router/m/qwen/qwen3-coder-480b): qwen/qwen3-coder-480b | score=75.4 | refValue=147.19/$ | refTtft=235ms | refTps=98 | fork=PRODUCTION_WORKHORSE
+- [#1 GPT-6 Luna](https://myrilum.com/router/m/openai/gpt-6-luna): openai/gpt-6-luna | score=89.6 | refValue=507.78/$ | refTtft=132ms | refTps=192 | fork=CONVERGENT_LEADER
+- [#2 Gemini 3 Flash](https://myrilum.com/router/m/google/gemini-3-flash): google/gemini-3-flash | score=88.5 | refValue=380/$ | refTtft=150ms | refTps=185 | fork=CONVERGENT_LEADER
+- [#3 DeepSeek V4.1 Flash](https://myrilum.com/router/m/deepseek/deepseek-v4-1-flash): deepseek/deepseek-v4-1-flash | score=87.2 | refValue=392.08/$ | refTtft=145ms | refTps=168 | fork=CONVERGENT_LEADER
+- [#4 MiniMax M3.1 Flash](https://myrilum.com/router/m/minimax/minimax-m3-1-flash): minimax/minimax-m3-1-flash | score=86.8 | refValue=381.67/$ | refTtft=138ms | refTps=172 | fork=CONVERGENT_LEADER
+- [#5 Zhipu GLM-5.3 Flash](https://myrilum.com/router/m/zhipu/glm-5-3-flash): zhipu/glm-5-3-flash | score=86.3 | refValue=410/$ | refTtft=140ms | refTps=162 | fork=CONVERGENT_LEADER
+- [#6 Llama 4 Maverick 400B](https://myrilum.com/router/m/meta-llama/llama-4-maverick-400b): meta-llama/llama-4-maverick-400b | score=84.4 | refValue=262.43/$ | refTtft=162ms | refTps=164 | fork=HIGH_VALUE_SLEEPER
+- [#7 GPT-5 Mini](https://myrilum.com/router/m/openai/gpt-5-mini): openai/gpt-5-mini | score=82.6 | refValue=226/$ | refTtft=170ms | refTps=148 | fork=HIGH_VALUE_SLEEPER
+- [#8 MiniMax M3](https://myrilum.com/router/m/minimax/minimax-m3): minimax/minimax-m3 | score=82 | refValue=195.42/$ | refTtft=215ms | refTps=124 | fork=CONVERGENT_LEADER
+- [#9 MiniMax M2 Flash](https://myrilum.com/router/m/minimax/minimax-m2-flash): minimax/minimax-m2-flash | score=81.6 | refValue=455.21/$ | refTtft=148ms | refTps=158 | fork=HIGH_VALUE_SLEEPER
+- [#10 Mistral Large 4](https://myrilum.com/router/m/mistralai/mistral-large-4): mistralai/mistral-large-4 | score=80.2 | refValue=97.24/$ | refTtft=225ms | refTps=118 | fork=CONVERGENT_LEADER
 
 ## Top Projected Skills (GLOBAL)
 - [#1 Find Skills Discovery CLI](https://myrilum.com/skills/s/vercel-labs/skills/find-skills): vercel-labs/skills | score=87.7 | lift=17.83%/1k tok | fork=CONVERGENT_LEADER | best=claude

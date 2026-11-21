@@ -7,24 +7,24 @@
   "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
   "snapshot": {
     "snapshotDate": "2026-11-21",
-    "snapshotVersion": "1.0.0",
-    "snapshotSha256": "f4d8e2a19c7b3054e61f82a0c3d957b1",
+    "snapshotVersion": "1.1.0",
+    "snapshotSha256": "c8a31f92e40b7d1568a93f4c2e1b7d80",
     "dataProvenance": "UNMEASURED_REFERENCE_BASELINE",
     "isMeasuredTelemetry": false,
     "provenanceNotice": {
       "zh": "参考基线快照（非实时测量遥测）：基于公开模型规格、官方标价与静态参考评测构建；不含实时网关流量计数、客户统计或经审计的 SLA 承诺。",
       "en": "Reference Baseline Snapshot (Unmeasured): Built from public model specifications, list pricing, and static reference benchmark baselines; not measured live gateway traffic, customer volume, or verified SLA."
     },
-    "indexedCatalogCount": 20
+    "indexedCatalogCount": 40
   },
   "digest": {
-    "zh": "MYRILUM AI 模型路由 API 索引（GLOBAL 参考基线）前三：google/gemini-3-flash / meta-llama/llama-4-maverick-400b / openai/gpt-5-mini；峰值标价性价比 minimax/minimax-m2-flash（455.2/$）。分叉预警：anthropic/claude-opus-4-5 属高基准参考延迟退化，meta-llama/llama-4-maverick-400b 属高性价比黑马（非实时遥测）。",
-    "en": "MYRILUM AI Router API Index (GLOBAL ref baseline) top 3: google/gemini-3-flash / meta-llama/llama-4-maverick-400b / openai/gpt-5-mini. Peak value: minimax/minimax-m2-flash (455.2/$). Fork alert: anthropic/claude-opus-4-5 flags ref latency degradation; meta-llama/llama-4-maverick-400b is a high-value sleeper (unmeasured baseline)."
+    "zh": "MYRILUM AI 模型路由 API 索引（GLOBAL 参考基线）前三：openai/gpt-6-luna / google/gemini-3-flash / deepseek/deepseek-v4-1-flash；峰值标价性价比 openai/gpt-6-luna（507.8/$）。分叉预警：openai/gpt-6-2-astra 属高基准参考延迟退化，meta-llama/llama-4-maverick-400b 属高性价比黑马（非实时遥测）。",
+    "en": "MYRILUM AI Router API Index (GLOBAL ref baseline) top 3: openai/gpt-6-luna / google/gemini-3-flash / deepseek/deepseek-v4-1-flash. Peak value: openai/gpt-6-luna (507.8/$). Fork alert: openai/gpt-6-2-astra flags ref latency degradation; meta-llama/llama-4-maverick-400b is a high-value sleeper (unmeasured baseline)."
   },
   "counts": {
-    "models": 20,
-    "providers": 10,
-    "labs": 10,
+    "models": 40,
+    "providers": 12,
+    "labs": 12,
     "benchmarks": 6,
     "harnesses": 6
   },
@@ -159,12 +159,58 @@
         "en": "OpenAI Direct API"
       },
       "summary": {
-        "zh": "原生支撑 /v1/responses 状态流、严格 JSON Schema 与 GPT-5 / o3 系列自适应推理。",
-        "en": "Direct host for /v1/responses, strict JSON Schema enforcement, and GPT-5 / o3 inference (audit Unverified)."
+        "zh": "原生支撑 /v1/responses 状态流、严格 JSON Schema 与 GPT-6.2 / GPT-5 / o3 系列自适应推理。",
+        "en": "Direct host for /v1/responses, strict JSON Schema enforcement, and GPT-6.2 / GPT-5 / o3 inference (audit Unverified)."
       },
       "trainPolicy": {
         "zh": "国际声明 · 审计待核验",
         "en": "Enterprise Policy · Audit Unverified"
+      }
+    },
+    {
+      "slug": "xai-direct",
+      "name": "xAI Direct",
+      "regionLabel": "US-West / Global",
+      "regionFocus": "GLOBAL",
+      "cnDirectReachable": false,
+      "zdrSupported": false,
+      "byokSupported": true,
+      "protocolSupport": "Chat · 500K Grok",
+      "quantization": "FP8",
+      "title": {
+        "zh": "xAI 官方 Grok 推理集群",
+        "en": "xAI Direct API"
+      },
+      "summary": {
+        "zh": "提供 500K 上下文 Grok 4.7 低输出乘数推理通道与前缀缓存折让（第三方审计回执 Unverified）。",
+        "en": "First-party endpoint serving 500K-context Grok 4.7 inference with prompt cache discounts (audit receipt Unverified)."
+      },
+      "trainPolicy": {
+        "zh": "国际声明 · 审计待核验",
+        "en": "Commercial Policy · Audit Unverified"
+      }
+    },
+    {
+      "slug": "mistral-la-plateforme",
+      "name": "Mistral La Plateforme",
+      "regionLabel": "EU-Paris / Global",
+      "regionFocus": "GLOBAL",
+      "cnDirectReachable": false,
+      "zdrSupported": false,
+      "byokSupported": true,
+      "protocolSupport": "Chat · 1M Multimodal",
+      "quantization": "FP8 / BF16",
+      "title": {
+        "zh": "Mistral La Plateforme 欧洲主权节点",
+        "en": "Mistral La Plateforme"
+      },
+      "summary": {
+        "zh": "部署 Mistral Large 4（1.05T MoE）多模态 1M 窗口推理端点，支持 BYOK 透传（外部审计回执 Unverified）。",
+        "en": "European sovereign inference cluster hosting 1M-context Mistral Large 4 multimodal routes (audit receipts Unverified)."
+      },
+      "trainPolicy": {
+        "zh": "欧盟声明 · 审计待核验",
+        "en": "EU Policy · Audit Unverified"
       }
     },
     {
@@ -279,8 +325,8 @@
         "en": "DeepSeek AI"
       },
       "summary": {
-        "zh": "以 MLA 注意力压缩与 DeepSeekMoE 架构著称，兼具深度推理与极具竞争力的官方标价。",
-        "en": "Pioneers of MLA attention and DeepSeekMoE delivering strong benchmark scores at low list-price economics."
+        "zh": "以 MLA 注意力压缩与 DeepSeekMoE 架构著称，覆盖 DeepSeek V4 Pro / V4.1 Flash（1M 窗口）及 V3.2 / R1 系列。",
+        "en": "Pioneers of MLA attention and DeepSeekMoE spanning 1M-context DeepSeek V4 Pro, V4.1 Flash Vision, V3.2, and R1."
       }
     },
     {
@@ -301,8 +347,8 @@
         "en": "Alibaba Qwen"
       },
       "summary": {
-        "zh": "覆盖 480B 仓库编程、混合思考与 GUI 视觉定位的全栈开源研发团队。",
-        "en": "Open-weight model family spanning 480B repository coding, hybrid thinking, and GUI vision."
+        "zh": "覆盖 Qwen4-Max（2.4T MoE 全模态）、Qwen3.8-Max、Qwen3 Coder 480B 与视觉定位的全栈研发团队。",
+        "en": "Model family spanning 2.4T multimodal Qwen4-Max, Qwen3.8-Max, 480B repository coding, and GUI vision."
       }
     },
     {
@@ -323,8 +369,8 @@
         "en": "Zhipu GLM"
       },
       "summary": {
-        "zh": "聚焦中文知识库检索对齐与工具调用约束能力的基座模型研发方。",
-        "en": "Chinese foundation model lab focusing on citation-grounded RAG and structured tool calling."
+        "zh": "覆盖百万窗 GLM-5.3、GLM-5.3 Flash 与检索对齐基座 GLM-4 Plus 的基座模型研发方。",
+        "en": "Chinese foundation lab spanning 1M-context GLM-5.3, GLM-5.3 Flash, and citation-grounded GLM-4 Plus."
       }
     },
     {
@@ -345,8 +391,8 @@
         "en": "Moonshot Kimi"
       },
       "summary": {
-        "zh": "专注 256K 长上下文多步工具推理（Kimi K2）的模型实验室。",
-        "en": "Long-context agentic reasoning lab known for 256K multi-step tool chains in Kimi K2."
+        "zh": "专注 1M 长程多模态自主代理推理（Kimi K3.1 Pro / K2 Thinking）的模型实验室。",
+        "en": "Long-context agentic reasoning lab powering 1M-context Kimi K3.1 Pro and K2 Thinking tool chains."
       }
     },
     {
@@ -359,16 +405,16 @@
         "en": "Shanghai, China"
       },
       "licenseTier": {
-        "zh": "开源 M2 & 商业 API",
-        "en": "Open M2 & Commercial API"
+        "zh": "开源 M3 / M2 & 商业 API",
+        "en": "Open M3 / M2 & Commercial API"
       },
       "title": {
         "zh": "MiniMax 稀宇科技",
         "en": "MiniMax AI"
       },
       "summary": {
-        "zh": "主打低标价轻量代理模型（M2 Flash）与线性注意力长文本模型探索的实验室。",
-        "en": "Lab advancing low-cost sub-$0.20/1M coding models and linear-attention long-context experiments."
+        "zh": "推出 1M 窗口 MiniMax M3、常驻思考高速 M3.1 Flash 及 M2 Flash 的通用多模态与代理研发方。",
+        "en": "Lab shipping 1M-context MiniMax M3, always-on thinking M3.1 Flash, and low-floor M2 Flash coding agents."
       }
     },
     {
@@ -389,8 +435,8 @@
         "en": "ByteDance Doubao"
       },
       "summary": {
-        "zh": "面向中文文档检索与 256K 多轮理解的商业模型族。",
-        "en": "CN commercial model family built for 256K Chinese document understanding workflows."
+        "zh": "涵盖百万窗企业推理旗舰 Seed 2.1 Pro 与 Doubao 1.5 Pro 256K 的字节跳动大模型族。",
+        "en": "CN commercial model family spanning 1,024K Seed 2.1 Pro and Doubao 1.5 Pro 256K workflows."
       }
     },
     {
@@ -411,8 +457,8 @@
         "en": "Anthropic"
       },
       "summary": {
-        "zh": "在软件工程基准、安全边界遵循与复杂重构质量方面表现突出的模型研发方。",
-        "en": "Global frontier lab recognized for agentic software engineering benchmarks and schema discipline."
+        "zh": "覆盖 Claude Fable 5.2、Opus 5.5 / Sonnet 5.5（1M 窗口）与 4.5 系列的软件工程研发方。",
+        "en": "Global frontier lab shipping 1M-context Claude Fable 5.2, Opus 5.5, Sonnet 5.5, and 4.5 coding models."
       }
     },
     {
@@ -433,8 +479,8 @@
         "en": "OpenAI"
       },
       "summary": {
-        "zh": "Responses 与 Chat Completions 规范制定者，提供 GPT-5 系列与 o3 深度推理模型。",
-        "en": "Steward of Responses and Chat Completions specs powering GPT-5 and o3 research models."
+        "zh": "Responses 规范制定者，提供 GPT-6.2 Astra / Sol、GPT-6 Luna、GPT-5 与 o3 深度推理模型。",
+        "en": "Steward of /v1/responses specs powering GPT-6.2 Astra/Sol, GPT-6 Luna, GPT-5, and o3 research tiers."
       }
     },
     {
@@ -455,8 +501,8 @@
         "en": "Google DeepMind"
       },
       "summary": {
-        "zh": "将原生全模态上下文窗口扩展至 200 万 Token，并覆盖轻量化极速 Flash 规格。",
-        "en": "Multimodal pioneer pairing 2M-token context windows with fast reference Flash tiers."
+        "zh": "推出统一 1M 架构 Gemini 4 Carbon / Hydrogen 及 2M 窗口 Gemini 3 Pro 的全模态先驱。",
+        "en": "Multimodal pioneer shipping unified ~1M Gemini 4 Carbon/Hydrogen alongside 2M-context Gemini 3 Pro."
       }
     },
     {
@@ -479,6 +525,50 @@
       "summary": {
         "zh": "广泛托管于全球多云 FP8 投机解码集群的开放权重 MoE 基座系列。",
         "en": "Open-weight MoE backbone hosted across global speculative-decoding Nitro and Turbo clusters."
+      }
+    },
+    {
+      "slug": "x-ai",
+      "name": "xAI Grok",
+      "regionFocus": "GLOBAL",
+      "cnDirectReachable": false,
+      "headquarters": {
+        "zh": "美国 · 帕洛阿尔托",
+        "en": "Palo Alto, USA"
+      },
+      "licenseTier": {
+        "zh": "国际商业 API",
+        "en": "Global Commercial API"
+      },
+      "title": {
+        "zh": "xAI Grok 模型实验室",
+        "en": "xAI Grok"
+      },
+      "summary": {
+        "zh": "专注高推理密度与低输出成本乘数（Grok 4.7，500K 上下文）的国际前沿模型实验室。",
+        "en": "Frontier lab pairing 500K-context reasoning in Grok 4.7 with aggressive 3:1 output-to-input list ratios."
+      }
+    },
+    {
+      "slug": "mistralai",
+      "name": "Mistral AI",
+      "regionFocus": "GLOBAL",
+      "cnDirectReachable": false,
+      "headquarters": {
+        "zh": "法国 · 巴黎",
+        "en": "Paris, France"
+      },
+      "licenseTier": {
+        "zh": "开源权重 & La Plateforme API",
+        "en": "Open Weights & La Plateforme"
+      },
+      "title": {
+        "zh": "Mistral AI 欧洲开放权重实验室",
+        "en": "Mistral AI"
+      },
+      "summary": {
+        "zh": "研发 1.05T 稀疏多模态万亿 MoE（Mistral Large 4，1M 窗口）的欧洲主力大模型机构。",
+        "en": "European AI lab delivering the 1M-context 1.05T open-weight multimodal Mistral Large 4 MoE flagship."
       }
     }
   ],
@@ -723,6 +813,95 @@
   "models": [
     {
       "rank": 1,
+      "slug": "gpt-6-luna",
+      "author": "openai",
+      "modelId": "openai/gpt-6-luna",
+      "regionHome": "GLOBAL",
+      "domainScope": "coding-agent",
+      "contextWindow": 1050000,
+      "maxOutputTokens": 64000,
+      "promptUsdPer1m": 0.1,
+      "completionUsdPer1m": 0.5,
+      "cachedReadUsdPer1m": 0.01,
+      "blendedNetUsd": 0.18,
+      "ttftMs": 132,
+      "tps": 192,
+      "benchmarkScore": 91.4,
+      "valueLiftPerDollar": 507.78,
+      "manifoldScore": 89.6,
+      "decayedConfidence": 1,
+      "forkKind": "CONVERGENT_LEADER",
+      "forkLabel": {
+        "zh": "共识领跑",
+        "en": "Convergent Leader"
+      },
+      "forkReason": {
+        "zh": "参考基准（第 #29）、参考吞吐与单位美元收益（507.8/$，第 #1）同向领先，且无合规告警（非实时测量遥测）。",
+        "en": "Reference benchmark (#29), speed, and list-price value lift (507.8/$, #1) converge without Warn/Review flags (unmeasured baseline)."
+      },
+      "cnDirectReachable": false,
+      "isByokSupported": true,
+      "providers": [
+        "openai-direct"
+      ],
+      "harnesses": [
+        "codex-cli",
+        "cursor-ide",
+        "opencode"
+      ],
+      "benchmarks": [
+        "livecodebench-v5",
+        "bfcl-v3-tool-calling",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-21T08:00:00.000Z",
+      "firstSeenDate": "2026-09-10",
+      "releaseVersion": "gpt-6-luna",
+      "title": {
+        "zh": "GPT-6 Luna 超高性价比百万人窗口版",
+        "en": "GPT-6 Luna"
+      },
+      "summary": {
+        "zh": "以 $0.10/$0.50 官方标价（Flex 半价）提供 ~1.05M 窗口与 192 tok/s 参考吞吐，专为子智能体高并发扇出设计。",
+        "en": "High-volume tier coupling ~1.05M context and 192 tok/s ref speed with $0.10/$0.50 list pricing ($0.05/$0.25 Flex)."
+      },
+      "capabilities": [
+        {
+          "zh": "80/20 混合参考净价低至 $0.18/1M（缓存仅 $0.01/1M）",
+          "en": "$0.18/1M blended list pricing with $0.01/1M cached reads"
+        },
+        {
+          "zh": "132ms 参考首字延迟适配高并发智能体分派",
+          "en": "132ms ref TTFT built for parallel subagent classification"
+        },
+        {
+          "zh": "~1.05M 上下文全仓扫描而无高额入站税",
+          "en": "~1.05M-token context sweep at ultra-low list cost"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": false,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开端点技术规格，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared endpoint capabilities only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/openai/gpt-6-luna",
+      "auditUrl": "https://myrilum.com/router/m/openai/gpt-6-luna/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 2,
       "slug": "gemini-3-flash",
       "author": "google",
       "modelId": "google/gemini-3-flash",
@@ -746,8 +925,8 @@
         "en": "Convergent Leader"
       },
       "forkReason": {
-        "zh": "参考基准（第 #11）、参考吞吐与单位美元收益（380.0/$，第 #2）同向领先，且无合规告警（非实时测量遥测）。",
-        "en": "Reference benchmark (#11), speed, and list-price value lift (380.0/$, #2) converge without Warn/Review flags (unmeasured baseline)."
+        "zh": "参考基准（第 #30）、参考吞吐与单位美元收益（380.0/$，第 #6）同向领先，且无合规告警（非实时测量遥测）。",
+        "en": "Reference benchmark (#30), speed, and list-price value lift (380.0/$, #6) converge without Warn/Review flags (unmeasured baseline)."
       },
       "cnDirectReachable": false,
       "isByokSupported": true,
@@ -811,7 +990,279 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 2,
+      "rank": 3,
+      "slug": "deepseek-v4-1-flash",
+      "author": "deepseek",
+      "modelId": "deepseek/deepseek-v4-1-flash",
+      "regionHome": "CN",
+      "domainScope": "multimodal-vision",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 384000,
+      "promptUsdPer1m": 0.15,
+      "completionUsdPer1m": 0.6,
+      "cachedReadUsdPer1m": 0.003,
+      "blendedNetUsd": 0.24,
+      "ttftMs": 145,
+      "tps": 168,
+      "benchmarkScore": 94.1,
+      "valueLiftPerDollar": 392.08,
+      "manifoldScore": 87.2,
+      "decayedConfidence": 1,
+      "forkKind": "CONVERGENT_LEADER",
+      "forkLabel": {
+        "zh": "共识领跑",
+        "en": "Convergent Leader"
+      },
+      "forkReason": {
+        "zh": "参考基准（第 #23）、参考吞吐与单位美元收益（392.1/$，第 #4）同向领先，且无合规告警（非实时测量遥测）。",
+        "en": "Reference benchmark (#23), speed, and list-price value lift (392.1/$, #4) converge without Warn/Review flags (unmeasured baseline)."
+      },
+      "cnDirectReachable": true,
+      "isByokSupported": true,
+      "providers": [
+        "deepseek-official",
+        "alibaba-bailian",
+        "together-turbo"
+      ],
+      "harnesses": [
+        "linghe-os",
+        "opencode",
+        "cursor-ide",
+        "antigravity"
+      ],
+      "benchmarks": [
+        "livecodebench-v5",
+        "mmmu-multimodal",
+        "bfcl-v3-tool-calling",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-21T09:00:00.000Z",
+      "firstSeenDate": "2026-10-17",
+      "releaseVersion": "V4.1-Flash-1017",
+      "title": {
+        "zh": "DeepSeek V4.1 Flash 多模态极速版",
+        "en": "DeepSeek V4.1 Flash"
+      },
+      "summary": {
+        "zh": "支持原生视觉多模态、思考模式切换、1M 窗口与 384K 输出的 2026 高速型号；采用错峰 $0.15/$0.60 官方参考标价。",
+        "en": "High-speed 2026 DeepSeek release adding native Vision, Thinking toggle, 1M context, and $0.15/$0.60 Off-Peak list pricing."
+      },
+      "capabilities": [
+        {
+          "zh": "原生图像多模态解析与思考模式自适应",
+          "en": "Native vision ingestion paired with configurable thinking mode"
+        },
+        {
+          "zh": "错峰缓存读取低至 $0.003/1M（高峰 2x）",
+          "en": "Off-peak cache hit pricing down to $0.003/1M (2x peak hours)"
+        },
+        {
+          "zh": "168 tok/s 参考吞吐适配高频代理并发",
+          "en": "168 tok/s reference tier suited to concurrent coding and UI loops"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": true,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开技术规格与境内直连能力，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared specs and CN-direct routing capability only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/deepseek/deepseek-v4-1-flash",
+      "auditUrl": "https://myrilum.com/router/m/deepseek/deepseek-v4-1-flash/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 4,
+      "slug": "minimax-m3-1-flash",
+      "author": "minimax",
+      "modelId": "minimax/minimax-m3-1-flash",
+      "regionHome": "CN",
+      "domainScope": "coding-agent",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 131072,
+      "promptUsdPer1m": 0.15,
+      "completionUsdPer1m": 0.6,
+      "cachedReadUsdPer1m": 0.015,
+      "blendedNetUsd": 0.24,
+      "ttftMs": 138,
+      "tps": 172,
+      "benchmarkScore": 91.6,
+      "valueLiftPerDollar": 381.67,
+      "manifoldScore": 86.8,
+      "decayedConfidence": 1,
+      "forkKind": "CONVERGENT_LEADER",
+      "forkLabel": {
+        "zh": "共识领跑",
+        "en": "Convergent Leader"
+      },
+      "forkReason": {
+        "zh": "参考基准（第 #27）、参考吞吐与单位美元收益（381.7/$，第 #5）同向领先，且无合规告警（非实时测量遥测）。",
+        "en": "Reference benchmark (#27), speed, and list-price value lift (381.7/$, #5) converge without Warn/Review flags (unmeasured baseline)."
+      },
+      "cnDirectReachable": true,
+      "isByokSupported": true,
+      "providers": [
+        "alibaba-bailian",
+        "fireworks-nitro"
+      ],
+      "harnesses": [
+        "linghe-os",
+        "opencode",
+        "cursor-ide"
+      ],
+      "benchmarks": [
+        "livecodebench-v5",
+        "bfcl-v3-tool-calling",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-21T08:00:00.000Z",
+      "firstSeenDate": "2026-10-19",
+      "releaseVersion": "MiniMax-M3.1-Flash",
+      "title": {
+        "zh": "MiniMax M3.1 Flash 常驻思考高速版",
+        "en": "MiniMax M3.1 Flash"
+      },
+      "summary": {
+        "zh": "2026 年 10 月发布的常驻思考高速型号，兼具 1M 窗口、172 tok/s 参考吞吐与 $0.15/$0.60 官方标价。",
+        "en": "October 2026 always-on thinking Flash tier combining 1M context, 172 tok/s ref speed, and $0.15/$0.60 list pricing."
+      },
+      "capabilities": [
+        {
+          "zh": "原生常驻思维链叠加 172 tok/s 高速参考吞吐",
+          "en": "Always-on thinking loop with 172 tok/s reference decode tier"
+        },
+        {
+          "zh": "90% 缓存命中折让（$0.015/1M）适配自动化子代理",
+          "en": "90% cache discount ($0.015/1M) built for agent fan-out"
+        },
+        {
+          "zh": "1M 上下文单轮全仓补丁与测试生成",
+          "en": "1M context support for repository test synthesis"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": true,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开技术规格与境内直连能力，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared specs and CN-direct routing capability only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/minimax/minimax-m3-1-flash",
+      "auditUrl": "https://myrilum.com/router/m/minimax/minimax-m3-1-flash/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 5,
+      "slug": "glm-5-3-flash",
+      "author": "zhipu",
+      "modelId": "zhipu/glm-5-3-flash",
+      "regionHome": "CN",
+      "domainScope": "enterprise-rag",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 65536,
+      "promptUsdPer1m": 0.15,
+      "completionUsdPer1m": 0.5,
+      "cachedReadUsdPer1m": 0.03,
+      "blendedNetUsd": 0.22,
+      "ttftMs": 140,
+      "tps": 162,
+      "benchmarkScore": 90.2,
+      "valueLiftPerDollar": 410,
+      "manifoldScore": 86.3,
+      "decayedConfidence": 0.9974,
+      "forkKind": "CONVERGENT_LEADER",
+      "forkLabel": {
+        "zh": "共识领跑",
+        "en": "Convergent Leader"
+      },
+      "forkReason": {
+        "zh": "参考基准（第 #33）、参考吞吐与单位美元收益（410.0/$，第 #3）同向领先，且无合规告警（非实时测量遥测）。",
+        "en": "Reference benchmark (#33), speed, and list-price value lift (410.0/$, #3) converge without Warn/Review flags (unmeasured baseline)."
+      },
+      "cnDirectReachable": true,
+      "isByokSupported": true,
+      "providers": [
+        "zhipu-bigmodel",
+        "alibaba-bailian"
+      ],
+      "harnesses": [
+        "linghe-os",
+        "opencode",
+        "cursor-ide"
+      ],
+      "benchmarks": [
+        "bfcl-v3-tool-calling",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-20T16:00:00.000Z",
+      "firstSeenDate": "2026-08-14",
+      "releaseVersion": "GLM-5.3-Flash",
+      "title": {
+        "zh": "智谱 GLM-5.3 Flash 高速检索版",
+        "en": "Zhipu GLM-5.3 Flash"
+      },
+      "summary": {
+        "zh": "兼顾 1M 上下文与 ¥0.80/¥2.80（$0.15/$0.50）极低标价的高速企业检索型号，适合高并发摘要与中文合规问答。",
+        "en": "Ultra-low-cost 1M-context RAG and classification tier (BigModel CN ¥0.80/¥2.80; Global $0.15/$0.50)."
+      },
+      "capabilities": [
+        {
+          "zh": "140ms 参考首字与 162 tok/s 参考流式响应",
+          "en": "140ms ref TTFT and 162 tok/s reference decode throughput"
+        },
+        {
+          "zh": "80/20 混合参考净价 $0.22/1M 的高频批处理经济性",
+          "en": "$0.22/1M blended list pricing for enterprise RAG fan-out"
+        },
+        {
+          "zh": "支持知识库原文引文约束与缓存低至 $0.03/1M",
+          "en": "Grounded RAG citation support with $0.03/1M cache reads"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": true,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开技术规格与境内直连能力，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared specs and CN-direct routing capability only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/zhipu/glm-5-3-flash",
+      "auditUrl": "https://myrilum.com/router/m/zhipu/glm-5-3-flash/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 6,
       "slug": "llama-4-maverick-400b",
       "author": "meta-llama",
       "modelId": "meta-llama/llama-4-maverick-400b",
@@ -835,8 +1286,8 @@
         "en": "High-Value Sleeper"
       },
       "forkReason": {
-        "zh": "按 $0.35/1M 标价交付 262.4/$ 参考单位收益与 164 tok/s 参考吞吐（效能第 #4，基准第 #12）。",
-        "en": "Reference baseline delivers 262.4/$ value lift at 164 tok/s and $0.35/1M list spend (#4 efficiency, #12 benchmark)."
+        "zh": "按 $0.35/1M 标价交付 262.4/$ 参考单位收益与 164 tok/s 参考吞吐（效能第 #8，基准第 #31）。",
+        "en": "Reference baseline delivers 262.4/$ value lift at 164 tok/s and $0.35/1M list spend (#8 efficiency, #31 benchmark)."
       },
       "cnDirectReachable": true,
       "isByokSupported": true,
@@ -902,7 +1353,7 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 3,
+      "rank": 7,
       "slug": "gpt-5-mini",
       "author": "openai",
       "modelId": "openai/gpt-5-mini",
@@ -926,8 +1377,8 @@
         "en": "High-Value Sleeper"
       },
       "forkReason": {
-        "zh": "按 $0.40/1M 标价交付 226.0/$ 参考单位收益与 148 tok/s 参考吞吐（效能第 #6，基准第 #13）。",
-        "en": "Reference baseline delivers 226.0/$ value lift at 148 tok/s and $0.40/1M list spend (#6 efficiency, #13 benchmark)."
+        "zh": "按 $0.40/1M 标价交付 226.0/$ 参考单位收益与 148 tok/s 参考吞吐（效能第 #10，基准第 #32）。",
+        "en": "Reference baseline delivers 226.0/$ value lift at 148 tok/s and $0.40/1M list spend (#10 efficiency, #32 benchmark)."
       },
       "cnDirectReachable": false,
       "isByokSupported": true,
@@ -991,7 +1442,98 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 4,
+      "rank": 8,
+      "slug": "minimax-m3",
+      "author": "minimax",
+      "modelId": "minimax/minimax-m3",
+      "regionHome": "CN",
+      "domainScope": "long-context",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 131072,
+      "promptUsdPer1m": 0.3,
+      "completionUsdPer1m": 1.2,
+      "cachedReadUsdPer1m": 0.06,
+      "blendedNetUsd": 0.48,
+      "ttftMs": 215,
+      "tps": 124,
+      "benchmarkScore": 93.8,
+      "valueLiftPerDollar": 195.42,
+      "manifoldScore": 82,
+      "decayedConfidence": 0.9968,
+      "forkKind": "CONVERGENT_LEADER",
+      "forkLabel": {
+        "zh": "共识领跑",
+        "en": "Convergent Leader"
+      },
+      "forkReason": {
+        "zh": "参考基准（第 #24）、参考吞吐与单位美元收益（195.4/$，第 #12）同向领先，且无合规告警（非实时测量遥测）。",
+        "en": "Reference benchmark (#24), speed, and list-price value lift (195.4/$, #12) converge without Warn/Review flags (unmeasured baseline)."
+      },
+      "cnDirectReachable": true,
+      "isByokSupported": true,
+      "providers": [
+        "alibaba-bailian",
+        "together-turbo"
+      ],
+      "harnesses": [
+        "linghe-os",
+        "opencode",
+        "cursor-ide",
+        "antigravity"
+      ],
+      "benchmarks": [
+        "mrcr-long-context",
+        "livecodebench-v5",
+        "bfcl-v3-tool-calling"
+      ],
+      "verifiedAtIso": "2026-11-20T14:00:00.000Z",
+      "firstSeenDate": "2026-06-18",
+      "releaseVersion": "MiniMax-M3",
+      "title": {
+        "zh": "MiniMax M3 百万上下文标准旗舰",
+        "en": "MiniMax M3"
+      },
+      "summary": {
+        "zh": "支持 1M 上下文的新一代旗舰文本基座；512K 输入内保持 $0.30/$1.20 公开标价（超过 512K 按 2x 计费）。",
+        "en": "Next-gen 1M-context MiniMax flagship priced at $0.30/$1.20 for requests up to 512K tokens (doubles above 512K)."
+      },
+      "capabilities": [
+        {
+          "zh": "512K 窗口内高性价比长文分析（$0.48/1M 混合）",
+          "en": "Flat $0.30/$1.20 tier up to 512K tokens ($0.48/1M blended)"
+        },
+        {
+          "zh": "80% 提示词缓存折让（$0.06/1M）",
+          "en": "$0.06/1M prompt cache read pricing for repeated agent histories"
+        },
+        {
+          "zh": "兼容中国区直连及多云推理代理节点",
+          "en": "Compatible with CN Bailian direct and global Together hosts"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": true,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开技术规格与境内直连能力，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared specs and CN-direct routing capability only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/minimax/minimax-m3",
+      "auditUrl": "https://myrilum.com/router/m/minimax/minimax-m3/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 9,
       "slug": "minimax-m2-flash",
       "author": "minimax",
       "modelId": "minimax/minimax-m2-flash",
@@ -1015,8 +1557,8 @@
         "en": "High-Value Sleeper"
       },
       "forkReason": {
-        "zh": "按 $0.19/1M 标价交付 455.2/$ 参考单位收益与 158 tok/s 参考吞吐（效能第 #1，基准第 #17）。",
-        "en": "Reference baseline delivers 455.2/$ value lift at 158 tok/s and $0.19/1M list spend (#1 efficiency, #17 benchmark)."
+        "zh": "按 $0.19/1M 标价交付 455.2/$ 参考单位收益与 158 tok/s 参考吞吐（效能第 #2，基准第 #37）。",
+        "en": "Reference baseline delivers 455.2/$ value lift at 158 tok/s and $0.19/1M list spend (#2 efficiency, #37 benchmark)."
       },
       "cnDirectReachable": true,
       "isByokSupported": true,
@@ -1080,7 +1622,99 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 5,
+      "rank": 10,
+      "slug": "mistral-large-4",
+      "author": "mistralai",
+      "modelId": "mistralai/mistral-large-4",
+      "regionHome": "GLOBAL",
+      "domainScope": "multimodal-vision",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "promptUsdPer1m": 0.7,
+      "completionUsdPer1m": 2.1,
+      "cachedReadUsdPer1m": 0.07,
+      "blendedNetUsd": 0.98,
+      "ttftMs": 225,
+      "tps": 118,
+      "benchmarkScore": 95.3,
+      "valueLiftPerDollar": 97.24,
+      "manifoldScore": 80.2,
+      "decayedConfidence": 1,
+      "forkKind": "CONVERGENT_LEADER",
+      "forkLabel": {
+        "zh": "共识领跑",
+        "en": "Convergent Leader"
+      },
+      "forkReason": {
+        "zh": "参考基准（第 #20）、参考吞吐与单位美元收益（97.2/$，第 #19）同向领先，且无合规告警（非实时测量遥测）。",
+        "en": "Reference benchmark (#20), speed, and list-price value lift (97.2/$, #19) converge without Warn/Review flags (unmeasured baseline)."
+      },
+      "cnDirectReachable": false,
+      "isByokSupported": true,
+      "providers": [
+        "mistral-la-plateforme",
+        "fireworks-nitro",
+        "together-turbo"
+      ],
+      "harnesses": [
+        "opencode",
+        "cursor-ide",
+        "linghe-os"
+      ],
+      "benchmarks": [
+        "mmmu-multimodal",
+        "livecodebench-v5",
+        "mrcr-long-context",
+        "bfcl-v3-tool-calling"
+      ],
+      "verifiedAtIso": "2026-11-21T08:00:00.000Z",
+      "firstSeenDate": "2026-10-29",
+      "releaseVersion": "Mistral-Large-4-1.05T",
+      "title": {
+        "zh": "Mistral Large 4 开放权重万亿 MoE",
+        "en": "Mistral Large 4"
+      },
+      "summary": {
+        "zh": "2026 年 10 月开放权重的 1.05T 总参 / 52B 激活多模态 MoE，原生 1M 窗口与视觉编码器且标价仅 $0.70/$2.10。",
+        "en": "October 2026 open-weight 1.05T-total (52B-active) multimodal MoE pairing built-in vision and 1M context with $0.70/$2.10 pricing."
+      },
+      "capabilities": [
+        {
+          "zh": "1.05T 总参（52B 激活）开放权重搭配内置视觉编码器",
+          "en": "1.05T/52B-active open-weight MoE with native vision encoder"
+        },
+        {
+          "zh": "1M 窗口 $0.98/1M 混合净价且支持 90% 缓存读取（$0.07/1M）",
+          "en": "$0.98/1M blended list pricing and $0.07/1M cache reads"
+        },
+        {
+          "zh": "欧洲巴黎 La Plateforme 与美国加速集群多云可选",
+          "en": "Served via EU-Paris La Plateforme, Fireworks, and Together hosts"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": false,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开端点技术规格，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared endpoint capabilities only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/mistralai/mistral-large-4",
+      "auditUrl": "https://myrilum.com/router/m/mistralai/mistral-large-4/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 11,
       "slug": "qwen3-235b-a22b",
       "author": "qwen",
       "modelId": "qwen/qwen3-235b-a22b",
@@ -1104,8 +1738,8 @@
         "en": "High-Value Sleeper"
       },
       "forkReason": {
-        "zh": "按 $0.29/1M 标价交付 317.7/$ 参考单位收益与 136 tok/s 参考吞吐（效能第 #3，基准第 #10）。",
-        "en": "Reference baseline delivers 317.7/$ value lift at 136 tok/s and $0.29/1M list spend (#3 efficiency, #10 benchmark)."
+        "zh": "按 $0.29/1M 标价交付 317.7/$ 参考单位收益与 136 tok/s 参考吞吐（效能第 #7，基准第 #28）。",
+        "en": "Reference baseline delivers 317.7/$ value lift at 136 tok/s and $0.29/1M list spend (#7 efficiency, #28 benchmark)."
       },
       "cnDirectReachable": true,
       "isByokSupported": true,
@@ -1170,7 +1804,96 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 6,
+      "rank": 12,
+      "slug": "gemini-4-hydrogen",
+      "author": "google",
+      "modelId": "google/gemini-4-hydrogen",
+      "regionHome": "GLOBAL",
+      "domainScope": "multimodal-vision",
+      "contextWindow": 1048576,
+      "maxOutputTokens": 65536,
+      "promptUsdPer1m": 1.5,
+      "completionUsdPer1m": 7.5,
+      "cachedReadUsdPer1m": 0.15,
+      "blendedNetUsd": 2.7,
+      "ttftMs": 175,
+      "tps": 162,
+      "benchmarkScore": 95.6,
+      "valueLiftPerDollar": 35.41,
+      "manifoldScore": 79,
+      "decayedConfidence": 1,
+      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkLabel": {
+        "zh": "稳健基线",
+        "en": "Production Workhorse"
+      },
+      "forkReason": {
+        "zh": "参考基准第 #17、标价综合成本 $2.70/1M、参考吞吐 162 tok/s（效能第 #23），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #17 benchmark, $2.70/1M list spend, and 162 tok/s ref speed (#23 efficiency)."
+      },
+      "cnDirectReachable": false,
+      "isByokSupported": true,
+      "providers": [
+        "google-vertex"
+      ],
+      "harnesses": [
+        "antigravity",
+        "cursor-ide",
+        "opencode"
+      ],
+      "benchmarks": [
+        "mmmu-multimodal",
+        "bfcl-v3-tool-calling",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-21T09:00:00.000Z",
+      "firstSeenDate": "2026-10-28",
+      "releaseVersion": "Gemini-4-Hydrogen",
+      "title": {
+        "zh": "Gemini 4 Hydrogen 极速全模态常驻版",
+        "en": "Gemini 4 Hydrogen"
+      },
+      "summary": {
+        "zh": "接棒 Gemini 3.8 Flash 的第 4 代高速全模态主力，具备 ~1M 统一上下文、隐式缓存及 $1.50/$7.50 公开标价。",
+        "en": "Fourth-generation fast multimodal successor to 3.8 Flash with ~1M unified window, implicit caching, and $1.50/$7.50 list pricing."
+      },
+      "capabilities": [
+        {
+          "zh": "175ms 参考首字叠加 162 tok/s 全模态参考吞吐",
+          "en": "175ms ref TTFT and 162 tok/s multimodal reference throughput"
+        },
+        {
+          "zh": "自动隐式上下文缓存（无需显式管理 Cache 生命周期）",
+          "en": "Built-in implicit caching without manual cache lifecycle calls"
+        },
+        {
+          "zh": "原生视觉 UI 巡检与实时浏览器代理执行",
+          "en": "Built for visual browser QA, PDF OCR, and streaming agents"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": false,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开端点技术规格，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared endpoint capabilities only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/google/gemini-4-hydrogen",
+      "auditUrl": "https://myrilum.com/router/m/google/gemini-4-hydrogen/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 13,
       "slug": "gemini-2-5-flash-lite-exp",
       "author": "google",
       "modelId": "google/gemini-2-5-flash-lite-exp",
@@ -1188,14 +1911,14 @@
       "valueLiftPerDollar": 165.04,
       "manifoldScore": 78.8,
       "decayedConfidence": 0.9076,
-      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkKind": "CONVERGENT_LEADER",
       "forkLabel": {
-        "zh": "稳健基线",
-        "en": "Production Workhorse"
+        "zh": "共识领跑",
+        "en": "Convergent Leader"
       },
       "forkReason": {
-        "zh": "参考基准第 #18、标价综合成本 $0.51/1M、参考吞吐 108 tok/s（效能第 #11），处于稳健参考基线区间。",
-        "en": "Steady reference-baseline profile at #18 benchmark, $0.51/1M list spend, and 108 tok/s ref speed (#11 efficiency)."
+        "zh": "参考基准（第 #38）、参考吞吐与单位美元收益（165.0/$，第 #16）同向领先，且无合规告警（非实时测量遥测）。",
+        "en": "Reference benchmark (#38), speed, and list-price value lift (165.0/$, #16) converge without Warn/Review flags (unmeasured baseline)."
       },
       "cnDirectReachable": false,
       "isByokSupported": false,
@@ -1255,7 +1978,7 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 7,
+      "rank": 14,
       "slug": "gemini-3-pro",
       "author": "google",
       "modelId": "google/gemini-3-pro",
@@ -1279,8 +2002,8 @@
         "en": "Production Workhorse"
       },
       "forkReason": {
-        "zh": "参考基准第 #5、标价综合成本 $2.00/1M、参考吞吐 118 tok/s（效能第 #16），处于稳健参考基线区间。",
-        "en": "Steady reference-baseline profile at #5 benchmark, $2.00/1M list spend, and 118 tok/s ref speed (#16 efficiency)."
+        "zh": "参考基准第 #15、标价综合成本 $2.00/1M、参考吞吐 118 tok/s（效能第 #27），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #15 benchmark, $2.00/1M list spend, and 118 tok/s ref speed (#27 efficiency)."
       },
       "cnDirectReachable": false,
       "isByokSupported": true,
@@ -1344,7 +2067,100 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 8,
+      "rank": 15,
+      "slug": "deepseek-v4-pro",
+      "author": "deepseek",
+      "modelId": "deepseek/deepseek-v4-pro",
+      "regionHome": "CN",
+      "domainScope": "general-reasoning",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 384000,
+      "promptUsdPer1m": 0.66,
+      "completionUsdPer1m": 1.98,
+      "cachedReadUsdPer1m": 0.022,
+      "blendedNetUsd": 0.924,
+      "ttftMs": 285,
+      "tps": 96,
+      "benchmarkScore": 97.6,
+      "valueLiftPerDollar": 105.63,
+      "manifoldScore": 77.5,
+      "decayedConfidence": 1,
+      "forkKind": "CONVERGENT_LEADER",
+      "forkLabel": {
+        "zh": "共识领跑",
+        "en": "Convergent Leader"
+      },
+      "forkReason": {
+        "zh": "参考基准（第 #9）、参考吞吐与单位美元收益（105.6/$，第 #20）同向领先，且无合规告警（非实时测量遥测）。",
+        "en": "Reference benchmark (#9), speed, and list-price value lift (105.6/$, #20) converge without Warn/Review flags (unmeasured baseline)."
+      },
+      "cnDirectReachable": true,
+      "isByokSupported": true,
+      "providers": [
+        "deepseek-official",
+        "alibaba-bailian",
+        "fireworks-nitro"
+      ],
+      "harnesses": [
+        "linghe-os",
+        "opencode",
+        "claude-code",
+        "antigravity"
+      ],
+      "benchmarks": [
+        "aime-2026-reasoning",
+        "swe-bench-verified",
+        "livecodebench-v5",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-21T09:00:00.000Z",
+      "firstSeenDate": "2026-08-13",
+      "releaseVersion": "V4-Pro-0813",
+      "title": {
+        "zh": "DeepSeek V4 Pro 百万窗旗舰推理",
+        "en": "DeepSeek V4 Pro"
+      },
+      "summary": {
+        "zh": "支持 1M 上下文与 384K 超长思维输出的 DeepSeek 2026 旗舰推理型号；表中标注为官方错峰（Off-Peak）标价（工作高峰时段按 2x 计费）。",
+        "en": "1M-context, 384K-output DeepSeek reasoning flagship; listed with official Off-Peak pricing (standard Peak UTC hours scale at 2x)."
+      },
+      "capabilities": [
+        {
+          "zh": "1M 窗口与最高 384K 深度推理轨迹输出",
+          "en": "1M context window paired with up to 384K reasoning output tokens"
+        },
+        {
+          "zh": "官方错峰缓存命中低至 $0.022/1M（高峰 2x）",
+          "en": "Off-peak cache reads at $0.022/1M list price (2x during UTC peak hours)"
+        },
+        {
+          "zh": "思考/非思考双模式切换与中国区官方直连",
+          "en": "Thinking/non-thinking toggle with CN-direct DeepSeek and Bailian access"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": true,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开技术规格与境内直连能力，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared specs and CN-direct routing capability only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/deepseek/deepseek-v4-pro",
+      "auditUrl": "https://myrilum.com/router/m/deepseek/deepseek-v4-pro/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 16,
       "slug": "deepseek-v3-2",
       "author": "deepseek",
       "modelId": "deepseek/deepseek-v3-2",
@@ -1368,8 +2184,8 @@
         "en": "Convergent Leader"
       },
       "forkReason": {
-        "zh": "参考基准（第 #9）、参考吞吐与单位美元收益（212.8/$，第 #7）同向领先，且无合规告警（非实时测量遥测）。",
-        "en": "Reference benchmark (#9), speed, and list-price value lift (212.8/$, #7) converge without Warn/Review flags (unmeasured baseline)."
+        "zh": "参考基准（第 #26）、参考吞吐与单位美元收益（212.8/$，第 #11）同向领先，且无合规告警（非实时测量遥测）。",
+        "en": "Reference benchmark (#26), speed, and list-price value lift (212.8/$, #11) converge without Warn/Review flags (unmeasured baseline)."
       },
       "cnDirectReachable": true,
       "isByokSupported": true,
@@ -1436,7 +2252,7 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 9,
+      "rank": 17,
       "slug": "llama-4-scout-17b",
       "author": "meta-llama",
       "modelId": "meta-llama/llama-4-scout-17b",
@@ -1460,8 +2276,8 @@
         "en": "Production Workhorse"
       },
       "forkReason": {
-        "zh": "参考基准第 #20、标价综合成本 $0.31/1M、参考吞吐 96 tok/s（效能第 #5），处于稳健参考基线区间。",
-        "en": "Steady reference-baseline profile at #20 benchmark, $0.31/1M list spend, and 96 tok/s ref speed (#5 efficiency)."
+        "zh": "参考基准第 #40、标价综合成本 $0.31/1M、参考吞吐 96 tok/s（效能第 #9），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #40 benchmark, $0.31/1M list spend, and 96 tok/s ref speed (#9 efficiency)."
       },
       "cnDirectReachable": false,
       "isByokSupported": true,
@@ -1523,7 +2339,188 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 10,
+      "rank": 18,
+      "slug": "gemini-4-carbon",
+      "author": "google",
+      "modelId": "google/gemini-4-carbon",
+      "regionHome": "GLOBAL",
+      "domainScope": "long-context",
+      "contextWindow": 1048576,
+      "maxOutputTokens": 65536,
+      "promptUsdPer1m": 2,
+      "completionUsdPer1m": 10,
+      "cachedReadUsdPer1m": 0.2,
+      "blendedNetUsd": 3.6,
+      "ttftMs": 280,
+      "tps": 114,
+      "benchmarkScore": 98.2,
+      "valueLiftPerDollar": 27.28,
+      "manifoldScore": 75.6,
+      "decayedConfidence": 1,
+      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkLabel": {
+        "zh": "稳健基线",
+        "en": "Production Workhorse"
+      },
+      "forkReason": {
+        "zh": "参考基准第 #4、标价综合成本 $3.60/1M、参考吞吐 114 tok/s（效能第 #31），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #4 benchmark, $3.60/1M list spend, and 114 tok/s ref speed (#31 efficiency)."
+      },
+      "cnDirectReachable": false,
+      "isByokSupported": true,
+      "providers": [
+        "google-vertex"
+      ],
+      "harnesses": [
+        "antigravity",
+        "cursor-ide",
+        "linghe-os"
+      ],
+      "benchmarks": [
+        "mrcr-long-context",
+        "mmmu-multimodal",
+        "swe-bench-verified",
+        "aime-2026-reasoning"
+      ],
+      "verifiedAtIso": "2026-11-21T09:00:00.000Z",
+      "firstSeenDate": "2026-10-28",
+      "releaseVersion": "Gemini-4-Carbon",
+      "title": {
+        "zh": "Gemini 4 Carbon 重度推理全模态旗舰",
+        "en": "Gemini 4 Carbon"
+      },
+      "summary": {
+        "zh": "Google 于 2026 年 10 月末发布的 Gemini 4 重度推理与代理旗舰，采用统一 1M 思考+输入共享上下文架构（11 月优惠期 $2/$10）。",
+        "en": "October 2026 Gemini 4 frontier model using unified ~1M shared input/thinking/output memory ($2/$10 intro rate through Nov 30)."
+      },
+      "capabilities": [
+        {
+          "zh": "1M 统一多模态上下文涵盖代码仓、视频与音频流",
+          "en": "1M unified multimodal window spanning code, video, audio, and PDFs"
+        },
+        {
+          "zh": "支持 Vertex AI 企业私有边界与隐式缓存优化",
+          "en": "Vertex AI enterprise integration with automatic caching savings"
+        },
+        {
+          "zh": "高复杂数学验证与长链工程代理推理",
+          "en": "Top-tier symbolic deduction and extended repo troubleshooting"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": false,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开端点技术规格，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared endpoint capabilities only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/google/gemini-4-carbon",
+      "auditUrl": "https://myrilum.com/router/m/google/gemini-4-carbon/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 19,
+      "slug": "gpt-6-2-sol",
+      "author": "openai",
+      "modelId": "openai/gpt-6-2-sol",
+      "regionHome": "GLOBAL",
+      "domainScope": "coding-agent",
+      "contextWindow": 1050000,
+      "maxOutputTokens": 128000,
+      "promptUsdPer1m": 2,
+      "completionUsdPer1m": 10,
+      "cachedReadUsdPer1m": 0.2,
+      "blendedNetUsd": 3.6,
+      "ttftMs": 265,
+      "tps": 108,
+      "benchmarkScore": 97.9,
+      "valueLiftPerDollar": 27.19,
+      "manifoldScore": 75.5,
+      "decayedConfidence": 1,
+      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkLabel": {
+        "zh": "稳健基线",
+        "en": "Production Workhorse"
+      },
+      "forkReason": {
+        "zh": "参考基准第 #6、标价综合成本 $3.60/1M、参考吞吐 108 tok/s（效能第 #32），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #6 benchmark, $3.60/1M list spend, and 108 tok/s ref speed (#32 efficiency)."
+      },
+      "cnDirectReachable": false,
+      "isByokSupported": true,
+      "providers": [
+        "openai-direct"
+      ],
+      "harnesses": [
+        "codex-cli",
+        "cursor-ide",
+        "opencode",
+        "antigravity"
+      ],
+      "benchmarks": [
+        "swe-bench-verified",
+        "livecodebench-v5",
+        "bfcl-v3-tool-calling",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-21T09:00:00.000Z",
+      "firstSeenDate": "2026-11-20",
+      "releaseVersion": "gpt-6.2-sol",
+      "title": {
+        "zh": "GPT-6.2 Sol 均衡编码主力",
+        "en": "GPT-6.2 Sol"
+      },
+      "summary": {
+        "zh": "延续 ~1.05M 上下文与 128K 输出并将官方标价降至 Astra 四分之一（$2/$10），兼顾参考吞吐与仓库工程基准。",
+        "en": "Balanced November 2026 workhorse preserving ~1.05M context and 128K output at one-fourth the list spend of Astra ($2/$10)."
+      },
+      "capabilities": [
+        {
+          "zh": "$2.00/$10.00 均衡旗舰标价与 108 tok/s 参考吞吐",
+          "en": "Balanced $2.00/$10.00 list rates paired with 108 tok/s ref speed"
+        },
+        {
+          "zh": "原生适配 Codex CLI /v1/responses 状态流与严格 JSON",
+          "en": "Native Codex CLI /v1/responses loop with strict JSON Schema"
+        },
+        {
+          "zh": "90% 官方缓存命中折让（$0.20/1M）",
+          "en": "90% list prompt caching savings ($0.20/1M)"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": false,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开端点技术规格，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared endpoint capabilities only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/openai/gpt-6-2-sol",
+      "auditUrl": "https://myrilum.com/router/m/openai/gpt-6-2-sol/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 20,
       "slug": "qwen3-coder-480b",
       "author": "qwen",
       "modelId": "qwen/qwen3-coder-480b",
@@ -1541,14 +2538,14 @@
       "valueLiftPerDollar": 147.19,
       "manifoldScore": 75.4,
       "decayedConfidence": 0.9976,
-      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkKind": "CONVERGENT_LEADER",
       "forkLabel": {
-        "zh": "稳健基线",
-        "en": "Production Workhorse"
+        "zh": "共识领跑",
+        "en": "Convergent Leader"
       },
       "forkReason": {
-        "zh": "参考基准第 #7、标价综合成本 $0.64/1M、参考吞吐 98 tok/s（效能第 #12），处于稳健参考基线区间。",
-        "en": "Steady reference-baseline profile at #7 benchmark, $0.64/1M list spend, and 98 tok/s ref speed (#12 efficiency)."
+        "zh": "参考基准（第 #22）、参考吞吐与单位美元收益（147.2/$，第 #17）同向领先，且无合规告警（非实时测量遥测）。",
+        "en": "Reference benchmark (#22), speed, and list-price value lift (147.2/$, #17) converge without Warn/Review flags (unmeasured baseline)."
       },
       "cnDirectReachable": true,
       "isByokSupported": true,
@@ -1614,7 +2611,372 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 11,
+      "rank": 21,
+      "slug": "claude-sonnet-5-5",
+      "author": "anthropic",
+      "modelId": "anthropic/claude-sonnet-5-5",
+      "regionHome": "GLOBAL",
+      "domainScope": "coding-agent",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "promptUsdPer1m": 2,
+      "completionUsdPer1m": 10,
+      "cachedReadUsdPer1m": 0.1,
+      "blendedNetUsd": 3.6,
+      "ttftMs": 255,
+      "tps": 106,
+      "benchmarkScore": 97.7,
+      "valueLiftPerDollar": 27.14,
+      "manifoldScore": 75.3,
+      "decayedConfidence": 1,
+      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkLabel": {
+        "zh": "稳健基线",
+        "en": "Production Workhorse"
+      },
+      "forkReason": {
+        "zh": "参考基准第 #8、标价综合成本 $3.60/1M、参考吞吐 106 tok/s（效能第 #30），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #8 benchmark, $3.60/1M list spend, and 106 tok/s ref speed (#30 efficiency)."
+      },
+      "cnDirectReachable": false,
+      "isByokSupported": true,
+      "providers": [
+        "anthropic-direct",
+        "aws-bedrock",
+        "google-vertex"
+      ],
+      "harnesses": [
+        "claude-code",
+        "cursor-ide",
+        "opencode",
+        "antigravity"
+      ],
+      "benchmarks": [
+        "swe-bench-verified",
+        "livecodebench-v5",
+        "bfcl-v3-tool-calling",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-21T08:30:00.000Z",
+      "firstSeenDate": "2026-09-28",
+      "releaseVersion": "Claude-Sonnet-5.5",
+      "title": {
+        "zh": "Claude Sonnet 5.5 百万窗速度智能平衡版",
+        "en": "Claude Sonnet 5.5"
+      },
+      "summary": {
+        "zh": "以 $2/$10 官方标价带来 1M 上下文、106 tok/s 参考吞吐与近 Opus 级工程分值，是日常编程代理的高胜率主力。",
+        "en": "Pairing 1M context, 106 tok/s ref speed, and $2/$10 list pricing for everyday Claude Code and Cursor workflows."
+      },
+      "capabilities": [
+        {
+          "zh": "1M 上下文窗口标配与 $0.10/1M 缓存读取",
+          "en": "1M context standard paired with $0.10/1M cached prompt reads"
+        },
+        {
+          "zh": "106 tok/s 参考流式生成速度与极高测试修复通过率",
+          "en": "106 tok/s ref decode speed with high CI test-fix accuracy"
+        },
+        {
+          "zh": "国际多云 Vertex / Bedrock 原生同步上线",
+          "en": "Simultaneous GA across Anthropic Direct, Bedrock, and Vertex"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": false,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开端点技术规格，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared endpoint capabilities only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/anthropic/claude-sonnet-5-5",
+      "auditUrl": "https://myrilum.com/router/m/anthropic/claude-sonnet-5-5/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 22,
+      "slug": "seed-2-1-pro",
+      "author": "doubao",
+      "modelId": "doubao/seed-2-1-pro",
+      "regionHome": "CN",
+      "domainScope": "enterprise-rag",
+      "contextWindow": 1024000,
+      "maxOutputTokens": 65536,
+      "promptUsdPer1m": 0.88,
+      "completionUsdPer1m": 4.41,
+      "cachedReadUsdPer1m": 0.18,
+      "blendedNetUsd": 1.586,
+      "ttftMs": 255,
+      "tps": 96,
+      "benchmarkScore": 94.6,
+      "valueLiftPerDollar": 59.65,
+      "manifoldScore": 74.6,
+      "decayedConfidence": 0.9962,
+      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkLabel": {
+        "zh": "稳健基线",
+        "en": "Production Workhorse"
+      },
+      "forkReason": {
+        "zh": "参考基准第 #21、标价综合成本 $1.59/1M、参考吞吐 96 tok/s（效能第 #24），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #21 benchmark, $1.59/1M list spend, and 96 tok/s ref speed (#24 efficiency)."
+      },
+      "cnDirectReachable": true,
+      "isByokSupported": true,
+      "providers": [
+        "volcengine-ark"
+      ],
+      "harnesses": [
+        "linghe-os",
+        "cursor-ide",
+        "opencode"
+      ],
+      "benchmarks": [
+        "mrcr-long-context",
+        "bfcl-v3-tool-calling",
+        "swe-bench-verified"
+      ],
+      "verifiedAtIso": "2026-11-20T12:00:00.000Z",
+      "firstSeenDate": "2026-06-24",
+      "releaseVersion": "Seed-2.1-Pro",
+      "title": {
+        "zh": "豆包 Seed 2.1 Pro 百万窗企业旗舰",
+        "en": "ByteDance Doubao Seed 2.1 Pro"
+      },
+      "summary": {
+        "zh": "火山方舟 1,024K 长上下文企业推理旗舰，国内官方标价 ¥6/¥30（国际等效 ~$0.88/$4.41），支持批处理半价折让。",
+        "en": "1,024K-context Volcano Engine flagship (China ¥6/¥30 per 1M; ~$0.88/$4.41 USD equivalent) supporting 50% batch savings."
+      },
+      "capabilities": [
+        {
+          "zh": "1,024K 国内直连超长文档审阅与企业知识检索",
+          "en": "1,024K context window via Volcengine Ark for Chinese enterprise RAG"
+        },
+        {
+          "zh": "缓存命中 ¥1.20/1M 且异步批处理支持半价折让",
+          "en": "Cache reads at ¥1.20/1M (~$0.18) plus 50% Batch discount"
+        },
+        {
+          "zh": "按 fail-closed 原则保持 ZDR 未审计状态",
+          "en": "Held fail-closed as Unverified until external ZDR receipts attach"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": true,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开技术规格与境内直连能力，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared specs and CN-direct routing capability only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/doubao/seed-2-1-pro",
+      "auditUrl": "https://myrilum.com/router/m/doubao/seed-2-1-pro/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 23,
+      "slug": "qwen4-max",
+      "author": "qwen",
+      "modelId": "qwen/qwen4-max",
+      "regionHome": "CN",
+      "domainScope": "general-reasoning",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 131072,
+      "promptUsdPer1m": 1.5,
+      "completionUsdPer1m": 4.5,
+      "cachedReadUsdPer1m": 0.075,
+      "blendedNetUsd": 2.1,
+      "ttftMs": 260,
+      "tps": 102,
+      "benchmarkScore": 97.4,
+      "valueLiftPerDollar": 46.38,
+      "manifoldScore": 74.4,
+      "decayedConfidence": 1,
+      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkLabel": {
+        "zh": "稳健基线",
+        "en": "Production Workhorse"
+      },
+      "forkReason": {
+        "zh": "参考基准第 #10、标价综合成本 $2.10/1M、参考吞吐 102 tok/s（效能第 #26），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #10 benchmark, $2.10/1M list spend, and 102 tok/s ref speed (#26 efficiency)."
+      },
+      "cnDirectReachable": true,
+      "isByokSupported": true,
+      "providers": [
+        "alibaba-bailian",
+        "together-turbo"
+      ],
+      "harnesses": [
+        "linghe-os",
+        "opencode",
+        "claude-code",
+        "antigravity"
+      ],
+      "benchmarks": [
+        "aime-2026-reasoning",
+        "swe-bench-verified",
+        "mmmu-multimodal",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-21T09:00:00.000Z",
+      "firstSeenDate": "2026-11-11",
+      "releaseVersion": "Qwen4-Max-2.4T",
+      "title": {
+        "zh": "通义千问 Qwen4 Max 2.4T 全模态",
+        "en": "Qwen4 Max"
+      },
+      "summary": {
+        "zh": "2.4T 参数稀疏 MoE 旗舰，原生支持文本/图像/视频与全量 1M 平滑不加价窗口；百炼北京节点参考价 ¥10/¥30（国际新加坡 $1.50/$4.50）。",
+        "en": "2.4T sparse MoE flagship with native multimodal input and flat 1M context pricing (DashScope Beijing ¥10/¥30; Singapore $1.50/$4.50)."
+      },
+      "capabilities": [
+        {
+          "zh": "1M 全窗口平价计费且无长窗加价系数",
+          "en": "Flat single-tier 1M context pricing without long-context surcharge"
+        },
+        {
+          "zh": "文本、图像与视频统一编码与深层思考预算",
+          "en": "Unified text, image, and video encoding with deep thinking mode"
+        },
+        {
+          "zh": "中国区百炼北京与新加坡节点双区合规路由",
+          "en": "Served via DashScope Beijing CN-direct and Singapore endpoints"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": true,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开技术规格与境内直连能力，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared specs and CN-direct routing capability only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/qwen/qwen4-max",
+      "auditUrl": "https://myrilum.com/router/m/qwen/qwen4-max/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 24,
+      "slug": "glm-5-3",
+      "author": "zhipu",
+      "modelId": "zhipu/glm-5-3",
+      "regionHome": "CN",
+      "domainScope": "coding-agent",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 131072,
+      "promptUsdPer1m": 1.4,
+      "completionUsdPer1m": 4.4,
+      "cachedReadUsdPer1m": 0.26,
+      "blendedNetUsd": 2,
+      "ttftMs": 245,
+      "tps": 98,
+      "benchmarkScore": 95.8,
+      "valueLiftPerDollar": 47.9,
+      "manifoldScore": 74.3,
+      "decayedConfidence": 1,
+      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkLabel": {
+        "zh": "稳健基线",
+        "en": "Production Workhorse"
+      },
+      "forkReason": {
+        "zh": "参考基准第 #16、标价综合成本 $2.00/1M、参考吞吐 98 tok/s（效能第 #25），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #16 benchmark, $2.00/1M list spend, and 98 tok/s ref speed (#25 efficiency)."
+      },
+      "cnDirectReachable": true,
+      "isByokSupported": true,
+      "providers": [
+        "zhipu-bigmodel",
+        "alibaba-bailian"
+      ],
+      "harnesses": [
+        "linghe-os",
+        "opencode",
+        "claude-code",
+        "cursor-ide"
+      ],
+      "benchmarks": [
+        "swe-bench-verified",
+        "bfcl-v3-tool-calling",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-21T07:00:00.000Z",
+      "firstSeenDate": "2026-08-14",
+      "releaseVersion": "GLM-5.3",
+      "title": {
+        "zh": "智谱 GLM-5.3 百万窗编程旗舰",
+        "en": "Zhipu GLM-5.3"
+      },
+      "summary": {
+        "zh": "支持 1M 上下文与强化仓库编程能力的新一代智谱旗舰；国内 BigModel 标价 ¥8/¥28，国际 Z.ai 标价 $1.40/$4.40。",
+        "en": "1M-context flagship from Zhipu AI delivering agentic coding gains (BigModel CN ¥8/¥28; Z.ai Global $1.40/$4.40)."
+      },
+      "capabilities": [
+        {
+          "zh": "百万级上下文代码库索引与长出力输出（131K）",
+          "en": "1M context code navigation with 131K completion ceiling"
+        },
+        {
+          "zh": "全面适配 Claude Code、Cursor 与 OpenCode 工具链",
+          "en": "Tuned for Claude Code, Cursor IDE, and OpenCode tool loops"
+        },
+        {
+          "zh": "智谱 BigModel 官方与百炼境内直连节点",
+          "en": "CN-direct access via Zhipu BigModel and Alibaba Bailian"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": true,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开技术规格与境内直连能力，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared specs and CN-direct routing capability only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/zhipu/glm-5-3",
+      "auditUrl": "https://myrilum.com/router/m/zhipu/glm-5-3/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 25,
       "slug": "minimax-text-01-preview",
       "author": "minimax",
       "modelId": "minimax/minimax-text-01-preview",
@@ -1638,8 +3000,8 @@
         "en": "Production Workhorse"
       },
       "forkReason": {
-        "zh": "参考基准第 #19、标价综合成本 $0.46/1M、参考吞吐 72 tok/s（效能第 #9），处于稳健参考基线区间。",
-        "en": "Steady reference-baseline profile at #19 benchmark, $0.46/1M list spend, and 72 tok/s ref speed (#9 efficiency)."
+        "zh": "参考基准第 #39、标价综合成本 $0.46/1M、参考吞吐 72 tok/s（效能第 #14），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #39 benchmark, $0.46/1M list spend, and 72 tok/s ref speed (#14 efficiency)."
       },
       "cnDirectReachable": true,
       "isByokSupported": false,
@@ -1699,7 +3061,96 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 12,
+      "rank": 26,
+      "slug": "grok-4-7",
+      "author": "x-ai",
+      "modelId": "x-ai/grok-4-7",
+      "regionHome": "GLOBAL",
+      "domainScope": "general-reasoning",
+      "contextWindow": 500000,
+      "maxOutputTokens": 131072,
+      "promptUsdPer1m": 2,
+      "completionUsdPer1m": 6,
+      "cachedReadUsdPer1m": 0.5,
+      "blendedNetUsd": 2.8,
+      "ttftMs": 240,
+      "tps": 112,
+      "benchmarkScore": 97.1,
+      "valueLiftPerDollar": 34.68,
+      "manifoldScore": 73.9,
+      "decayedConfidence": 1,
+      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkLabel": {
+        "zh": "稳健基线",
+        "en": "Production Workhorse"
+      },
+      "forkReason": {
+        "zh": "参考基准第 #11、标价综合成本 $2.80/1M、参考吞吐 112 tok/s（效能第 #28），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #11 benchmark, $2.80/1M list spend, and 112 tok/s ref speed (#28 efficiency)."
+      },
+      "cnDirectReachable": false,
+      "isByokSupported": true,
+      "providers": [
+        "xai-direct"
+      ],
+      "harnesses": [
+        "opencode",
+        "cursor-ide",
+        "antigravity"
+      ],
+      "benchmarks": [
+        "aime-2026-reasoning",
+        "swe-bench-verified",
+        "bfcl-v3-tool-calling"
+      ],
+      "verifiedAtIso": "2026-11-21T08:00:00.000Z",
+      "firstSeenDate": "2026-09-21",
+      "releaseVersion": "Grok-4.7",
+      "title": {
+        "zh": "xAI Grok 4.7 低输出乘数推理旗舰",
+        "en": "xAI Grok 4.7"
+      },
+      "summary": {
+        "zh": "xAI 2026 年 9 月发布的 500K 窗口旗舰，输出仅输入 3 倍（$2/$6，<200K 标准分档；>=200K 按 2x 计费）。",
+        "en": "September 2026 xAI flagship with 500K context and an aggressive 3x output-to-input ratio ($2/$6 under 200K; 2x at >=200K)."
+      },
+      "capabilities": [
+        {
+          "zh": "输出/输入仅 3:1 标价倍比（$6/1M 输出显著低于同类旗舰）",
+          "en": "Low 3:1 output multiplier ($6/1M output below peer frontier tiers)"
+        },
+        {
+          "zh": "500K 上下文深度推理与 75% 缓存折让（$0.50/1M）",
+          "en": "500K context reasoning paired with $0.50/1M cached prompt reads"
+        },
+        {
+          "zh": "兼容标准 OpenAI 协议与高吞吐并发工具调用",
+          "en": "OpenAI-compatible client schemas and structured tool dispatch"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": false,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开端点技术规格，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared endpoint capabilities only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/x-ai/grok-4-7",
+      "auditUrl": "https://myrilum.com/router/m/x-ai/grok-4-7/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 27,
       "slug": "qwen-vl-max-72b",
       "author": "qwen",
       "modelId": "qwen/qwen-vl-max-72b",
@@ -1723,8 +3174,8 @@
         "en": "Production Workhorse"
       },
       "forkReason": {
-        "zh": "参考基准第 #14、标价综合成本 $0.52/1M、参考吞吐 89 tok/s（效能第 #10），处于稳健参考基线区间。",
-        "en": "Steady reference-baseline profile at #14 benchmark, $0.52/1M list spend, and 89 tok/s ref speed (#10 efficiency)."
+        "zh": "参考基准第 #34、标价综合成本 $0.52/1M、参考吞吐 89 tok/s（效能第 #15），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #34 benchmark, $0.52/1M list spend, and 89 tok/s ref speed (#15 efficiency)."
       },
       "cnDirectReachable": true,
       "isByokSupported": true,
@@ -1786,7 +3237,96 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 13,
+      "rank": 28,
+      "slug": "qwen3-8-max",
+      "author": "qwen",
+      "modelId": "qwen/qwen3-8-max",
+      "regionHome": "CN",
+      "domainScope": "coding-agent",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 65536,
+      "promptUsdPer1m": 2,
+      "completionUsdPer1m": 6,
+      "cachedReadUsdPer1m": 0.25,
+      "blendedNetUsd": 2.8,
+      "ttftMs": 270,
+      "tps": 94,
+      "benchmarkScore": 95.6,
+      "valueLiftPerDollar": 34.14,
+      "manifoldScore": 72.7,
+      "decayedConfidence": 0.9981,
+      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkLabel": {
+        "zh": "稳健基线",
+        "en": "Production Workhorse"
+      },
+      "forkReason": {
+        "zh": "参考基准第 #18、标价综合成本 $2.80/1M、参考吞吐 94 tok/s（效能第 #29），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #18 benchmark, $2.80/1M list spend, and 94 tok/s ref speed (#29 efficiency)."
+      },
+      "cnDirectReachable": true,
+      "isByokSupported": true,
+      "providers": [
+        "alibaba-bailian"
+      ],
+      "harnesses": [
+        "linghe-os",
+        "opencode",
+        "cursor-ide"
+      ],
+      "benchmarks": [
+        "swe-bench-verified",
+        "bfcl-v3-tool-calling",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-20T18:00:00.000Z",
+      "firstSeenDate": "2026-08-20",
+      "releaseVersion": "Qwen3.8-Max",
+      "title": {
+        "zh": "通义千问 Qwen3.8 Max 长稳主力",
+        "en": "Qwen3.8 Max"
+      },
+      "summary": {
+        "zh": "Qwen4 发布前的 1M 窗口长稳生产旗舰，主打严格工具调用 Schema 对齐与大型 TypeScript/Rust 仓库补丁。",
+        "en": "Predecessor 1M-context workhorse specialized in strict tool schemas and multi-file repository patching."
+      },
+      "capabilities": [
+        {
+          "zh": "1M 上下文跨仓符号追踪与重构校验",
+          "en": "1M-context cross-module symbol tracking and refactoring"
+        },
+        {
+          "zh": "高稳定 BFCL AST 结构化参数输出",
+          "en": "High BFCL tool schema fidelity across multi-turn agent loops"
+        },
+        {
+          "zh": "阿里云百炼境内直连稳定节点",
+          "en": "CN-direct enterprise stability via Alibaba Bailian"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": true,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开技术规格与境内直连能力，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared specs and CN-direct routing capability only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/qwen/qwen3-8-max",
+      "auditUrl": "https://myrilum.com/router/m/qwen/qwen3-8-max/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 29,
       "slug": "glm-4-plus",
       "author": "zhipu",
       "modelId": "zhipu/glm-4-plus",
@@ -1810,8 +3350,8 @@
         "en": "Production Workhorse"
       },
       "forkReason": {
-        "zh": "参考基准第 #16、标价综合成本 $0.62/1M、参考吞吐 94 tok/s（效能第 #13），处于稳健参考基线区间。",
-        "en": "Steady reference-baseline profile at #16 benchmark, $0.62/1M list spend, and 94 tok/s ref speed (#13 efficiency)."
+        "zh": "参考基准第 #36、标价综合成本 $0.62/1M、参考吞吐 94 tok/s（效能第 #18），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #36 benchmark, $0.62/1M list spend, and 94 tok/s ref speed (#18 efficiency)."
       },
       "cnDirectReachable": true,
       "isByokSupported": true,
@@ -1874,7 +3414,189 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 14,
+      "rank": 30,
+      "slug": "kimi-k3-1-pro",
+      "author": "moonshot",
+      "modelId": "moonshot/kimi-k3-1-pro",
+      "regionHome": "CN",
+      "domainScope": "long-context",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 131072,
+      "promptUsdPer1m": 2,
+      "completionUsdPer1m": 10,
+      "cachedReadUsdPer1m": 0.2,
+      "blendedNetUsd": 3.6,
+      "ttftMs": 310,
+      "tps": 92,
+      "benchmarkScore": 96.6,
+      "valueLiftPerDollar": 26.83,
+      "manifoldScore": 71.7,
+      "decayedConfidence": 1,
+      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkLabel": {
+        "zh": "稳健基线",
+        "en": "Production Workhorse"
+      },
+      "forkReason": {
+        "zh": "参考基准第 #13、标价综合成本 $3.60/1M、参考吞吐 92 tok/s（效能第 #33），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #13 benchmark, $3.60/1M list spend, and 92 tok/s ref speed (#33 efficiency)."
+      },
+      "cnDirectReachable": true,
+      "isByokSupported": true,
+      "providers": [
+        "alibaba-bailian",
+        "together-turbo"
+      ],
+      "harnesses": [
+        "linghe-os",
+        "opencode",
+        "claude-code",
+        "antigravity"
+      ],
+      "benchmarks": [
+        "mrcr-long-context",
+        "swe-bench-verified",
+        "aime-2026-reasoning"
+      ],
+      "verifiedAtIso": "2026-11-21T08:00:00.000Z",
+      "firstSeenDate": "2026-10-15",
+      "releaseVersion": "Kimi-K3.1-Pro",
+      "title": {
+        "zh": "月之暗面 Kimi K3.1 Pro 长程代理",
+        "en": "Moonshot Kimi K3.1 Pro"
+      },
+      "summary": {
+        "zh": "1M 上下文开放权重多模态推理旗舰，继承 K3 深层规划并在长程代理工具链中显著压缩单价。",
+        "en": "1M-context open-weight multimodal reasoning flagship extending Kimi K3 long-horizon agent execution at reduced list rates."
+      },
+      "capabilities": [
+        {
+          "zh": "1M 长文档与百轮自主工具调用一致性",
+          "en": "Sustained coherence across 1M-token research and 100-step tool chains"
+        },
+        {
+          "zh": "90% 官方缓存读取折让（$0.20/1M）",
+          "en": "90% list cache-read discount ($0.20/1M) for persistent corpora"
+        },
+        {
+          "zh": "中国区百炼与全球开源加速网并行支持",
+          "en": "Served across CN Bailian direct and global Together endpoints"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": true,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开技术规格与境内直连能力，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared specs and CN-direct routing capability only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/moonshot/kimi-k3-1-pro",
+      "auditUrl": "https://myrilum.com/router/m/moonshot/kimi-k3-1-pro/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 31,
+      "slug": "claude-opus-5-5",
+      "author": "anthropic",
+      "modelId": "anthropic/claude-opus-5-5",
+      "regionHome": "GLOBAL",
+      "domainScope": "coding-agent",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "promptUsdPer1m": 4,
+      "completionUsdPer1m": 20,
+      "cachedReadUsdPer1m": 0.2,
+      "blendedNetUsd": 7.2,
+      "ttftMs": 390,
+      "tps": 76,
+      "benchmarkScore": 98.4,
+      "valueLiftPerDollar": 13.67,
+      "manifoldScore": 71.2,
+      "decayedConfidence": 1,
+      "forkKind": "PRODUCTION_WORKHORSE",
+      "forkLabel": {
+        "zh": "稳健基线",
+        "en": "Production Workhorse"
+      },
+      "forkReason": {
+        "zh": "参考基准第 #3、标价综合成本 $7.20/1M、参考吞吐 76 tok/s（效能第 #36），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #3 benchmark, $7.20/1M list spend, and 76 tok/s ref speed (#36 efficiency)."
+      },
+      "cnDirectReachable": false,
+      "isByokSupported": true,
+      "providers": [
+        "anthropic-direct",
+        "aws-bedrock",
+        "google-vertex"
+      ],
+      "harnesses": [
+        "claude-code",
+        "cursor-ide",
+        "antigravity"
+      ],
+      "benchmarks": [
+        "swe-bench-verified",
+        "livecodebench-v5",
+        "aime-2026-reasoning"
+      ],
+      "verifiedAtIso": "2026-11-21T08:30:00.000Z",
+      "firstSeenDate": "2026-09-22",
+      "releaseVersion": "Claude-Opus-5.5",
+      "title": {
+        "zh": "Claude Opus 5.5 自主研发旗舰",
+        "en": "Claude Opus 5.5"
+      },
+      "summary": {
+        "zh": "2026 年 9 月起成为长周期工程代码主力的 Opus 5.5（$4/$20，1M 窗口），较 4.5 代大幅提升参考速度并降价。",
+        "en": "September 2026 frontier engineering release scaling to 1M context at $4/$20 while accelerating decode throughput over 4.5."
+      },
+      "capabilities": [
+        {
+          "zh": "1M 仓库级上下文与 128K 长文件完整重写能力",
+          "en": "1M context with 128K max output for full-module synthesis"
+        },
+        {
+          "zh": "官方 Fast Mode 可选加速倍速档位（2.5x）",
+          "en": "Supports optional Anthropic Fast Mode lane when enabled"
+        },
+        {
+          "zh": "极强的长程多工具协议合规性与指令约束",
+          "en": "High schema adherence across complex autonomous dev loops"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": false,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开端点技术规格，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared endpoint capabilities only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/anthropic/claude-opus-5-5",
+      "auditUrl": "https://myrilum.com/router/m/anthropic/claude-opus-5-5/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 32,
       "slug": "deepseek-r1",
       "author": "deepseek",
       "modelId": "deepseek/deepseek-r1",
@@ -1898,8 +3620,8 @@
         "en": "Production Workhorse"
       },
       "forkReason": {
-        "zh": "参考基准第 #6、标价综合成本 $0.88/1M、参考吞吐 74 tok/s（效能第 #14），处于稳健参考基线区间。",
-        "en": "Steady reference-baseline profile at #6 benchmark, $0.88/1M list spend, and 74 tok/s ref speed (#14 efficiency)."
+        "zh": "参考基准第 #19、标价综合成本 $0.88/1M、参考吞吐 74 tok/s（效能第 #21），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #19 benchmark, $0.88/1M list spend, and 74 tok/s ref speed (#21 efficiency)."
       },
       "cnDirectReachable": true,
       "isByokSupported": true,
@@ -1966,7 +3688,7 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 15,
+      "rank": 33,
       "slug": "kimi-k2-thinking",
       "author": "moonshot",
       "modelId": "moonshot/kimi-k2-thinking",
@@ -1990,8 +3712,8 @@
         "en": "Production Workhorse"
       },
       "forkReason": {
-        "zh": "参考基准第 #8、标价综合成本 $0.96/1M、参考吞吐 78 tok/s（效能第 #15），处于稳健参考基线区间。",
-        "en": "Steady reference-baseline profile at #8 benchmark, $0.96/1M list spend, and 78 tok/s ref speed (#15 efficiency)."
+        "zh": "参考基准第 #25、标价综合成本 $0.96/1M、参考吞吐 78 tok/s（效能第 #22），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #25 benchmark, $0.96/1M list spend, and 78 tok/s ref speed (#22 efficiency)."
       },
       "cnDirectReachable": true,
       "isByokSupported": true,
@@ -2056,7 +3778,7 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 16,
+      "rank": 34,
       "slug": "gpt-5",
       "author": "openai",
       "modelId": "openai/gpt-5",
@@ -2080,8 +3802,8 @@
         "en": "Production Workhorse"
       },
       "forkReason": {
-        "zh": "参考基准第 #3、标价综合成本 $4.00/1M、参考吞吐 86 tok/s（效能第 #17），处于稳健参考基线区间。",
-        "en": "Steady reference-baseline profile at #3 benchmark, $4.00/1M list spend, and 86 tok/s ref speed (#17 efficiency)."
+        "zh": "参考基准第 #12、标价综合成本 $4.00/1M、参考吞吐 86 tok/s（效能第 #34），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #12 benchmark, $4.00/1M list spend, and 86 tok/s ref speed (#34 efficiency)."
       },
       "cnDirectReachable": false,
       "isByokSupported": true,
@@ -2146,7 +3868,7 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 17,
+      "rank": 35,
       "slug": "doubao-1-5-pro-256k",
       "author": "doubao",
       "modelId": "doubao/doubao-1-5-pro-256k",
@@ -2170,8 +3892,8 @@
         "en": "Production Workhorse"
       },
       "forkReason": {
-        "zh": "参考基准第 #15、标价综合成本 $0.47/1M、参考吞吐 86 tok/s（效能第 #8），处于稳健参考基线区间。",
-        "en": "Steady reference-baseline profile at #15 benchmark, $0.47/1M list spend, and 86 tok/s ref speed (#8 efficiency)."
+        "zh": "参考基准第 #35、标价综合成本 $0.47/1M、参考吞吐 86 tok/s（效能第 #13），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #35 benchmark, $0.47/1M list spend, and 86 tok/s ref speed (#13 efficiency)."
       },
       "cnDirectReachable": true,
       "isByokSupported": true,
@@ -2233,7 +3955,7 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 18,
+      "rank": 36,
       "slug": "claude-sonnet-4-5",
       "author": "anthropic",
       "modelId": "anthropic/claude-sonnet-4-5",
@@ -2257,8 +3979,8 @@
         "en": "Production Workhorse"
       },
       "forkReason": {
-        "zh": "参考基准第 #4、标价综合成本 $5.40/1M、参考吞吐 84 tok/s（效能第 #18），处于稳健参考基线区间。",
-        "en": "Steady reference-baseline profile at #4 benchmark, $5.40/1M list spend, and 84 tok/s ref speed (#18 efficiency)."
+        "zh": "参考基准第 #14、标价综合成本 $5.40/1M、参考吞吐 84 tok/s（效能第 #35），处于稳健参考基线区间。",
+        "en": "Steady reference-baseline profile at #14 benchmark, $5.40/1M list spend, and 84 tok/s ref speed (#35 efficiency)."
       },
       "cnDirectReachable": false,
       "isByokSupported": true,
@@ -2325,7 +4047,187 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 19,
+      "rank": 37,
+      "slug": "gpt-6-2-astra",
+      "author": "openai",
+      "modelId": "openai/gpt-6-2-astra",
+      "regionHome": "GLOBAL",
+      "domainScope": "general-reasoning",
+      "contextWindow": 1050000,
+      "maxOutputTokens": 128000,
+      "promptUsdPer1m": 8,
+      "completionUsdPer1m": 40,
+      "cachedReadUsdPer1m": 0.4,
+      "blendedNetUsd": 14.4,
+      "ttftMs": 680,
+      "tps": 44,
+      "benchmarkScore": 99.1,
+      "valueLiftPerDollar": 6.88,
+      "manifoldScore": 54.5,
+      "decayedConfidence": 1,
+      "forkKind": "LATENCY_DEGRADED_WARNING",
+      "forkLabel": {
+        "zh": "延迟退化预警",
+        "en": "Latency Degraded Warning"
+      },
+      "forkReason": {
+        "zh": "参考基准位列第 #1（99.1 分），但参考首字延迟 680ms、输出 44 tok/s 且标价综合 $14.40/1M（效能第 #38）。",
+        "en": "Ranks #1 on reference benchmark (99.1) yet hits 680ms ref TTFT at 44 tok/s and $14.40/1M blended (#38 efficiency)."
+      },
+      "cnDirectReachable": false,
+      "isByokSupported": true,
+      "providers": [
+        "openai-direct"
+      ],
+      "harnesses": [
+        "codex-cli",
+        "cursor-ide",
+        "antigravity"
+      ],
+      "benchmarks": [
+        "aime-2026-reasoning",
+        "swe-bench-verified",
+        "livecodebench-v5",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-21T09:00:00.000Z",
+      "firstSeenDate": "2026-11-20",
+      "releaseVersion": "gpt-6.2-astra",
+      "title": {
+        "zh": "GPT-6.2 Astra 超前沿旗舰",
+        "en": "GPT-6.2 Astra"
+      },
+      "summary": {
+        "zh": "2026 年 11 月发布的 OpenAI 最高规格推理旗舰，具备 ~1.05M 窗口与 95% 缓存读取折让（$0.40/1M）；因重思考参考延迟触发预警标识。",
+        "en": "November 2026 OpenAI frontier flagship with ~1.05M context and $0.40/1M cache reads; heavy deliberation flags interactive latency warnings."
+      },
+      "capabilities": [
+        {
+          "zh": "~1.05M 上下文与 128K 原生 /v1/responses 推理输出",
+          "en": "~1.05M context window with 128K output via /v1/responses"
+        },
+        {
+          "zh": "官方提示词缓存低至 $0.40/1M（Batch 50% 折让）",
+          "en": "Prompt cache reads at $0.40/1M and 50% Batch API discounts"
+        },
+        {
+          "zh": "顶尖科研与形式化重构能力上限",
+          "en": "Peak reasoning ceiling across architecture reviews and proofs"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": false,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开端点技术规格，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared endpoint capabilities only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/openai/gpt-6-2-astra",
+      "auditUrl": "https://myrilum.com/router/m/openai/gpt-6-2-astra/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 38,
+      "slug": "claude-fable-5-2",
+      "author": "anthropic",
+      "modelId": "anthropic/claude-fable-5-2",
+      "regionHome": "GLOBAL",
+      "domainScope": "general-reasoning",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "promptUsdPer1m": 8,
+      "completionUsdPer1m": 40,
+      "cachedReadUsdPer1m": 0.2,
+      "blendedNetUsd": 14.4,
+      "ttftMs": 710,
+      "tps": 42,
+      "benchmarkScore": 99,
+      "valueLiftPerDollar": 6.88,
+      "manifoldScore": 53.5,
+      "decayedConfidence": 1,
+      "forkKind": "LATENCY_DEGRADED_WARNING",
+      "forkLabel": {
+        "zh": "延迟退化预警",
+        "en": "Latency Degraded Warning"
+      },
+      "forkReason": {
+        "zh": "参考基准位列第 #2（99.0 分），但参考首字延迟 710ms、输出 42 tok/s 且标价综合 $14.40/1M（效能第 #39）。",
+        "en": "Ranks #2 on reference benchmark (99.0) yet hits 710ms ref TTFT at 42 tok/s and $14.40/1M blended (#39 efficiency)."
+      },
+      "cnDirectReachable": false,
+      "isByokSupported": true,
+      "providers": [
+        "anthropic-direct",
+        "aws-bedrock",
+        "google-vertex"
+      ],
+      "harnesses": [
+        "claude-code",
+        "antigravity"
+      ],
+      "benchmarks": [
+        "swe-bench-verified",
+        "aime-2026-reasoning",
+        "mrcr-long-context"
+      ],
+      "verifiedAtIso": "2026-11-21T09:00:00.000Z",
+      "firstSeenDate": "2026-11-09",
+      "releaseVersion": "Claude-Fable-5.2",
+      "title": {
+        "zh": "Claude Fable 5.2 长程推理旗舰",
+        "en": "Claude Fable 5.2"
+      },
+      "summary": {
+        "zh": "2026 年 11 月发布的 Anthropic 顶配长程推理系列（1M 上下文 / 128K 输出）；深思考特性使其交互首字参考值为 710ms。",
+        "en": "November 2026 Anthropic peak-reasoning tier (1M context, 128K output); deep deliberation places interactive ref TTFT at 710ms."
+      },
+      "capabilities": [
+        {
+          "zh": "1M 窗口超长程多步自主科研与安全红队审计",
+          "en": "1M-context extended agentic reasoning and red-team code audits"
+        },
+        {
+          "zh": "多云 Bedrock / Vertex / 官方 /v1/messages 端点一致兼容",
+          "en": "Consistent /v1/messages support across Anthropic, Bedrock, and Vertex"
+        },
+        {
+          "zh": "支持 Batch 半价折让与最高 $0.20/1M 缓存读取",
+          "en": "50% Batch API discounts and cached reads from $0.20/1M"
+        }
+      ],
+      "zdr": {
+        "overallStatus": "Unverified",
+        "zdrStatus": "Unverified",
+        "dataResidencyStatus": "Unverified",
+        "tlsAuditStatus": "Unverified",
+        "zeroDataRetention": false,
+        "noPromptTraining": false,
+        "cnIcpDirect": false,
+        "supportsToolCalling": true,
+        "supportsJsonSchema": true,
+        "summary": {
+          "zh": "尚未关联仓库内注册的第三方 ZDR 审计回执；当前仅披露公开端点技术规格，按 fail-closed 原则保持 Unverified。",
+          "en": "No registered third-party ZDR audit receipt in repo; discloses declared endpoint capabilities only (fail-closed Unverified)."
+        }
+      },
+      "detailUrl": "https://myrilum.com/router/m/anthropic/claude-fable-5-2",
+      "auditUrl": "https://myrilum.com/router/m/anthropic/claude-fable-5-2/audit",
+      "workbenchHref": "https://app.myrilum.com/sign-in",
+      "catalogApiUrl": "https://myrilum.com/router/api/v1/index.json",
+      "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
+    },
+    {
+      "rank": 39,
       "slug": "claude-opus-4-5",
       "author": "anthropic",
       "modelId": "anthropic/claude-opus-4-5",
@@ -2349,8 +4251,8 @@
         "en": "Latency Degraded Warning"
       },
       "forkReason": {
-        "zh": "参考基准位列第 #2（97.8 分），但参考首字延迟 820ms、输出 38 tok/s 且标价综合 $9.00/1M（效能第 #19）。",
-        "en": "Ranks #2 on reference benchmark (97.8) yet hits 820ms ref TTFT at 38 tok/s and $9.00/1M blended (#19 efficiency)."
+        "zh": "参考基准位列第 #7（97.8 分），但参考首字延迟 820ms、输出 38 tok/s 且标价综合 $9.00/1M（效能第 #37）。",
+        "en": "Ranks #7 on reference benchmark (97.8) yet hits 820ms ref TTFT at 38 tok/s and $9.00/1M blended (#37 efficiency)."
       },
       "cnDirectReachable": false,
       "isByokSupported": true,
@@ -2413,7 +4315,7 @@
       "publicGatewayStatus": "UNAVAILABLE_PENDING_RELEASE"
     },
     {
-      "rank": 20,
+      "rank": 40,
       "slug": "o3-deep-research",
       "author": "openai",
       "modelId": "openai/o3-deep-research",
@@ -2437,8 +4339,8 @@
         "en": "Latency Degraded Warning"
       },
       "forkReason": {
-        "zh": "参考基准位列第 #1（98.1 分），但参考首字延迟 960ms、输出 32 tok/s 且标价综合 $12.80/1M（效能第 #20）。",
-        "en": "Ranks #1 on reference benchmark (98.1) yet hits 960ms ref TTFT at 32 tok/s and $12.80/1M blended (#20 efficiency)."
+        "zh": "参考基准位列第 #5（98.1 分），但参考首字延迟 960ms、输出 32 tok/s 且标价综合 $12.80/1M（效能第 #40）。",
+        "en": "Ranks #5 on reference benchmark (98.1) yet hits 960ms ref TTFT at 32 tok/s and $12.80/1M blended (#40 efficiency)."
       },
       "cnDirectReachable": false,
       "isByokSupported": true,

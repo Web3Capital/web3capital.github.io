@@ -2,4 +2,4 @@
 :HL["/candidate/v0.4/tokens.css?rev=20260825-dark-theme-v1","style"]
 :HL["/candidate/v0.4/site.css?rev=20260902-regional-sites-v1","style"]
 :HL["/candidate/v0.4/theme.css?rev=20260826-dark-theme-v5","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"fusion","param":null,"prefetchHints":0,"slots":{"children":{"name":"market","param":null,"prefetchHints":0,"slots":{"children":{"name":"skuSlug","param":{"type":"d","key":"sku-08","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"p0LPoSgGSS3eGcDHJp9GH"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"fusion","param":null,"prefetchHints":0,"slots":{"children":{"name":"market","param":null,"prefetchHints":0,"slots":{"children":{"name":"skuSlug","param":{"type":"d","key":"sku-08","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"uBe_gEQ2Ibyru74DuzEk9"}

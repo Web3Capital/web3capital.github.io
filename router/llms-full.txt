@@ -6,17 +6,17 @@ Catalog API URL: https://myrilum.com/router/api/v1/index.json
 Public Gateway Status: UNAVAILABLE_PENDING_RELEASE
 Workbench Href: https://app.myrilum.com/sign-in
 Snapshot Date: 2026-11-21
-Snapshot Version: 1.0.0
-Snapshot SHA-256: f4d8e2a19c7b3054e61f82a0c3d957b1
-Indexed Catalog Count: 20
+Snapshot Version: 1.1.0
+Snapshot SHA-256: c8a31f92e40b7d1568a93f4c2e1b7d80
+Indexed Catalog Count: 40
 Data Provenance: UNMEASURED_REFERENCE_BASELINE (isMeasuredTelemetry=false)
 Provenance Notice (EN): Reference Baseline Snapshot (Unmeasured): Built from public model specifications, list pricing, and static reference benchmark baselines; not measured live gateway traffic, customer volume, or verified SLA.
 Provenance Notice (ZH): 参考基线快照（非实时测量遥测）：基于公开模型规格、官方标价与静态参考评测构建；不含实时网关流量计数、客户统计或经审计的 SLA 承诺。
-Catalog Entries Included: 20
+Catalog Entries Included: 40
 
 ## Executive Summary
-EN: AI Router Full Corpus (GLOBAL ref baseline) top 3: google/gemini-3-flash / meta-llama/llama-4-maverick-400b / openai/gpt-5-mini. Peak value: minimax/minimax-m2-flash (455.2/$). Fork alert: anthropic/claude-opus-4-5 flags ref latency degradation; meta-llama/llama-4-maverick-400b is a high-value sleeper (unmeasured baseline).
-ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3-flash / meta-llama/llama-4-maverick-400b / openai/gpt-5-mini；峰值标价性价比 minimax/minimax-m2-flash（455.2/$）。分叉预警：anthropic/claude-opus-4-5 属高基准参考延迟退化，meta-llama/llama-4-maverick-400b 属高性价比黑马（非实时遥测）。
+EN: AI Router Full Corpus (GLOBAL ref baseline) top 3: openai/gpt-6-luna / google/gemini-3-flash / deepseek/deepseek-v4-1-flash. Peak value: openai/gpt-6-luna (507.8/$). Fork alert: openai/gpt-6-2-astra flags ref latency degradation; meta-llama/llama-4-maverick-400b is a high-value sleeper (unmeasured baseline).
+ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：openai/gpt-6-luna / google/gemini-3-flash / deepseek/deepseek-v4-1-flash；峰值标价性价比 openai/gpt-6-luna（507.8/$）。分叉预警：openai/gpt-6-2-astra 属高基准参考延迟退化，meta-llama/llama-4-maverick-400b 属高性价比黑马（非实时遥测）。
 
 ## Evaluation Methodology
 - Confidence Decay: 90-day half-life exponential decay anchored to snapshot verification timestamps.
@@ -31,23 +31,27 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Volcengine Ark (volcengine-ark · CN-Beijing · protocol=Chat Completions · 256K · quant=FP8): https://myrilum.com/router/providers/volcengine-ark — Mainland inference endpoint for Doubao 256K workflows (carries TLS rotation Warn advisory; receipts Unverified).
 - Zhipu BigModel (zhipu-bigmodel · CN-Beijing · protocol=Chat Completions · Tools · quant=BF16): https://myrilum.com/router/providers/zhipu-bigmodel — Domestic official cluster tuned for Chinese RAG citations and tool schemas (audit receipts Unverified).
 - Anthropic Direct (anthropic-direct · US-West · protocol=/v1/messages · Prompt Cache · quant=BF16): https://myrilum.com/router/providers/anthropic-direct — Native /v1/messages gateway supporting prompt caching savings on global routes (audit receipt Unverified).
-- OpenAI Direct (openai-direct · US-Central · protocol=/v1/responses · Chat · quant=BF16 / FP8): https://myrilum.com/router/providers/openai-direct — Direct host for /v1/responses, strict JSON Schema enforcement, and GPT-5 / o3 inference (audit Unverified).
+- OpenAI Direct (openai-direct · US-Central · protocol=/v1/responses · Chat · quant=BF16 / FP8): https://myrilum.com/router/providers/openai-direct — Direct host for /v1/responses, strict JSON Schema enforcement, and GPT-6.2 / GPT-5 / o3 inference (audit Unverified).
+- xAI Direct (xai-direct · US-West / Global · protocol=Chat · 500K Grok · quant=FP8): https://myrilum.com/router/providers/xai-direct — First-party endpoint serving 500K-context Grok 4.7 inference with prompt cache discounts (audit receipt Unverified).
+- Mistral La Plateforme (mistral-la-plateforme · EU-Paris / Global · protocol=Chat · 1M Multimodal · quant=FP8 / BF16): https://myrilum.com/router/providers/mistral-la-plateforme — European sovereign inference cluster hosting 1M-context Mistral Large 4 multimodal routes (audit receipts Unverified).
 - Google Vertex AI (google-vertex · US / EU Multi-Region · protocol=Chat · 2M Multimodal · quant=TPU-v6e): https://myrilum.com/router/providers/google-vertex — TPU v6e inference fabric backing 2M-context Gemini models and global routing (audit receipts Unverified).
 - AWS Bedrock (aws-bedrock · US-East / Tokyo · protocol=/v1/messages · Multi-Region · quant=BF16): https://myrilum.com/router/providers/aws-bedrock — Cross-region managed failover route supporting BYOK forwarding (external ZDR receipt Unverified).
 - Fireworks AI Nitro (fireworks-nitro · US / EU Edge · protocol=Chat · Speculative FP8 · quant=FP8-Spec): https://myrilum.com/router/providers/fireworks-nitro — Speculative-decoding inference fleet mapped to :nitro policy suffixes for open-weight models.
 - Together AI Turbo (together-turbo · US-West / EU · protocol=Chat · Distributed FP8 · quant=FP8): https://myrilum.com/router/providers/together-turbo — Distributed FP8 inference network mapped to 235B-480B open-weight models and :floor routing.
 
 ## Model Labs
-- DeepSeek (deepseek · Hangzhou, China): https://myrilum.com/router/labs/deepseek — Pioneers of MLA attention and DeepSeekMoE delivering strong benchmark scores at low list-price economics.
-- Alibaba Qwen (qwen · Hangzhou, China): https://myrilum.com/router/labs/qwen — Open-weight model family spanning 480B repository coding, hybrid thinking, and GUI vision.
-- Zhipu GLM (zhipu · Beijing, China): https://myrilum.com/router/labs/zhipu — Chinese foundation model lab focusing on citation-grounded RAG and structured tool calling.
-- Moonshot Kimi (moonshot · Beijing, China): https://myrilum.com/router/labs/moonshot — Long-context agentic reasoning lab known for 256K multi-step tool chains in Kimi K2.
-- MiniMax (minimax · Shanghai, China): https://myrilum.com/router/labs/minimax — Lab advancing low-cost sub-$0.20/1M coding models and linear-attention long-context experiments.
-- ByteDance Doubao (doubao · Beijing, China): https://myrilum.com/router/labs/doubao — CN commercial model family built for 256K Chinese document understanding workflows.
-- Anthropic (anthropic · San Francisco, USA): https://myrilum.com/router/labs/anthropic — Global frontier lab recognized for agentic software engineering benchmarks and schema discipline.
-- OpenAI (openai · San Francisco, USA): https://myrilum.com/router/labs/openai — Steward of Responses and Chat Completions specs powering GPT-5 and o3 research models.
-- Google DeepMind (google · USA / United Kingdom): https://myrilum.com/router/labs/google — Multimodal pioneer pairing 2M-token context windows with fast reference Flash tiers.
+- DeepSeek (deepseek · Hangzhou, China): https://myrilum.com/router/labs/deepseek — Pioneers of MLA attention and DeepSeekMoE spanning 1M-context DeepSeek V4 Pro, V4.1 Flash Vision, V3.2, and R1.
+- Alibaba Qwen (qwen · Hangzhou, China): https://myrilum.com/router/labs/qwen — Model family spanning 2.4T multimodal Qwen4-Max, Qwen3.8-Max, 480B repository coding, and GUI vision.
+- Zhipu GLM (zhipu · Beijing, China): https://myrilum.com/router/labs/zhipu — Chinese foundation lab spanning 1M-context GLM-5.3, GLM-5.3 Flash, and citation-grounded GLM-4 Plus.
+- Moonshot Kimi (moonshot · Beijing, China): https://myrilum.com/router/labs/moonshot — Long-context agentic reasoning lab powering 1M-context Kimi K3.1 Pro and K2 Thinking tool chains.
+- MiniMax (minimax · Shanghai, China): https://myrilum.com/router/labs/minimax — Lab shipping 1M-context MiniMax M3, always-on thinking M3.1 Flash, and low-floor M2 Flash coding agents.
+- ByteDance Doubao (doubao · Beijing, China): https://myrilum.com/router/labs/doubao — CN commercial model family spanning 1,024K Seed 2.1 Pro and Doubao 1.5 Pro 256K workflows.
+- Anthropic (anthropic · San Francisco, USA): https://myrilum.com/router/labs/anthropic — Global frontier lab shipping 1M-context Claude Fable 5.2, Opus 5.5, Sonnet 5.5, and 4.5 coding models.
+- OpenAI (openai · San Francisco, USA): https://myrilum.com/router/labs/openai — Steward of /v1/responses specs powering GPT-6.2 Astra/Sol, GPT-6 Luna, GPT-5, and o3 research tiers.
+- Google DeepMind (google · USA / United Kingdom): https://myrilum.com/router/labs/google — Multimodal pioneer shipping unified ~1M Gemini 4 Carbon/Hydrogen alongside 2M-context Gemini 3 Pro.
 - Meta Llama (meta-llama · Menlo Park, USA): https://myrilum.com/router/labs/meta-llama — Open-weight MoE backbone hosted across global speculative-decoding Nitro and Turbo clusters.
+- xAI Grok (x-ai · Palo Alto, USA): https://myrilum.com/router/labs/x-ai — Frontier lab pairing 500K-context reasoning in Grok 4.7 with aggressive 3:1 output-to-input list ratios.
+- Mistral AI (mistralai · Paris, France): https://myrilum.com/router/labs/mistralai — European AI lab delivering the 1M-context 1.05T open-weight multimodal Mistral Large 4 MoE flagship.
 
 ## Benchmark Suites
 - SWE-bench Verified (swe-bench-verified · 500 tasks · % Resolved): https://myrilum.com/router/benchmarks/swe-bench-verified — 500 human-validated open-source issue tasks measuring multi-file patch synthesis and regression verification.
@@ -67,7 +71,23 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 
 ## Complete Projected Models Catalog
 
-### #1 Gemini 3 Flash / Gemini 3 Flash 极速多模态 (google/gemini-3-flash)
+### #1 GPT-6 Luna / GPT-6 Luna 超高性价比百万人窗口版 (openai/gpt-6-luna)
+- Detail URL: https://myrilum.com/router/m/openai/gpt-6-luna
+- ZDR Audit URL: https://myrilum.com/router/m/openai/gpt-6-luna/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: openai/gpt-6-luna | Release: gpt-6-luna | Domain: coding-agent | RegionHome: GLOBAL
+- Context & List Pricing: contextWindow=1050000 | maxOutput=64000 | prompt=$0.1/1M | completion=$0.5/1M | cachedRead=$0.01/1M | blendedListUsd=$0.18/1M
+- Reference Profile (Unmeasured): manifoldScore=89.6 | decayedConfidence=1 | refBenchmarkScore=91.4 | valueLiftPerDollar=507.78/$ | refTtft=132ms | refTps=192 tok/s
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#29), speed, and list-price value lift (507.8/$, #1) converge without Warn/Review flags (unmeasured baseline).
+- Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: openai-direct | Harnesses: codex-cli, cursor-ide, opencode | Benchmarks: livecodebench-v5, bfcl-v3-tool-calling, mrcr-long-context
+- Summary (EN): High-volume tier coupling ~1.05M context and 192 tok/s ref speed with $0.10/$0.50 list pricing ($0.05/$0.25 Flex).
+- Summary (ZH): 以 $0.10/$0.50 官方标价（Flex 半价）提供 ~1.05M 窗口与 192 tok/s 参考吞吐，专为子智能体高并发扇出设计。
+- Capabilities: $0.18/1M blended list pricing with $0.01/1M cached reads; 132ms ref TTFT built for parallel subagent classification; ~1.05M-token context sweep at ultra-low list cost
+
+### #2 Gemini 3 Flash / Gemini 3 Flash 极速多模态 (google/gemini-3-flash)
 - Detail URL: https://myrilum.com/router/m/google/gemini-3-flash
 - ZDR Audit URL: https://myrilum.com/router/m/google/gemini-3-flash/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -75,7 +95,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: google/gemini-3-flash | Release: Gemini-3-Flash | Domain: multimodal-vision | RegionHome: GLOBAL
 - Context & List Pricing: contextWindow=1000000 | maxOutput=65536 | prompt=$0.15/1M | completion=$0.6/1M | cachedRead=$0.04/1M | blendedListUsd=$0.24/1M
 - Reference Profile (Unmeasured): manifoldScore=88.5 | decayedConfidence=1 | refBenchmarkScore=91.2 | valueLiftPerDollar=380/$ | refTtft=150ms | refTps=185 tok/s
-- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#11), speed, and list-price value lift (380.0/$, #2) converge without Warn/Review flags (unmeasured baseline).
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#30), speed, and list-price value lift (380.0/$, #6) converge without Warn/Review flags (unmeasured baseline).
 - Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: google-vertex | Harnesses: antigravity, cursor-ide, opencode | Benchmarks: mmmu-multimodal, bfcl-v3-tool-calling, mrcr-long-context
@@ -83,7 +103,55 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 185 tok/s 参考吐出与 150ms 参考首字的百万上下文全模态领跑者，标价综合收益达 380/$。
 - Capabilities: 185 tok/s peak reference decode tier across 1M context; Sub-200ms ref multimodal tier built for browser agents; Supports prompt cache list discounts and structured outputs
 
-### #2 Llama 4 Maverick 400B / Llama 4 Maverick 400B 投机加速 (meta-llama/llama-4-maverick-400b)
+### #3 DeepSeek V4.1 Flash / DeepSeek V4.1 Flash 多模态极速版 (deepseek/deepseek-v4-1-flash)
+- Detail URL: https://myrilum.com/router/m/deepseek/deepseek-v4-1-flash
+- ZDR Audit URL: https://myrilum.com/router/m/deepseek/deepseek-v4-1-flash/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: deepseek/deepseek-v4-1-flash | Release: V4.1-Flash-1017 | Domain: multimodal-vision | RegionHome: CN
+- Context & List Pricing: contextWindow=1000000 | maxOutput=384000 | prompt=$0.15/1M | completion=$0.6/1M | cachedRead=$0.003/1M | blendedListUsd=$0.24/1M
+- Reference Profile (Unmeasured): manifoldScore=87.2 | decayedConfidence=1 | refBenchmarkScore=94.1 | valueLiftPerDollar=392.08/$ | refTtft=145ms | refTps=168 tok/s
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#23), speed, and list-price value lift (392.1/$, #4) converge without Warn/Review flags (unmeasured baseline).
+- Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: deepseek-official, alibaba-bailian, together-turbo | Harnesses: linghe-os, opencode, cursor-ide, antigravity | Benchmarks: livecodebench-v5, mmmu-multimodal, bfcl-v3-tool-calling, mrcr-long-context
+- Summary (EN): High-speed 2026 DeepSeek release adding native Vision, Thinking toggle, 1M context, and $0.15/$0.60 Off-Peak list pricing.
+- Summary (ZH): 支持原生视觉多模态、思考模式切换、1M 窗口与 384K 输出的 2026 高速型号；采用错峰 $0.15/$0.60 官方参考标价。
+- Capabilities: Native vision ingestion paired with configurable thinking mode; Off-peak cache hit pricing down to $0.003/1M (2x peak hours); 168 tok/s reference tier suited to concurrent coding and UI loops
+
+### #4 MiniMax M3.1 Flash / MiniMax M3.1 Flash 常驻思考高速版 (minimax/minimax-m3-1-flash)
+- Detail URL: https://myrilum.com/router/m/minimax/minimax-m3-1-flash
+- ZDR Audit URL: https://myrilum.com/router/m/minimax/minimax-m3-1-flash/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: minimax/minimax-m3-1-flash | Release: MiniMax-M3.1-Flash | Domain: coding-agent | RegionHome: CN
+- Context & List Pricing: contextWindow=1000000 | maxOutput=131072 | prompt=$0.15/1M | completion=$0.6/1M | cachedRead=$0.015/1M | blendedListUsd=$0.24/1M
+- Reference Profile (Unmeasured): manifoldScore=86.8 | decayedConfidence=1 | refBenchmarkScore=91.6 | valueLiftPerDollar=381.67/$ | refTtft=138ms | refTps=172 tok/s
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#27), speed, and list-price value lift (381.7/$, #5) converge without Warn/Review flags (unmeasured baseline).
+- Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: alibaba-bailian, fireworks-nitro | Harnesses: linghe-os, opencode, cursor-ide | Benchmarks: livecodebench-v5, bfcl-v3-tool-calling, mrcr-long-context
+- Summary (EN): October 2026 always-on thinking Flash tier combining 1M context, 172 tok/s ref speed, and $0.15/$0.60 list pricing.
+- Summary (ZH): 2026 年 10 月发布的常驻思考高速型号，兼具 1M 窗口、172 tok/s 参考吞吐与 $0.15/$0.60 官方标价。
+- Capabilities: Always-on thinking loop with 172 tok/s reference decode tier; 90% cache discount ($0.015/1M) built for agent fan-out; 1M context support for repository test synthesis
+
+### #5 Zhipu GLM-5.3 Flash / 智谱 GLM-5.3 Flash 高速检索版 (zhipu/glm-5-3-flash)
+- Detail URL: https://myrilum.com/router/m/zhipu/glm-5-3-flash
+- ZDR Audit URL: https://myrilum.com/router/m/zhipu/glm-5-3-flash/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: zhipu/glm-5-3-flash | Release: GLM-5.3-Flash | Domain: enterprise-rag | RegionHome: CN
+- Context & List Pricing: contextWindow=1000000 | maxOutput=65536 | prompt=$0.15/1M | completion=$0.5/1M | cachedRead=$0.03/1M | blendedListUsd=$0.22/1M
+- Reference Profile (Unmeasured): manifoldScore=86.3 | decayedConfidence=0.9974 | refBenchmarkScore=90.2 | valueLiftPerDollar=410/$ | refTtft=140ms | refTps=162 tok/s
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#33), speed, and list-price value lift (410.0/$, #3) converge without Warn/Review flags (unmeasured baseline).
+- Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: zhipu-bigmodel, alibaba-bailian | Harnesses: linghe-os, opencode, cursor-ide | Benchmarks: bfcl-v3-tool-calling, mrcr-long-context
+- Summary (EN): Ultra-low-cost 1M-context RAG and classification tier (BigModel CN ¥0.80/¥2.80; Global $0.15/$0.50).
+- Summary (ZH): 兼顾 1M 上下文与 ¥0.80/¥2.80（$0.15/$0.50）极低标价的高速企业检索型号，适合高并发摘要与中文合规问答。
+- Capabilities: 140ms ref TTFT and 162 tok/s reference decode throughput; $0.22/1M blended list pricing for enterprise RAG fan-out; Grounded RAG citation support with $0.03/1M cache reads
+
+### #6 Llama 4 Maverick 400B / Llama 4 Maverick 400B 投机加速 (meta-llama/llama-4-maverick-400b)
 - Detail URL: https://myrilum.com/router/m/meta-llama/llama-4-maverick-400b
 - ZDR Audit URL: https://myrilum.com/router/m/meta-llama/llama-4-maverick-400b/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -91,7 +159,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: meta-llama/llama-4-maverick-400b | Release: Llama-4-Maverick | Domain: coding-agent | RegionHome: GLOBAL
 - Context & List Pricing: contextWindow=512000 | maxOutput=32768 | prompt=$0.22/1M | completion=$0.85/1M | cachedRead=$0.06/1M | blendedListUsd=$0.346/1M
 - Reference Profile (Unmeasured): manifoldScore=84.4 | decayedConfidence=0.9885 | refBenchmarkScore=90.8 | valueLiftPerDollar=262.43/$ | refTtft=162ms | refTps=164 tok/s
-- Paraconsistent Fork: HIGH_VALUE_SLEEPER (High-Value Sleeper) — Reference baseline delivers 262.4/$ value lift at 164 tok/s and $0.35/1M list spend (#4 efficiency, #12 benchmark).
+- Paraconsistent Fork: HIGH_VALUE_SLEEPER (High-Value Sleeper) — Reference baseline delivers 262.4/$ value lift at 164 tok/s and $0.35/1M list spend (#8 efficiency, #31 benchmark).
 - Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: fireworks-nitro, together-turbo, alibaba-bailian | Harnesses: opencode, cursor-ide, linghe-os | Benchmarks: livecodebench-v5, bfcl-v3-tool-calling, swe-bench-verified
@@ -99,7 +167,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 依托投机解码集群达 164 tok/s 与 162ms 参考首字的高性价比开源 MoE 黑马，兼容百炼镜像。
 - Capabilities: 164 tok/s speculative-decoding reference tier built for :nitro; 512K context open-weight MoE deployable across 3 providers; Available through both Nitro US/EU and Bailian CN mirrors
 
-### #3 GPT-5 Mini / GPT-5 Mini 高并发轻量版 (openai/gpt-5-mini)
+### #7 GPT-5 Mini / GPT-5 Mini 高并发轻量版 (openai/gpt-5-mini)
 - Detail URL: https://myrilum.com/router/m/openai/gpt-5-mini
 - ZDR Audit URL: https://myrilum.com/router/m/openai/gpt-5-mini/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -107,7 +175,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: openai/gpt-5-mini | Release: GPT-5-Mini | Domain: coding-agent | RegionHome: GLOBAL
 - Context & List Pricing: contextWindow=400000 | maxOutput=64000 | prompt=$0.25/1M | completion=$1/1M | cachedRead=$0.06/1M | blendedListUsd=$0.4/1M
 - Reference Profile (Unmeasured): manifoldScore=82.6 | decayedConfidence=0.9994 | refBenchmarkScore=90.4 | valueLiftPerDollar=226/$ | refTtft=170ms | refTps=148 tok/s
-- Paraconsistent Fork: HIGH_VALUE_SLEEPER (High-Value Sleeper) — Reference baseline delivers 226.0/$ value lift at 148 tok/s and $0.40/1M list spend (#6 efficiency, #13 benchmark).
+- Paraconsistent Fork: HIGH_VALUE_SLEEPER (High-Value Sleeper) — Reference baseline delivers 226.0/$ value lift at 148 tok/s and $0.40/1M list spend (#10 efficiency, #32 benchmark).
 - Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: openai-direct | Harnesses: codex-cli, cursor-ide, opencode | Benchmarks: livecodebench-v5, bfcl-v3-tool-calling, mrcr-long-context
@@ -115,7 +183,23 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 170ms 参考首字、148 tok/s 参考输出且延续 400K 窗口的轻量主力，适配高并发子智能体路由。
 - Capabilities: 148 tok/s reference decode speed paired with 400K context capacity; Strong structured tool execution at $0.40/1M blended list spend; Built for high-volume classification and test synthesis
 
-### #4 MiniMax M2 Flash / MiniMax M2 Flash 极速轻量代理 (minimax/minimax-m2-flash)
+### #8 MiniMax M3 / MiniMax M3 百万上下文标准旗舰 (minimax/minimax-m3)
+- Detail URL: https://myrilum.com/router/m/minimax/minimax-m3
+- ZDR Audit URL: https://myrilum.com/router/m/minimax/minimax-m3/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: minimax/minimax-m3 | Release: MiniMax-M3 | Domain: long-context | RegionHome: CN
+- Context & List Pricing: contextWindow=1000000 | maxOutput=131072 | prompt=$0.3/1M | completion=$1.2/1M | cachedRead=$0.06/1M | blendedListUsd=$0.48/1M
+- Reference Profile (Unmeasured): manifoldScore=82 | decayedConfidence=0.9968 | refBenchmarkScore=93.8 | valueLiftPerDollar=195.42/$ | refTtft=215ms | refTps=124 tok/s
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#24), speed, and list-price value lift (195.4/$, #12) converge without Warn/Review flags (unmeasured baseline).
+- Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: alibaba-bailian, together-turbo | Harnesses: linghe-os, opencode, cursor-ide, antigravity | Benchmarks: mrcr-long-context, livecodebench-v5, bfcl-v3-tool-calling
+- Summary (EN): Next-gen 1M-context MiniMax flagship priced at $0.30/$1.20 for requests up to 512K tokens (doubles above 512K).
+- Summary (ZH): 支持 1M 上下文的新一代旗舰文本基座；512K 输入内保持 $0.30/$1.20 公开标价（超过 512K 按 2x 计费）。
+- Capabilities: Flat $0.30/$1.20 tier up to 512K tokens ($0.48/1M blended); $0.06/1M prompt cache read pricing for repeated agent histories; Compatible with CN Bailian direct and global Together hosts
+
+### #9 MiniMax M2 Flash / MiniMax M2 Flash 极速轻量代理 (minimax/minimax-m2-flash)
 - Detail URL: https://myrilum.com/router/m/minimax/minimax-m2-flash
 - ZDR Audit URL: https://myrilum.com/router/m/minimax/minimax-m2-flash/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -123,7 +207,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: minimax/minimax-m2-flash | Release: M2-Flash | Domain: coding-agent | RegionHome: CN
 - Context & List Pricing: contextWindow=196608 | maxOutput=32768 | prompt=$0.12/1M | completion=$0.48/1M | cachedRead=$0.03/1M | blendedListUsd=$0.192/1M
 - Reference Profile (Unmeasured): manifoldScore=81.6 | decayedConfidence=0.9974 | refBenchmarkScore=87.4 | valueLiftPerDollar=455.21/$ | refTtft=148ms | refTps=158 tok/s
-- Paraconsistent Fork: HIGH_VALUE_SLEEPER (High-Value Sleeper) — Reference baseline delivers 455.2/$ value lift at 158 tok/s and $0.19/1M list spend (#1 efficiency, #17 benchmark).
+- Paraconsistent Fork: HIGH_VALUE_SLEEPER (High-Value Sleeper) — Reference baseline delivers 455.2/$ value lift at 158 tok/s and $0.19/1M list spend (#2 efficiency, #37 benchmark).
 - Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: alibaba-bailian, fireworks-nitro | Harnesses: linghe-os, opencode, cursor-ide | Benchmarks: livecodebench-v5, bfcl-v3-tool-calling
@@ -131,7 +215,23 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 148ms 参考首字、158 tok/s 参考吞吐且混合标价不足 $0.20/1M 的高性价比黑马，适合并发子代理批处理。
 - Capabilities: 158 tok/s reference decode tier at 148ms ref TTFT; Sub-$0.20/1M blended list pricing yielding >450 ref value/$; 196K context window for fast tool fan-out tasks
 
-### #5 Qwen3 235B A22B / 通义千问 Qwen3 235B A22B (qwen/qwen3-235b-a22b)
+### #10 Mistral Large 4 / Mistral Large 4 开放权重万亿 MoE (mistralai/mistral-large-4)
+- Detail URL: https://myrilum.com/router/m/mistralai/mistral-large-4
+- ZDR Audit URL: https://myrilum.com/router/m/mistralai/mistral-large-4/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: mistralai/mistral-large-4 | Release: Mistral-Large-4-1.05T | Domain: multimodal-vision | RegionHome: GLOBAL
+- Context & List Pricing: contextWindow=1000000 | maxOutput=128000 | prompt=$0.7/1M | completion=$2.1/1M | cachedRead=$0.07/1M | blendedListUsd=$0.98/1M
+- Reference Profile (Unmeasured): manifoldScore=80.2 | decayedConfidence=1 | refBenchmarkScore=95.3 | valueLiftPerDollar=97.24/$ | refTtft=225ms | refTps=118 tok/s
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#20), speed, and list-price value lift (97.2/$, #19) converge without Warn/Review flags (unmeasured baseline).
+- Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: mistral-la-plateforme, fireworks-nitro, together-turbo | Harnesses: opencode, cursor-ide, linghe-os | Benchmarks: mmmu-multimodal, livecodebench-v5, mrcr-long-context, bfcl-v3-tool-calling
+- Summary (EN): October 2026 open-weight 1.05T-total (52B-active) multimodal MoE pairing built-in vision and 1M context with $0.70/$2.10 pricing.
+- Summary (ZH): 2026 年 10 月开放权重的 1.05T 总参 / 52B 激活多模态 MoE，原生 1M 窗口与视觉编码器且标价仅 $0.70/$2.10。
+- Capabilities: 1.05T/52B-active open-weight MoE with native vision encoder; $0.98/1M blended list pricing and $0.07/1M cache reads; Served via EU-Paris La Plateforme, Fireworks, and Together hosts
+
+### #11 Qwen3 235B A22B / 通义千问 Qwen3 235B A22B (qwen/qwen3-235b-a22b)
 - Detail URL: https://myrilum.com/router/m/qwen/qwen3-235b-a22b
 - ZDR Audit URL: https://myrilum.com/router/m/qwen/qwen3-235b-a22b/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -139,7 +239,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: qwen/qwen3-235b-a22b | Release: Qwen3-235B-A22B | Domain: general-reasoning | RegionHome: CN
 - Context & List Pricing: contextWindow=131072 | maxOutput=32768 | prompt=$0.18/1M | completion=$0.72/1M | cachedRead=$0.05/1M | blendedListUsd=$0.288/1M
 - Reference Profile (Unmeasured): manifoldScore=79.7 | decayedConfidence=0.9962 | refBenchmarkScore=91.5 | valueLiftPerDollar=317.71/$ | refTtft=178ms | refTps=136 tok/s
-- Paraconsistent Fork: HIGH_VALUE_SLEEPER (High-Value Sleeper) — Reference baseline delivers 317.7/$ value lift at 136 tok/s and $0.29/1M list spend (#3 efficiency, #10 benchmark).
+- Paraconsistent Fork: HIGH_VALUE_SLEEPER (High-Value Sleeper) — Reference baseline delivers 317.7/$ value lift at 136 tok/s and $0.29/1M list spend (#7 efficiency, #28 benchmark).
 - Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: alibaba-bailian, fireworks-nitro | Harnesses: linghe-os, opencode, antigravity | Benchmarks: aime-2026-reasoning, bfcl-v3-tool-calling, livecodebench-v5
@@ -147,7 +247,23 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 仅激活 22B 参数的混合思考高性价比黑马，在 178ms 参考首字延迟下提供高基准性价比表现。
 - Capabilities: Dynamic hybrid thinking toggle inside a single API payload; Exceeds 310 capability points per USD on reference list pricing; Served on CN Bailian and global Nitro clusters
 
-### #6 Gemini 2.5 Flash Lite Exp / Gemini 2.5 Flash Lite 实验版 (google/gemini-2-5-flash-lite-exp)
+### #12 Gemini 4 Hydrogen / Gemini 4 Hydrogen 极速全模态常驻版 (google/gemini-4-hydrogen)
+- Detail URL: https://myrilum.com/router/m/google/gemini-4-hydrogen
+- ZDR Audit URL: https://myrilum.com/router/m/google/gemini-4-hydrogen/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: google/gemini-4-hydrogen | Release: Gemini-4-Hydrogen | Domain: multimodal-vision | RegionHome: GLOBAL
+- Context & List Pricing: contextWindow=1048576 | maxOutput=65536 | prompt=$1.5/1M | completion=$7.5/1M | cachedRead=$0.15/1M | blendedListUsd=$2.7/1M
+- Reference Profile (Unmeasured): manifoldScore=79 | decayedConfidence=1 | refBenchmarkScore=95.6 | valueLiftPerDollar=35.41/$ | refTtft=175ms | refTps=162 tok/s
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #17 benchmark, $2.70/1M list spend, and 162 tok/s ref speed (#23 efficiency).
+- Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: google-vertex | Harnesses: antigravity, cursor-ide, opencode | Benchmarks: mmmu-multimodal, bfcl-v3-tool-calling, mrcr-long-context
+- Summary (EN): Fourth-generation fast multimodal successor to 3.8 Flash with ~1M unified window, implicit caching, and $1.50/$7.50 list pricing.
+- Summary (ZH): 接棒 Gemini 3.8 Flash 的第 4 代高速全模态主力，具备 ~1M 统一上下文、隐式缓存及 $1.50/$7.50 公开标价。
+- Capabilities: 175ms ref TTFT and 162 tok/s multimodal reference throughput; Built-in implicit caching without manual cache lifecycle calls; Built for visual browser QA, PDF OCR, and streaming agents
+
+### #13 Gemini 2.5 Flash Lite Exp / Gemini 2.5 Flash Lite 实验版 (google/gemini-2-5-flash-lite-exp)
 - Detail URL: https://myrilum.com/router/m/google/gemini-2-5-flash-lite-exp
 - ZDR Audit URL: https://myrilum.com/router/m/google/gemini-2-5-flash-lite-exp/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -155,7 +271,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: google/gemini-2-5-flash-lite-exp | Release: 2.5-Flash-Lite-Exp | Domain: enterprise-rag | RegionHome: GLOBAL
 - Context & List Pricing: contextWindow=1000000 | maxOutput=32768 | prompt=$0.32/1M | completion=$1.28/1M | cachedRead=$0.08/1M | blendedListUsd=$0.512/1M
 - Reference Profile (Unmeasured): manifoldScore=78.8 | decayedConfidence=0.9076 | refBenchmarkScore=84.5 | valueLiftPerDollar=165.04/$ | refTtft=250ms | refTps=108 tok/s
-- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #18 benchmark, $0.51/1M list spend, and 108 tok/s ref speed (#11 efficiency).
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#38), speed, and list-price value lift (165.0/$, #16) converge without Warn/Review flags (unmeasured baseline).
 - Reachability & BYOK: cnDirectReachable=false | isByokSupported=false
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: google-vertex | Harnesses: antigravity | Benchmarks: mrcr-long-context
@@ -163,7 +279,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 实验性轻量预览节点，因尚未提交正式企业 ZDR 审计单据，在审计目录严格保持 Unverified 态。
 - Capabilities: Experimental 1M-context lightweight retrieval batching; BYOK and enterprise ZDR receipts pending GA promotion; Manifold score applies conservative Unverified confidence damping
 
-### #7 Gemini 3 Pro 2M / Gemini 3 Pro 200万全模态 (google/gemini-3-pro)
+### #14 Gemini 3 Pro 2M / Gemini 3 Pro 200万全模态 (google/gemini-3-pro)
 - Detail URL: https://myrilum.com/router/m/google/gemini-3-pro
 - ZDR Audit URL: https://myrilum.com/router/m/google/gemini-3-pro/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -171,7 +287,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: google/gemini-3-pro | Release: Gemini-3-Pro | Domain: long-context | RegionHome: GLOBAL
 - Context & List Pricing: contextWindow=2000000 | maxOutput=65536 | prompt=$1.25/1M | completion=$5/1M | cachedRead=$0.31/1M | blendedListUsd=$2/1M
 - Reference Profile (Unmeasured): manifoldScore=78.7 | decayedConfidence=0.9984 | refBenchmarkScore=95.8 | valueLiftPerDollar=47.9/$ | refTtft=330ms | refTps=118 tok/s
-- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #5 benchmark, $2.00/1M list spend, and 118 tok/s ref speed (#16 efficiency).
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #15 benchmark, $2.00/1M list spend, and 118 tok/s ref speed (#27 efficiency).
 - Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: google-vertex | Harnesses: antigravity, cursor-ide, linghe-os | Benchmarks: mrcr-long-context, mmmu-multimodal, swe-bench-verified
@@ -179,7 +295,23 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 原生 200 万 Token 文本/图像/音频/视频窗口规格，支持 TPU v6e 118 tok/s 参考吞吐，适用于整仓扫描。
 - Capabilities: Native 2M-token window ingesting full repos and video streams; 118 tok/s TPU v6e reference decode tier across modalities; Vertex AI VPC-SC private enterprise endpoint support
 
-### #8 DeepSeek V3.2 MoE / DeepSeek V3.2 高吞吐 MoE (deepseek/deepseek-v3-2)
+### #15 DeepSeek V4 Pro / DeepSeek V4 Pro 百万窗旗舰推理 (deepseek/deepseek-v4-pro)
+- Detail URL: https://myrilum.com/router/m/deepseek/deepseek-v4-pro
+- ZDR Audit URL: https://myrilum.com/router/m/deepseek/deepseek-v4-pro/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: deepseek/deepseek-v4-pro | Release: V4-Pro-0813 | Domain: general-reasoning | RegionHome: CN
+- Context & List Pricing: contextWindow=1000000 | maxOutput=384000 | prompt=$0.66/1M | completion=$1.98/1M | cachedRead=$0.022/1M | blendedListUsd=$0.924/1M
+- Reference Profile (Unmeasured): manifoldScore=77.5 | decayedConfidence=1 | refBenchmarkScore=97.6 | valueLiftPerDollar=105.63/$ | refTtft=285ms | refTps=96 tok/s
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#9), speed, and list-price value lift (105.6/$, #20) converge without Warn/Review flags (unmeasured baseline).
+- Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: deepseek-official, alibaba-bailian, fireworks-nitro | Harnesses: linghe-os, opencode, claude-code, antigravity | Benchmarks: aime-2026-reasoning, swe-bench-verified, livecodebench-v5, mrcr-long-context
+- Summary (EN): 1M-context, 384K-output DeepSeek reasoning flagship; listed with official Off-Peak pricing (standard Peak UTC hours scale at 2x).
+- Summary (ZH): 支持 1M 上下文与 384K 超长思维输出的 DeepSeek 2026 旗舰推理型号；表中标注为官方错峰（Off-Peak）标价（工作高峰时段按 2x 计费）。
+- Capabilities: 1M context window paired with up to 384K reasoning output tokens; Off-peak cache reads at $0.022/1M list price (2x during UTC peak hours); Thinking/non-thinking toggle with CN-direct DeepSeek and Bailian access
+
+### #16 DeepSeek V3.2 MoE / DeepSeek V3.2 高吞吐 MoE (deepseek/deepseek-v3-2)
 - Detail URL: https://myrilum.com/router/m/deepseek/deepseek-v3-2
 - ZDR Audit URL: https://myrilum.com/router/m/deepseek/deepseek-v3-2/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -187,7 +319,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: deepseek/deepseek-v3-2 | Release: V3.2-FP8 | Domain: coding-agent | RegionHome: CN
 - Context & List Pricing: contextWindow=128000 | maxOutput=16384 | prompt=$0.27/1M | completion=$1.1/1M | cachedRead=$0.07/1M | blendedListUsd=$0.436/1M
 - Reference Profile (Unmeasured): manifoldScore=77.5 | decayedConfidence=1 | refBenchmarkScore=92.8 | valueLiftPerDollar=212.84/$ | refTtft=195ms | refTps=122 tok/s
-- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#9), speed, and list-price value lift (212.8/$, #7) converge without Warn/Review flags (unmeasured baseline).
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#26), speed, and list-price value lift (212.8/$, #11) converge without Warn/Review flags (unmeasured baseline).
 - Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: deepseek-official, alibaba-bailian, together-turbo | Harnesses: linghe-os, opencode, cursor-ide, antigravity | Benchmarks: swe-bench-verified, livecodebench-v5, bfcl-v3-tool-calling
@@ -195,7 +327,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 兼顾编码工具循环基准精度与亚美元百万 Token 混合标价的混合专家模型，参考吞吐表现均衡。
 - Capabilities: 122 tok/s reference decode tier with sub-200ms ref TTFT; Strict JSON Schema adherence for multi-tool agent loops; Dual-region endpoint compatibility across CN and global mirrors
 
-### #9 Llama 4 Scout 17B / Llama 4 Scout 17B 长窗口 (meta-llama/llama-4-scout-17b)
+### #17 Llama 4 Scout 17B / Llama 4 Scout 17B 长窗口 (meta-llama/llama-4-scout-17b)
 - Detail URL: https://myrilum.com/router/m/meta-llama/llama-4-scout-17b
 - ZDR Audit URL: https://myrilum.com/router/m/meta-llama/llama-4-scout-17b/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -203,7 +335,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: meta-llama/llama-4-scout-17b | Release: Llama-4-Scout-17B | Domain: long-context | RegionHome: GLOBAL
 - Context & List Pricing: contextWindow=1000000 | maxOutput=16384 | prompt=$0.2/1M | completion=$0.75/1M | cachedRead=$0.05/1M | blendedListUsd=$0.31/1M
 - Reference Profile (Unmeasured): manifoldScore=76.8 | decayedConfidence=0.7975 | refBenchmarkScore=81.2 | valueLiftPerDollar=261.94/$ | refTtft=295ms | refTps=96 tok/s
-- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #20 benchmark, $0.31/1M list spend, and 96 tok/s ref speed (#5 efficiency).
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #40 benchmark, $0.31/1M list spend, and 96 tok/s ref speed (#9 efficiency).
 - Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
 - ZDR Compliance: overall=Warn (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: together-turbo, fireworks-nitro | Harnesses: opencode, linghe-os | Benchmarks: mrcr-long-context
@@ -211,7 +343,39 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 轻量级 1M 上下文检索模型，部分开源托管副节点存在保留策略差异，ZDR 矩阵显示 Warn 提示。
 - Capabilities: 17B-active architecture handling 1M-token retrieval sweeps; Suited to pre-filtering and lightweight metadata extraction; Flags host-level log Warn while external audit receipts remain Unverified
 
-### #10 Qwen3 Coder 480B / 通义千问 Qwen3 Coder 480B (qwen/qwen3-coder-480b)
+### #18 Gemini 4 Carbon / Gemini 4 Carbon 重度推理全模态旗舰 (google/gemini-4-carbon)
+- Detail URL: https://myrilum.com/router/m/google/gemini-4-carbon
+- ZDR Audit URL: https://myrilum.com/router/m/google/gemini-4-carbon/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: google/gemini-4-carbon | Release: Gemini-4-Carbon | Domain: long-context | RegionHome: GLOBAL
+- Context & List Pricing: contextWindow=1048576 | maxOutput=65536 | prompt=$2/1M | completion=$10/1M | cachedRead=$0.2/1M | blendedListUsd=$3.6/1M
+- Reference Profile (Unmeasured): manifoldScore=75.6 | decayedConfidence=1 | refBenchmarkScore=98.2 | valueLiftPerDollar=27.28/$ | refTtft=280ms | refTps=114 tok/s
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #4 benchmark, $3.60/1M list spend, and 114 tok/s ref speed (#31 efficiency).
+- Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: google-vertex | Harnesses: antigravity, cursor-ide, linghe-os | Benchmarks: mrcr-long-context, mmmu-multimodal, swe-bench-verified, aime-2026-reasoning
+- Summary (EN): October 2026 Gemini 4 frontier model using unified ~1M shared input/thinking/output memory ($2/$10 intro rate through Nov 30).
+- Summary (ZH): Google 于 2026 年 10 月末发布的 Gemini 4 重度推理与代理旗舰，采用统一 1M 思考+输入共享上下文架构（11 月优惠期 $2/$10）。
+- Capabilities: 1M unified multimodal window spanning code, video, audio, and PDFs; Vertex AI enterprise integration with automatic caching savings; Top-tier symbolic deduction and extended repo troubleshooting
+
+### #19 GPT-6.2 Sol / GPT-6.2 Sol 均衡编码主力 (openai/gpt-6-2-sol)
+- Detail URL: https://myrilum.com/router/m/openai/gpt-6-2-sol
+- ZDR Audit URL: https://myrilum.com/router/m/openai/gpt-6-2-sol/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: openai/gpt-6-2-sol | Release: gpt-6.2-sol | Domain: coding-agent | RegionHome: GLOBAL
+- Context & List Pricing: contextWindow=1050000 | maxOutput=128000 | prompt=$2/1M | completion=$10/1M | cachedRead=$0.2/1M | blendedListUsd=$3.6/1M
+- Reference Profile (Unmeasured): manifoldScore=75.5 | decayedConfidence=1 | refBenchmarkScore=97.9 | valueLiftPerDollar=27.19/$ | refTtft=265ms | refTps=108 tok/s
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #6 benchmark, $3.60/1M list spend, and 108 tok/s ref speed (#32 efficiency).
+- Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: openai-direct | Harnesses: codex-cli, cursor-ide, opencode, antigravity | Benchmarks: swe-bench-verified, livecodebench-v5, bfcl-v3-tool-calling, mrcr-long-context
+- Summary (EN): Balanced November 2026 workhorse preserving ~1.05M context and 128K output at one-fourth the list spend of Astra ($2/$10).
+- Summary (ZH): 延续 ~1.05M 上下文与 128K 输出并将官方标价降至 Astra 四分之一（$2/$10），兼顾参考吞吐与仓库工程基准。
+- Capabilities: Balanced $2.00/$10.00 list rates paired with 108 tok/s ref speed; Native Codex CLI /v1/responses loop with strict JSON Schema; 90% list prompt caching savings ($0.20/1M)
+
+### #20 Qwen3 Coder 480B / 通义千问 Qwen3 Coder 480B (qwen/qwen3-coder-480b)
 - Detail URL: https://myrilum.com/router/m/qwen/qwen3-coder-480b
 - ZDR Audit URL: https://myrilum.com/router/m/qwen/qwen3-coder-480b/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -219,7 +383,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: qwen/qwen3-coder-480b | Release: Qwen3-Coder-480B | Domain: coding-agent | RegionHome: CN
 - Context & List Pricing: contextWindow=256000 | maxOutput=32768 | prompt=$0.4/1M | completion=$1.6/1M | cachedRead=$0.1/1M | blendedListUsd=$0.64/1M
 - Reference Profile (Unmeasured): manifoldScore=75.4 | decayedConfidence=0.9976 | refBenchmarkScore=94.2 | valueLiftPerDollar=147.19/$ | refTtft=235ms | refTps=98 tok/s
-- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #7 benchmark, $0.64/1M list spend, and 98 tok/s ref speed (#12 efficiency).
+- Paraconsistent Fork: CONVERGENT_LEADER (Convergent Leader) — Reference benchmark (#22), speed, and list-price value lift (147.2/$, #17) converge without Warn/Review flags (unmeasured baseline).
 - Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: alibaba-bailian, together-turbo | Harnesses: linghe-os, opencode, cursor-ide, claude-code | Benchmarks: swe-bench-verified, livecodebench-v5, mrcr-long-context
@@ -227,7 +391,71 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 面向仓库级软件工程与多文件重构的 256K 超长上下文代码旗舰，原生兼容多种终端编码代理。
 - Capabilities: 256K repository-scale context for cross-file refactor reasoning; CN-direct routing via Alibaba Bailian endpoints; Native tool calling tuned for deterministic patch synthesis
 
-### #11 MiniMax Text 01 Preview / MiniMax Text 01 百万窗口预览 (minimax/minimax-text-01-preview)
+### #21 Claude Sonnet 5.5 / Claude Sonnet 5.5 百万窗速度智能平衡版 (anthropic/claude-sonnet-5-5)
+- Detail URL: https://myrilum.com/router/m/anthropic/claude-sonnet-5-5
+- ZDR Audit URL: https://myrilum.com/router/m/anthropic/claude-sonnet-5-5/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: anthropic/claude-sonnet-5-5 | Release: Claude-Sonnet-5.5 | Domain: coding-agent | RegionHome: GLOBAL
+- Context & List Pricing: contextWindow=1000000 | maxOutput=128000 | prompt=$2/1M | completion=$10/1M | cachedRead=$0.1/1M | blendedListUsd=$3.6/1M
+- Reference Profile (Unmeasured): manifoldScore=75.3 | decayedConfidence=1 | refBenchmarkScore=97.7 | valueLiftPerDollar=27.14/$ | refTtft=255ms | refTps=106 tok/s
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #8 benchmark, $3.60/1M list spend, and 106 tok/s ref speed (#30 efficiency).
+- Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: anthropic-direct, aws-bedrock, google-vertex | Harnesses: claude-code, cursor-ide, opencode, antigravity | Benchmarks: swe-bench-verified, livecodebench-v5, bfcl-v3-tool-calling, mrcr-long-context
+- Summary (EN): Pairing 1M context, 106 tok/s ref speed, and $2/$10 list pricing for everyday Claude Code and Cursor workflows.
+- Summary (ZH): 以 $2/$10 官方标价带来 1M 上下文、106 tok/s 参考吞吐与近 Opus 级工程分值，是日常编程代理的高胜率主力。
+- Capabilities: 1M context standard paired with $0.10/1M cached prompt reads; 106 tok/s ref decode speed with high CI test-fix accuracy; Simultaneous GA across Anthropic Direct, Bedrock, and Vertex
+
+### #22 ByteDance Doubao Seed 2.1 Pro / 豆包 Seed 2.1 Pro 百万窗企业旗舰 (doubao/seed-2-1-pro)
+- Detail URL: https://myrilum.com/router/m/doubao/seed-2-1-pro
+- ZDR Audit URL: https://myrilum.com/router/m/doubao/seed-2-1-pro/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: doubao/seed-2-1-pro | Release: Seed-2.1-Pro | Domain: enterprise-rag | RegionHome: CN
+- Context & List Pricing: contextWindow=1024000 | maxOutput=65536 | prompt=$0.88/1M | completion=$4.41/1M | cachedRead=$0.18/1M | blendedListUsd=$1.586/1M
+- Reference Profile (Unmeasured): manifoldScore=74.6 | decayedConfidence=0.9962 | refBenchmarkScore=94.6 | valueLiftPerDollar=59.65/$ | refTtft=255ms | refTps=96 tok/s
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #21 benchmark, $1.59/1M list spend, and 96 tok/s ref speed (#24 efficiency).
+- Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: volcengine-ark | Harnesses: linghe-os, cursor-ide, opencode | Benchmarks: mrcr-long-context, bfcl-v3-tool-calling, swe-bench-verified
+- Summary (EN): 1,024K-context Volcano Engine flagship (China ¥6/¥30 per 1M; ~$0.88/$4.41 USD equivalent) supporting 50% batch savings.
+- Summary (ZH): 火山方舟 1,024K 长上下文企业推理旗舰，国内官方标价 ¥6/¥30（国际等效 ~$0.88/$4.41），支持批处理半价折让。
+- Capabilities: 1,024K context window via Volcengine Ark for Chinese enterprise RAG; Cache reads at ¥1.20/1M (~$0.18) plus 50% Batch discount; Held fail-closed as Unverified until external ZDR receipts attach
+
+### #23 Qwen4 Max / 通义千问 Qwen4 Max 2.4T 全模态 (qwen/qwen4-max)
+- Detail URL: https://myrilum.com/router/m/qwen/qwen4-max
+- ZDR Audit URL: https://myrilum.com/router/m/qwen/qwen4-max/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: qwen/qwen4-max | Release: Qwen4-Max-2.4T | Domain: general-reasoning | RegionHome: CN
+- Context & List Pricing: contextWindow=1000000 | maxOutput=131072 | prompt=$1.5/1M | completion=$4.5/1M | cachedRead=$0.075/1M | blendedListUsd=$2.1/1M
+- Reference Profile (Unmeasured): manifoldScore=74.4 | decayedConfidence=1 | refBenchmarkScore=97.4 | valueLiftPerDollar=46.38/$ | refTtft=260ms | refTps=102 tok/s
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #10 benchmark, $2.10/1M list spend, and 102 tok/s ref speed (#26 efficiency).
+- Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: alibaba-bailian, together-turbo | Harnesses: linghe-os, opencode, claude-code, antigravity | Benchmarks: aime-2026-reasoning, swe-bench-verified, mmmu-multimodal, mrcr-long-context
+- Summary (EN): 2.4T sparse MoE flagship with native multimodal input and flat 1M context pricing (DashScope Beijing ¥10/¥30; Singapore $1.50/$4.50).
+- Summary (ZH): 2.4T 参数稀疏 MoE 旗舰，原生支持文本/图像/视频与全量 1M 平滑不加价窗口；百炼北京节点参考价 ¥10/¥30（国际新加坡 $1.50/$4.50）。
+- Capabilities: Flat single-tier 1M context pricing without long-context surcharge; Unified text, image, and video encoding with deep thinking mode; Served via DashScope Beijing CN-direct and Singapore endpoints
+
+### #24 Zhipu GLM-5.3 / 智谱 GLM-5.3 百万窗编程旗舰 (zhipu/glm-5-3)
+- Detail URL: https://myrilum.com/router/m/zhipu/glm-5-3
+- ZDR Audit URL: https://myrilum.com/router/m/zhipu/glm-5-3/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: zhipu/glm-5-3 | Release: GLM-5.3 | Domain: coding-agent | RegionHome: CN
+- Context & List Pricing: contextWindow=1000000 | maxOutput=131072 | prompt=$1.4/1M | completion=$4.4/1M | cachedRead=$0.26/1M | blendedListUsd=$2/1M
+- Reference Profile (Unmeasured): manifoldScore=74.3 | decayedConfidence=1 | refBenchmarkScore=95.8 | valueLiftPerDollar=47.9/$ | refTtft=245ms | refTps=98 tok/s
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #16 benchmark, $2.00/1M list spend, and 98 tok/s ref speed (#25 efficiency).
+- Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: zhipu-bigmodel, alibaba-bailian | Harnesses: linghe-os, opencode, claude-code, cursor-ide | Benchmarks: swe-bench-verified, bfcl-v3-tool-calling, mrcr-long-context
+- Summary (EN): 1M-context flagship from Zhipu AI delivering agentic coding gains (BigModel CN ¥8/¥28; Z.ai Global $1.40/$4.40).
+- Summary (ZH): 支持 1M 上下文与强化仓库编程能力的新一代智谱旗舰；国内 BigModel 标价 ¥8/¥28，国际 Z.ai 标价 $1.40/$4.40。
+- Capabilities: 1M context code navigation with 131K completion ceiling; Tuned for Claude Code, Cursor IDE, and OpenCode tool loops; CN-direct access via Zhipu BigModel and Alibaba Bailian
+
+### #25 MiniMax Text 01 Preview / MiniMax Text 01 百万窗口预览 (minimax/minimax-text-01-preview)
 - Detail URL: https://myrilum.com/router/m/minimax/minimax-text-01-preview
 - ZDR Audit URL: https://myrilum.com/router/m/minimax/minimax-text-01-preview/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -235,7 +463,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: minimax/minimax-text-01-preview | Release: Text-01-Preview | Domain: long-context | RegionHome: CN
 - Context & List Pricing: contextWindow=1000000 | maxOutput=16384 | prompt=$0.3/1M | completion=$1.1/1M | cachedRead=$0.08/1M | blendedListUsd=$0.46/1M
 - Reference Profile (Unmeasured): manifoldScore=74.3 | decayedConfidence=0.9214 | refBenchmarkScore=84.5 | valueLiftPerDollar=183.7/$ | refTtft=390ms | refTps=72 tok/s
-- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #19 benchmark, $0.46/1M list spend, and 72 tok/s ref speed (#9 efficiency).
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #39 benchmark, $0.46/1M list spend, and 72 tok/s ref speed (#14 efficiency).
 - Reachability & BYOK: cnDirectReachable=true | isByokSupported=false
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: alibaba-bailian | Harnesses: linghe-os | Benchmarks: mrcr-long-context
@@ -243,7 +471,23 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 百万级线性注意力长文本实验预览节点，尚未登记第三方 ZDR 证明，页面严格保持 Unverified 态。
 - Capabilities: 1M-token linear-attention long-context window; CN-direct preview endpoint (BYOK disabled during preview); Fail-closed Unverified ZDR posture until audit evidence attaches
 
-### #12 Qwen VL Max 72B / 通义千问 VL Max 72B 多模态 (qwen/qwen-vl-max-72b)
+### #26 xAI Grok 4.7 / xAI Grok 4.7 低输出乘数推理旗舰 (x-ai/grok-4-7)
+- Detail URL: https://myrilum.com/router/m/x-ai/grok-4-7
+- ZDR Audit URL: https://myrilum.com/router/m/x-ai/grok-4-7/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: x-ai/grok-4-7 | Release: Grok-4.7 | Domain: general-reasoning | RegionHome: GLOBAL
+- Context & List Pricing: contextWindow=500000 | maxOutput=131072 | prompt=$2/1M | completion=$6/1M | cachedRead=$0.5/1M | blendedListUsd=$2.8/1M
+- Reference Profile (Unmeasured): manifoldScore=73.9 | decayedConfidence=1 | refBenchmarkScore=97.1 | valueLiftPerDollar=34.68/$ | refTtft=240ms | refTps=112 tok/s
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #11 benchmark, $2.80/1M list spend, and 112 tok/s ref speed (#28 efficiency).
+- Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: xai-direct | Harnesses: opencode, cursor-ide, antigravity | Benchmarks: aime-2026-reasoning, swe-bench-verified, bfcl-v3-tool-calling
+- Summary (EN): September 2026 xAI flagship with 500K context and an aggressive 3x output-to-input ratio ($2/$6 under 200K; 2x at >=200K).
+- Summary (ZH): xAI 2026 年 9 月发布的 500K 窗口旗舰，输出仅输入 3 倍（$2/$6，<200K 标准分档；>=200K 按 2x 计费）。
+- Capabilities: Low 3:1 output multiplier ($6/1M output below peer frontier tiers); 500K context reasoning paired with $0.50/1M cached prompt reads; OpenAI-compatible client schemas and structured tool dispatch
+
+### #27 Qwen VL Max 72B / 通义千问 VL Max 72B 多模态 (qwen/qwen-vl-max-72b)
 - Detail URL: https://myrilum.com/router/m/qwen/qwen-vl-max-72b
 - ZDR Audit URL: https://myrilum.com/router/m/qwen/qwen-vl-max-72b/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -251,7 +495,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: qwen/qwen-vl-max-72b | Release: VL-Max-72B | Domain: multimodal-vision | RegionHome: CN
 - Context & List Pricing: contextWindow=128000 | maxOutput=16384 | prompt=$0.35/1M | completion=$1.2/1M | cachedRead=$0.09/1M | blendedListUsd=$0.52/1M
 - Reference Profile (Unmeasured): manifoldScore=72.8 | decayedConfidence=0.9876 | refBenchmarkScore=89.2 | valueLiftPerDollar=171.54/$ | refTtft=265ms | refTps=89 tok/s
-- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #14 benchmark, $0.52/1M list spend, and 89 tok/s ref speed (#10 efficiency).
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #34 benchmark, $0.52/1M list spend, and 89 tok/s ref speed (#15 efficiency).
 - Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: alibaba-bailian | Harnesses: linghe-os, cursor-ide | Benchmarks: mmmu-multimodal, bfcl-v3-tool-calling
@@ -259,7 +503,23 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 支持高分辨率文档版面 OCR、GUI 像素坐标定位与长视频帧序列理解的中国区多模态参考模型。
 - Capabilities: Structured extraction on dense invoices and tables; Pixel-level UI element grounding for browser agents; CN-direct multimodal image and video frame ingestion
 
-### #13 Zhipu GLM-4 Plus / 智谱 GLM-4 Plus 检索对齐版 (zhipu/glm-4-plus)
+### #28 Qwen3.8 Max / 通义千问 Qwen3.8 Max 长稳主力 (qwen/qwen3-8-max)
+- Detail URL: https://myrilum.com/router/m/qwen/qwen3-8-max
+- ZDR Audit URL: https://myrilum.com/router/m/qwen/qwen3-8-max/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: qwen/qwen3-8-max | Release: Qwen3.8-Max | Domain: coding-agent | RegionHome: CN
+- Context & List Pricing: contextWindow=1000000 | maxOutput=65536 | prompt=$2/1M | completion=$6/1M | cachedRead=$0.25/1M | blendedListUsd=$2.8/1M
+- Reference Profile (Unmeasured): manifoldScore=72.7 | decayedConfidence=0.9981 | refBenchmarkScore=95.6 | valueLiftPerDollar=34.14/$ | refTtft=270ms | refTps=94 tok/s
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #18 benchmark, $2.80/1M list spend, and 94 tok/s ref speed (#29 efficiency).
+- Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: alibaba-bailian | Harnesses: linghe-os, opencode, cursor-ide | Benchmarks: swe-bench-verified, bfcl-v3-tool-calling, mrcr-long-context
+- Summary (EN): Predecessor 1M-context workhorse specialized in strict tool schemas and multi-file repository patching.
+- Summary (ZH): Qwen4 发布前的 1M 窗口长稳生产旗舰，主打严格工具调用 Schema 对齐与大型 TypeScript/Rust 仓库补丁。
+- Capabilities: 1M-context cross-module symbol tracking and refactoring; High BFCL tool schema fidelity across multi-turn agent loops; CN-direct enterprise stability via Alibaba Bailian
+
+### #29 Zhipu GLM-4 Plus / 智谱 GLM-4 Plus 检索对齐版 (zhipu/glm-4-plus)
 - Detail URL: https://myrilum.com/router/m/zhipu/glm-4-plus
 - ZDR Audit URL: https://myrilum.com/router/m/zhipu/glm-4-plus/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -267,7 +527,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: zhipu/glm-4-plus | Release: GLM-4-Plus | Domain: enterprise-rag | RegionHome: CN
 - Context & List Pricing: contextWindow=128000 | maxOutput=16384 | prompt=$0.42/1M | completion=$1.4/1M | cachedRead=$0.11/1M | blendedListUsd=$0.616/1M
 - Reference Profile (Unmeasured): manifoldScore=72.2 | decayedConfidence=0.9816 | refBenchmarkScore=88.6 | valueLiftPerDollar=143.83/$ | refTtft=240ms | refTps=94 tok/s
-- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #16 benchmark, $0.62/1M list spend, and 94 tok/s ref speed (#13 efficiency).
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #36 benchmark, $0.62/1M list spend, and 94 tok/s ref speed (#18 efficiency).
 - Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: zhipu-bigmodel, alibaba-bailian | Harnesses: linghe-os, opencode | Benchmarks: bfcl-v3-tool-calling, mrcr-long-context
@@ -275,7 +535,39 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 面向中文知识库对齐、多跳工具调用与长文引文溯源优化的基座参考模型。
 - Capabilities: Citation grounding and abstention adherence for RAG workflows; Structured BFCL tool argument extraction across Chinese prompts; Accessible via both Zhipu BigModel and Alibaba Bailian
 
-### #14 DeepSeek R1 Reasoning / DeepSeek R1 显式推理旗舰 (deepseek/deepseek-r1)
+### #30 Moonshot Kimi K3.1 Pro / 月之暗面 Kimi K3.1 Pro 长程代理 (moonshot/kimi-k3-1-pro)
+- Detail URL: https://myrilum.com/router/m/moonshot/kimi-k3-1-pro
+- ZDR Audit URL: https://myrilum.com/router/m/moonshot/kimi-k3-1-pro/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: moonshot/kimi-k3-1-pro | Release: Kimi-K3.1-Pro | Domain: long-context | RegionHome: CN
+- Context & List Pricing: contextWindow=1000000 | maxOutput=131072 | prompt=$2/1M | completion=$10/1M | cachedRead=$0.2/1M | blendedListUsd=$3.6/1M
+- Reference Profile (Unmeasured): manifoldScore=71.7 | decayedConfidence=1 | refBenchmarkScore=96.6 | valueLiftPerDollar=26.83/$ | refTtft=310ms | refTps=92 tok/s
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #13 benchmark, $3.60/1M list spend, and 92 tok/s ref speed (#33 efficiency).
+- Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: alibaba-bailian, together-turbo | Harnesses: linghe-os, opencode, claude-code, antigravity | Benchmarks: mrcr-long-context, swe-bench-verified, aime-2026-reasoning
+- Summary (EN): 1M-context open-weight multimodal reasoning flagship extending Kimi K3 long-horizon agent execution at reduced list rates.
+- Summary (ZH): 1M 上下文开放权重多模态推理旗舰，继承 K3 深层规划并在长程代理工具链中显著压缩单价。
+- Capabilities: Sustained coherence across 1M-token research and 100-step tool chains; 90% list cache-read discount ($0.20/1M) for persistent corpora; Served across CN Bailian direct and global Together endpoints
+
+### #31 Claude Opus 5.5 / Claude Opus 5.5 自主研发旗舰 (anthropic/claude-opus-5-5)
+- Detail URL: https://myrilum.com/router/m/anthropic/claude-opus-5-5
+- ZDR Audit URL: https://myrilum.com/router/m/anthropic/claude-opus-5-5/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: anthropic/claude-opus-5-5 | Release: Claude-Opus-5.5 | Domain: coding-agent | RegionHome: GLOBAL
+- Context & List Pricing: contextWindow=1000000 | maxOutput=128000 | prompt=$4/1M | completion=$20/1M | cachedRead=$0.2/1M | blendedListUsd=$7.2/1M
+- Reference Profile (Unmeasured): manifoldScore=71.2 | decayedConfidence=1 | refBenchmarkScore=98.4 | valueLiftPerDollar=13.67/$ | refTtft=390ms | refTps=76 tok/s
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #3 benchmark, $7.20/1M list spend, and 76 tok/s ref speed (#36 efficiency).
+- Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: anthropic-direct, aws-bedrock, google-vertex | Harnesses: claude-code, cursor-ide, antigravity | Benchmarks: swe-bench-verified, livecodebench-v5, aime-2026-reasoning
+- Summary (EN): September 2026 frontier engineering release scaling to 1M context at $4/$20 while accelerating decode throughput over 4.5.
+- Summary (ZH): 2026 年 9 月起成为长周期工程代码主力的 Opus 5.5（$4/$20，1M 窗口），较 4.5 代大幅提升参考速度并降价。
+- Capabilities: 1M context with 128K max output for full-module synthesis; Supports optional Anthropic Fast Mode lane when enabled; High schema adherence across complex autonomous dev loops
+
+### #32 DeepSeek R1 Reasoning / DeepSeek R1 显式推理旗舰 (deepseek/deepseek-r1)
 - Detail URL: https://myrilum.com/router/m/deepseek/deepseek-r1
 - ZDR Audit URL: https://myrilum.com/router/m/deepseek/deepseek-r1/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -283,7 +575,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: deepseek/deepseek-r1 | Release: R1-0528 | Domain: general-reasoning | RegionHome: CN
 - Context & List Pricing: contextWindow=128000 | maxOutput=32768 | prompt=$0.55/1M | completion=$2.19/1M | cachedRead=$0.14/1M | blendedListUsd=$0.878/1M
 - Reference Profile (Unmeasured): manifoldScore=70.3 | decayedConfidence=0.9955 | refBenchmarkScore=95.4 | valueLiftPerDollar=108.66/$ | refTtft=310ms | refTps=74 tok/s
-- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #6 benchmark, $0.88/1M list spend, and 74 tok/s ref speed (#14 efficiency).
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #19 benchmark, $0.88/1M list spend, and 74 tok/s ref speed (#21 efficiency).
 - Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: deepseek-official, alibaba-bailian, fireworks-nitro | Harnesses: linghe-os, opencode, claude-code, antigravity | Benchmarks: aime-2026-reasoning, swe-bench-verified, livecodebench-v5
@@ -291,7 +583,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 开源强化学习显式推理模型，提供完整思维链与前缀缓存官方定价折让，适配复杂架构设计与代码审查。
 - Capabilities: Native explicit reasoning trace with deterministic tool calling; CN-direct routing via DeepSeek Official and Alibaba Bailian endpoints; List cache-read pricing discounts repeat prompts by 75%
 
-### #15 Moonshot Kimi K2 Thinking / 月之暗面 Kimi K2 Thinking (moonshot/kimi-k2-thinking)
+### #33 Moonshot Kimi K2 Thinking / 月之暗面 Kimi K2 Thinking (moonshot/kimi-k2-thinking)
 - Detail URL: https://myrilum.com/router/m/moonshot/kimi-k2-thinking
 - ZDR Audit URL: https://myrilum.com/router/m/moonshot/kimi-k2-thinking/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -299,7 +591,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: moonshot/kimi-k2-thinking | Release: K2-Thinking | Domain: long-context | RegionHome: CN
 - Context & List Pricing: contextWindow=256000 | maxOutput=32768 | prompt=$0.6/1M | completion=$2.4/1M | cachedRead=$0.15/1M | blendedListUsd=$0.96/1M
 - Reference Profile (Unmeasured): manifoldScore=70 | decayedConfidence=0.9884 | refBenchmarkScore=93.1 | valueLiftPerDollar=96.98/$ | refTtft=360ms | refTps=78 tok/s
-- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #8 benchmark, $0.96/1M list spend, and 78 tok/s ref speed (#15 efficiency).
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #25 benchmark, $0.96/1M list spend, and 78 tok/s ref speed (#22 efficiency).
 - Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: alibaba-bailian, together-turbo | Harnesses: linghe-os, opencode, antigravity | Benchmarks: mrcr-long-context, aime-2026-reasoning, swe-bench-verified
@@ -307,7 +599,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 具备 256K 长上下文多步工具思考能力的大规模 MoE 模型，适合长文档拆解与多步规划。
 - Capabilities: Multi-hop tool planning across 256K context windows; Full-document cross-reference checks for long specifications; Accessible via CN Bailian direct nodes and global mirrors
 
-### #16 GPT-5 / GPT-5 Responses 原生旗舰 (openai/gpt-5)
+### #34 GPT-5 / GPT-5 Responses 原生旗舰 (openai/gpt-5)
 - Detail URL: https://myrilum.com/router/m/openai/gpt-5
 - ZDR Audit URL: https://myrilum.com/router/m/openai/gpt-5/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -315,7 +607,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: openai/gpt-5 | Release: GPT-5-2026 | Domain: general-reasoning | RegionHome: GLOBAL
 - Context & List Pricing: contextWindow=400000 | maxOutput=128000 | prompt=$2.5/1M | completion=$10/1M | cachedRead=$0.62/1M | blendedListUsd=$4/1M
 - Reference Profile (Unmeasured): manifoldScore=69.4 | decayedConfidence=1 | refBenchmarkScore=96.8 | valueLiftPerDollar=24.2/$ | refTtft=370ms | refTps=86 tok/s
-- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #3 benchmark, $4.00/1M list spend, and 86 tok/s ref speed (#17 efficiency).
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #12 benchmark, $4.00/1M list spend, and 86 tok/s ref speed (#34 efficiency).
 - Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: openai-direct, aws-bedrock | Harnesses: codex-cli, cursor-ide, antigravity | Benchmarks: swe-bench-verified, aime-2026-reasoning, bfcl-v3-tool-calling
@@ -323,7 +615,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 原生支持 /v1/responses 与 /v1/chat/completions 双规范，具备 400K 上下文与强结构化 JSON 输出保证。
 - Capabilities: 400K input context with 128K max completion output; Native /v1/responses compatibility for Codex CLI sandboxes; Adaptive reasoning effort with strict structured output mode
 
-### #17 Doubao 1.5 Pro 256K / 豆包 Doubao 1.5 Pro 256K (doubao/doubao-1-5-pro-256k)
+### #35 Doubao 1.5 Pro 256K / 豆包 Doubao 1.5 Pro 256K (doubao/doubao-1-5-pro-256k)
 - Detail URL: https://myrilum.com/router/m/doubao/doubao-1-5-pro-256k
 - ZDR Audit URL: https://myrilum.com/router/m/doubao/doubao-1-5-pro-256k/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -331,7 +623,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: doubao/doubao-1-5-pro-256k | Release: Doubao-1.5-Pro | Domain: enterprise-rag | RegionHome: CN
 - Context & List Pricing: contextWindow=256000 | maxOutput=16384 | prompt=$0.3/1M | completion=$1.15/1M | cachedRead=$0.08/1M | blendedListUsd=$0.47/1M
 - Reference Profile (Unmeasured): manifoldScore=68.9 | decayedConfidence=0.7721 | refBenchmarkScore=88.9 | valueLiftPerDollar=189.15/$ | refTtft=280ms | refTps=86 tok/s
-- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #15 benchmark, $0.47/1M list spend, and 86 tok/s ref speed (#8 efficiency).
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #35 benchmark, $0.47/1M list spend, and 86 tok/s ref speed (#13 efficiency).
 - Reachability & BYOK: cnDirectReachable=true | isByokSupported=true
 - ZDR Compliance: overall=Warn (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: volcengine-ark | Harnesses: linghe-os, cursor-ide | Benchmarks: mrcr-long-context, bfcl-v3-tool-calling
@@ -339,7 +631,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 火山方舟 256K 中文长文档理解与检索主力，已附条件披露区域 TLS 证书轮换 Warn 提示。
 - Capabilities: 256K document retrieval tuned for CN collaboration workflows; Supports structured summarization and tool argument extraction; Explicit Warn flag while external 3-axis audit receipts remain Unverified
 
-### #18 Claude Sonnet 4.5 / Claude Sonnet 4.5 编程主力 (anthropic/claude-sonnet-4-5)
+### #36 Claude Sonnet 4.5 / Claude Sonnet 4.5 编程主力 (anthropic/claude-sonnet-4-5)
 - Detail URL: https://myrilum.com/router/m/anthropic/claude-sonnet-4-5
 - ZDR Audit URL: https://myrilum.com/router/m/anthropic/claude-sonnet-4-5/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -347,7 +639,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: anthropic/claude-sonnet-4-5 | Release: Claude-Sonnet-4.5 | Domain: coding-agent | RegionHome: GLOBAL
 - Context & List Pricing: contextWindow=200000 | maxOutput=64000 | prompt=$3/1M | completion=$15/1M | cachedRead=$0.3/1M | blendedListUsd=$5.4/1M
 - Reference Profile (Unmeasured): manifoldScore=67 | decayedConfidence=0.9968 | refBenchmarkScore=96.4 | valueLiftPerDollar=17.85/$ | refTtft=365ms | refTps=84 tok/s
-- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #4 benchmark, $5.40/1M list spend, and 84 tok/s ref speed (#18 efficiency).
+- Paraconsistent Fork: PRODUCTION_WORKHORSE (Production Workhorse) — Steady reference-baseline profile at #14 benchmark, $5.40/1M list spend, and 84 tok/s ref speed (#35 efficiency).
 - Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: anthropic-direct, aws-bedrock, google-vertex | Harnesses: claude-code, cursor-ide, antigravity, opencode | Benchmarks: swe-bench-verified, livecodebench-v5, bfcl-v3-tool-calling
@@ -355,7 +647,39 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 国际站自主代码工程与工具链编排核心，支持 /v1/messages 原生透传与 90% 提示词缓存官方折让。
 - Capabilities: Top SWE-bench multi-file patch accuracy tier; 90% list cache savings across Anthropic, Bedrock, and Vertex; High adherence to tool schemas and workspace constraints
 
-### #19 Claude Opus 4.5 / Claude Opus 4.5 重度研发旗舰 (anthropic/claude-opus-4-5)
+### #37 GPT-6.2 Astra / GPT-6.2 Astra 超前沿旗舰 (openai/gpt-6-2-astra)
+- Detail URL: https://myrilum.com/router/m/openai/gpt-6-2-astra
+- ZDR Audit URL: https://myrilum.com/router/m/openai/gpt-6-2-astra/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: openai/gpt-6-2-astra | Release: gpt-6.2-astra | Domain: general-reasoning | RegionHome: GLOBAL
+- Context & List Pricing: contextWindow=1050000 | maxOutput=128000 | prompt=$8/1M | completion=$40/1M | cachedRead=$0.4/1M | blendedListUsd=$14.4/1M
+- Reference Profile (Unmeasured): manifoldScore=54.5 | decayedConfidence=1 | refBenchmarkScore=99.1 | valueLiftPerDollar=6.88/$ | refTtft=680ms | refTps=44 tok/s
+- Paraconsistent Fork: LATENCY_DEGRADED_WARNING (Latency Degraded Warning) — Ranks #1 on reference benchmark (99.1) yet hits 680ms ref TTFT at 44 tok/s and $14.40/1M blended (#38 efficiency).
+- Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: openai-direct | Harnesses: codex-cli, cursor-ide, antigravity | Benchmarks: aime-2026-reasoning, swe-bench-verified, livecodebench-v5, mrcr-long-context
+- Summary (EN): November 2026 OpenAI frontier flagship with ~1.05M context and $0.40/1M cache reads; heavy deliberation flags interactive latency warnings.
+- Summary (ZH): 2026 年 11 月发布的 OpenAI 最高规格推理旗舰，具备 ~1.05M 窗口与 95% 缓存读取折让（$0.40/1M）；因重思考参考延迟触发预警标识。
+- Capabilities: ~1.05M context window with 128K output via /v1/responses; Prompt cache reads at $0.40/1M and 50% Batch API discounts; Peak reasoning ceiling across architecture reviews and proofs
+
+### #38 Claude Fable 5.2 / Claude Fable 5.2 长程推理旗舰 (anthropic/claude-fable-5-2)
+- Detail URL: https://myrilum.com/router/m/anthropic/claude-fable-5-2
+- ZDR Audit URL: https://myrilum.com/router/m/anthropic/claude-fable-5-2/audit
+- Workbench URL: https://app.myrilum.com/sign-in
+- Catalog API URL: https://myrilum.com/router/api/v1/index.json (publicGatewayStatus=UNAVAILABLE_PENDING_RELEASE)
+- Provenance: anthropic/claude-fable-5-2 | Release: Claude-Fable-5.2 | Domain: general-reasoning | RegionHome: GLOBAL
+- Context & List Pricing: contextWindow=1000000 | maxOutput=128000 | prompt=$8/1M | completion=$40/1M | cachedRead=$0.2/1M | blendedListUsd=$14.4/1M
+- Reference Profile (Unmeasured): manifoldScore=53.5 | decayedConfidence=1 | refBenchmarkScore=99 | valueLiftPerDollar=6.88/$ | refTtft=710ms | refTps=42 tok/s
+- Paraconsistent Fork: LATENCY_DEGRADED_WARNING (Latency Degraded Warning) — Ranks #2 on reference benchmark (99.0) yet hits 710ms ref TTFT at 42 tok/s and $14.40/1M blended (#39 efficiency).
+- Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
+- ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
+- Providers: anthropic-direct, aws-bedrock, google-vertex | Harnesses: claude-code, antigravity | Benchmarks: swe-bench-verified, aime-2026-reasoning, mrcr-long-context
+- Summary (EN): November 2026 Anthropic peak-reasoning tier (1M context, 128K output); deep deliberation places interactive ref TTFT at 710ms.
+- Summary (ZH): 2026 年 11 月发布的 Anthropic 顶配长程推理系列（1M 上下文 / 128K 输出）；深思考特性使其交互首字参考值为 710ms。
+- Capabilities: 1M-context extended agentic reasoning and red-team code audits; Consistent /v1/messages support across Anthropic, Bedrock, and Vertex; 50% Batch API discounts and cached reads from $0.20/1M
+
+### #39 Claude Opus 4.5 / Claude Opus 4.5 重度研发旗舰 (anthropic/claude-opus-4-5)
 - Detail URL: https://myrilum.com/router/m/anthropic/claude-opus-4-5
 - ZDR Audit URL: https://myrilum.com/router/m/anthropic/claude-opus-4-5/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -363,7 +687,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: anthropic/claude-opus-4-5 | Release: Claude-Opus-4.5 | Domain: general-reasoning | RegionHome: GLOBAL
 - Context & List Pricing: contextWindow=200000 | maxOutput=64000 | prompt=$5/1M | completion=$25/1M | cachedRead=$0.5/1M | blendedListUsd=$9/1M
 - Reference Profile (Unmeasured): manifoldScore=46.6 | decayedConfidence=0.9904 | refBenchmarkScore=97.8 | valueLiftPerDollar=10.87/$ | refTtft=820ms | refTps=38 tok/s
-- Paraconsistent Fork: LATENCY_DEGRADED_WARNING (Latency Degraded Warning) — Ranks #2 on reference benchmark (97.8) yet hits 820ms ref TTFT at 38 tok/s and $9.00/1M blended (#19 efficiency).
+- Paraconsistent Fork: LATENCY_DEGRADED_WARNING (Latency Degraded Warning) — Ranks #7 on reference benchmark (97.8) yet hits 820ms ref TTFT at 38 tok/s and $9.00/1M blended (#37 efficiency).
 - Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: anthropic-direct, aws-bedrock | Harnesses: claude-code, antigravity | Benchmarks: swe-bench-verified, aime-2026-reasoning
@@ -371,7 +695,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Summary (ZH): 深层系统架构与高难度多步规划旗舰；虽参考基准分居前排，但因 820ms 参考首字与 38 tok/s 触发延迟退化预警。
 - Capabilities: Peak reasoning ceiling on complex system architecture audits; Coherent alignment across extended multi-step tool trajectories; Best scoped to critical reviews rather than low-latency loops
 
-### #20 OpenAI o3 Deep Research / OpenAI o3 深度推理专精 (openai/o3-deep-research)
+### #40 OpenAI o3 Deep Research / OpenAI o3 深度推理专精 (openai/o3-deep-research)
 - Detail URL: https://myrilum.com/router/m/openai/o3-deep-research
 - ZDR Audit URL: https://myrilum.com/router/m/openai/o3-deep-research/audit
 - Workbench URL: https://app.myrilum.com/sign-in
@@ -379,7 +703,7 @@ ZH: AI 模型路由全量语料（GLOBAL 参考基线）前三：google/gemini-3
 - Provenance: openai/o3-deep-research | Release: o3-Research | Domain: general-reasoning | RegionHome: GLOBAL
 - Context & List Pricing: contextWindow=200000 | maxOutput=100000 | prompt=$8/1M | completion=$32/1M | cachedRead=$2/1M | blendedListUsd=$12.8/1M
 - Reference Profile (Unmeasured): manifoldScore=43.4 | decayedConfidence=0.9835 | refBenchmarkScore=98.1 | valueLiftPerDollar=7.66/$ | refTtft=960ms | refTps=32 tok/s
-- Paraconsistent Fork: LATENCY_DEGRADED_WARNING (Latency Degraded Warning) — Ranks #1 on reference benchmark (98.1) yet hits 960ms ref TTFT at 32 tok/s and $12.80/1M blended (#20 efficiency).
+- Paraconsistent Fork: LATENCY_DEGRADED_WARNING (Latency Degraded Warning) — Ranks #5 on reference benchmark (98.1) yet hits 960ms ref TTFT at 32 tok/s and $12.80/1M blended (#40 efficiency).
 - Reachability & BYOK: cnDirectReachable=false | isByokSupported=true
 - ZDR Compliance: overall=Unverified (zdr=Unverified, residency=Unverified, tls=Unverified) | evidenceRef=Unverified | zeroDataRetention=false | noPromptTraining=false
 - Providers: openai-direct | Harnesses: codex-cli, antigravity | Benchmarks: aime-2026-reasoning, swe-bench-verified
